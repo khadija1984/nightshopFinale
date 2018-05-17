@@ -64,7 +64,7 @@
                             <li class="menu-item-has-children"><a href="">Catégories <i
                                     class="fa fa-angle-right"></i></a>
                                 <ul class="sub-menu">
-                                    <li><a href="index.html">Alcools</a></li>          
+                                    <li><a href="">Alcools</a></li>          
                                     <li><a href="home-1.html">Softs</a></li>
                                     <li><a href="home-2.html">Packs</a></li>
                                     <li><a href="home-2.html">Divers</a></li>

@@ -11,10 +11,18 @@
 |
 */
 
+
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/categories', 'CategorieController@index')->name('categories.index');
+
+Route::get('/contact', function () {
+    return view('contact');
+});
+
+
+
+/*Route::get('/categories', 'CategorieController@index')->name('categories.index');
 Route::get('/categories/produits}', 'ProduitController@index')->name('prouits.index');
 Route::get('/categories/produits/{id}', 'ProduitController@index')->name('prouits.index');
 
