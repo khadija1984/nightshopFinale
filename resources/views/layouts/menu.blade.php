@@ -48,23 +48,23 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href=""><img src="assets/images/logo.png" alt=""></a>
+                <a class="navbar-brand" href="{{ url('/') }}"><img src="assets/images/logo.png" alt=""></a>
             </div>
 
 
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
                 <ul class="nav navbar-nav text-uppercase">
-                    <li><a data-toggle="dropdown" class="dropdown-toggle" href="index.html">Home</a>
+                    <li><a href="{{ url('/') }}" data-toggle="dropdown" class="dropdown-toggle">Home</a>
                        
                     </li>
                     <li class="menu-item-has-children"><a data-toggle="dropdown" class="dropdown-toggle" href="#">Boutique
                         <i class="fa fa-angle-down"></i></a>
                        <ul class="sub-menu">
-                            <li class="menu-item-has-children"><a href="">Catégories <i
+                            <li class="menu-item-has-children"><a href="{{ url('categories') }}">Catégories <i
                                     class="fa fa-angle-right"></i></a>
                                 <ul class="sub-menu">
-                                    <li><a href="">Alcools</a></li>          
+                                    <li><a href="{{ url('categories/alcools') }}">Alcools</a></li>          
                                     <li><a href="home-1.html">Softs</a></li>
                                     <li><a href="home-2.html">Packs</a></li>
                                     <li><a href="home-2.html">Divers</a></li>
@@ -85,10 +85,13 @@
                    <!--- <a href="#"><i class="fa fa-heart"></i></a>--->
                     
                     <div>
-                    <a href="#"><i class="active fa fa"></i>Connectez-vous</a>
                     
-                    <a href="#"><i class="active fa fa"></i>Inscrivez-vous</a>
+                    <a href="{{ url('/login') }}"><i class="active fa fa"></i>Connectez-vous</a>
+                    
+                    <a href="{{ url('/register') }}"><i class="active fa fa"></i>Inscrivez-vous</a>
+                     
                     </div>
+                    
                     
                     <div class="top-search">
                         <a href="#"><i class="fa fa-search"></i></a>

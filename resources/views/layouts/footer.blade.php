@@ -3,7 +3,7 @@
         <div class="row">
             <div class="col-md-4">
                 <aside class="footer-widget">
-                    <div class="about-img"><img src="assets/images/footer-logo.png" alt="Kotha"></div>
+                    <div class="about-img"><img src="assets/images/logofooter.png" alt="Kotha"></div>
                     <div class="about-content">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
                         eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed voluptua. At vero eos et
                         accusam et justo duo dlores et ea rebum magna text ar koto din.
@@ -11,18 +11,19 @@
                     <div class="address">
                         <h4 class="text-uppercase">contact Info</h4>
 
-                        <p> 239/2 NK Street, DC, USA</p>
+                        <p> 2,Rue van gulick</p>
+                        <p> 1020, Bruxelles</p>
 
-                        <p> Phone: +123 456 78900</p>
+                        <p> Gsm: 0484/28.27.72</p>
 
-                        <p>theme@kotha.com</p>
+                        <p>nightshopenligne@infos.be</p>
                     </div>
                 </aside>
             </div>
 
             <div class="col-md-4">
                 <aside class="footer-widget">
-                    <h3 class="widget-title text-uppercase">Testimonials</h3>
+                    <h3 class="widget-title text-uppercase">Promotion</h3>
 
                     <div id="myCarousel" class="carousel slide" data-ride="carousel">
                         <!--Indicator-->
@@ -35,12 +36,9 @@
                             <div class="item active">
                                 <div class="single-review">
                                     <div class="review-text">
-                                        <p>Lorem ipsum dolor sit amet, conssadipscing elitr, sed diam nonumy eirmod
-                                            tempvidunt ut labore et dolore magna aliquyam erat,sed diam voluptua. At
-                                            vero eos et accusam justo duo dolores et ea rebum.gubergren no sea takimata
-                                            magna aliquyam eratma</p>
+                                        <img src="assets/images/promo1.png" alt="">
                                     </div>
-                                    <div class="author-id">
+                                    <!--<div class="author-id">
                                         <img src="assets/images/author.png" alt="">
 
                                         <div class="author-text">
@@ -48,18 +46,15 @@
 
                                             <h4>CEO, ReadyTheme</h4>
                                         </div>
-                                    </div>
+                                    </div>--->
                                 </div>
                             </div>
                             <div class="item">
                                 <div class="single-review">
                                     <div class="review-text">
-                                        <p>Lorem ipsum dolor sit amet, conssadipscing elitr, sed diam nonumy eirmod
-                                            tempvidunt ut labore et dolore magna aliquyam erat,sed diam voluptua. At
-                                            vero eos et accusam justo duo dolores et ea rebum.gubergren no sea takimata
-                                            magna aliquyam eratma</p>
+                                        <img src="assets/images/promo1.png" alt="">
                                     </div>
-                                    <div class="author-id">
+                                    <!--<div class="author-id">
                                         <img src="assets/images/author.png" alt="">
 
                                         <div class="author-text">
@@ -67,18 +62,15 @@
 
                                             <h4>CEO, ReadyTheme</h4>
                                         </div>
-                                    </div>
+                                    </div>--->
                                 </div>
                             </div>
                             <div class="item">
                                 <div class="single-review">
                                     <div class="review-text">
-                                        <p>Lorem ipsum dolor sit amet, conssadipscing elitr, sed diam nonumy eirmod
-                                            tempvidunt ut labore et dolore magna aliquyam erat,sed diam voluptua. At
-                                            vero eos et accusam justo duo dolores et ea rebum.gubergren no sea takimata
-                                            magna aliquyam eratma</p>
+                                        <img src="assets/images/promo2.png" alt="">
                                     </div>
-                                    <div class="author-id">
+                                    <!--<div class="author-id">
                                         <img src="assets/images/author.png" alt="">
 
                                         <div class="author-text">
@@ -86,7 +78,7 @@
 
                                             <h4>CEO, ReadyTheme</h4>
                                         </div>
-                                    </div>
+                                    </div>--->
                                 </div>
                             </div>
                         </div>
@@ -96,17 +88,14 @@
             </div>
             <div class="col-md-4">
                 <aside class="footer-widget">
-                    <h3 class="widget-title text-uppercase">Custom Category Post</h3>
+                    <h3 class="widget-title text-uppercase">Nouveau produit</h3>
 
 
                     <div class="custom-post">
                         <div>
-                            <a href=""><img src="assets/images/footer-img.png" alt=""></a>
+                            <a href=""><img src="assets/images/nouveau.png" alt=""></a>
                         </div>
-                        <div>
-                            <a href="#" class="text-uppercase">Home is peaceful Place</a>
-                            <span class="p-date">February 15, 2016</span>
-                        </div>
+                        
                     </div>
                 </aside>
             </div>
@@ -116,8 +105,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <div class="text-center">&copy; 2015 <a href="">Kotha PRO</a>,Designed with <i
-                            class="fa fa-heart"></i> by <a href="#">ShapedTheme</a>
+                    <div class="text-center">&copy; 2018 <a href="">Night Shop En Ligne</a>,Designed with <i
+                            class="fa fa-heart"></i> by <a href="#">Khadija Hamama</a>
                     </div>
                 </div>
             </div>

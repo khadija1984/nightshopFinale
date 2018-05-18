@@ -3,7 +3,7 @@
 <html>
 <body>
 <div class="col-md-8">
-        <h1 class="portfolio-title text-uppercase">Categories</h1>
+        <h1 class="portfolio-title text-uppercase">Alcools</h1>
         <div class="row">
             <div class="col-md-4">
                 <article class="post portfolio-2 portfolio-3 post-grid">
@@ -98,6 +98,6 @@
     </div>
     </div>
     
-    
+ 
 </body>
 </html>

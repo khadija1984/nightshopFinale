@@ -19,8 +19,17 @@ Route::get('/', function () {
 Route::get('/contact', function () {
     return view('contact');
 });
+Route::get('/login', function () {
+    return view('login');
+});
 
 
+Route::get('/categories', function () {
+    return view('categories');
+});
+Route::get('/categories/alcools', function () {
+    return view('alcools');
+});
 
 /*Route::get('/categories', 'CategorieController@index')->name('categories.index');
 Route::get('/categories/produits}', 'ProduitController@index')->name('prouits.index');
