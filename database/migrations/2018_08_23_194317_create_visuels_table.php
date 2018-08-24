@@ -29,6 +29,6 @@ class CreateVisuelsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('products');
+        Schema::dropIfExists('visuels');
     }
 }

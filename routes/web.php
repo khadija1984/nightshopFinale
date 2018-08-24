@@ -12,7 +12,7 @@
 */
 
 
-Route::get('/', function () {
+/*Route::get('/', function () {
     return view('welcome');
 });
 
@@ -29,12 +29,12 @@ Route::get('/categories', function () {
 });
 Route::get('/categories/alcools', function () {
     return view('alcools');
-});
+});*/
 
 /*Route::get('/categories', 'CategorieController@index')->name('categories.index');
 Route::get('/categories/produits}', 'ProduitController@index')->name('prouits.index');
 Route::get('/categories/produits/{id}', 'ProduitController@index')->name('prouits.index');
-
+*/
 
 
 
