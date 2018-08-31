@@ -12,7 +12,9 @@ class ProductsTableSeeder extends Seeder
     public function run()
     {
         $tags = App\Tag::orderByRaw('RAND()')->take(4)->get();
+        
         factory(App\product::class, 50)->create()->each(function($u) use ($tags){
+          
             foreach($tags as $tag)
             {
                $u->tags()->attach($tag->id); 

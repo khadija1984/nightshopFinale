@@ -17,8 +17,8 @@ $factory->define(App\Product::class, function (Faker $faker) {
     $name = $faker->sentence;
     $categories = null;
     $categories = App\Category::pluck('id')->toArray();
-    $type = ['alcool','food','maison'];
-    $image = $faker->randomElement($type);
+    $types = ['alcool','food','maison'];
+    $image = $faker->randomElement($types);
     return [
         'name' => $name,
         'slug' => str_slug($name),
