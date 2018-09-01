@@ -21,9 +21,9 @@
                 </aside>
             </div>
 <!--rajouter foreach sur les produits en promotion--->
-            @foreach($promotions as $product)
+            
             <div class="col-md-4">
-                @include('include._product')
+                
                 <aside class="footer-widget">
                     <h3 class="widget-title text-uppercase">Promotion</h3>
 
@@ -88,7 +88,7 @@
 
                 </aside>
             </div>
-            @endforeach
+       
             <div class="col-md-4">
                 <aside class="footer-widget">
                     <h3 class="widget-title text-uppercase">Nouveau produit</h3>

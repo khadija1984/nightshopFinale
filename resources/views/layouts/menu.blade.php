@@ -86,10 +86,10 @@
                     
                     <div>
                     
-                    <a href="{{ url('/login') }}"><i class="active fa fa"></i>Connectez-vous</a>
+                    <a href="{{ route('auth/login')}}"><i class="active fa fa"></i>Connectez-vous</a>
                     
-                    <a href="{{ url('/register') }}"><i class="active fa fa"></i>Inscrivez-vous</a>
-                     
+                    <a href="{{ route('/register') }}"><i class="active fa fa"></i>Inscrivez-vous</a>
+                    
                     </div>
                     
                     
