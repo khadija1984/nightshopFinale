@@ -72,8 +72,8 @@
                             </li>
                         </ul>
                     </li>
-                    <li><a href="#">A PROPOS</a></li>
-                    <li><a href="contact.html">CONTACTEZ-NOUS</a></li>
+                    <li><a href="{{ url('apropos') }}">A PROPOS</a></li>
+                    <li><a href="{{ url('contact') }}">CONTACTEZ-NOUS</a></li>
                 </ul>
                 
                 <div class="i_con">

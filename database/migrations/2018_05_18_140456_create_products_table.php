@@ -13,7 +13,7 @@ class CreateProductsTable extends Migration
      */
     public function up()
     {
-         Schema::create('products', function (Blueprint $table) {
+          Schema::create('products', function (Blueprint $table) {
             $table->increments('id');
             $table->timestamps();
             $table->string('name');
@@ -23,6 +23,7 @@ class CreateProductsTable extends Migration
             $table->integer('qte');
             $table->string('image')->default('http://lorempixel.com/400/400');
             $table->integer('category_id');
+            
         });
     }
 

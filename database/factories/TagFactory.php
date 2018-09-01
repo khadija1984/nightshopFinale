@@ -10,14 +10,14 @@
 | database. Just tell the factory how a default model should look.
 |
 */
-
+use Faker\Generator as Faker;
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
 $factory->define(App\Tag::class, function (Faker $faker) {
-    
-    $name = $faker->sentence($nbWords = 2, $variableNbWords = true);
+
+	$name = $faker->sentence($nbWords =1 , $variableNbWords = true);
+
     return [
-        'name' => name,
-        'slug' => str_slug($name),
-        
+        'name' => $name,
+       	'slug' => str_slug($name),
     ];
 });

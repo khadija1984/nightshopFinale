@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/C:/UwAmp/www/nightshopFinale/database/migrations/2018_08_31_155734_create_product_tag_table.php</file>
+            <file>file:/C:/UwAmp/www/nightshopFinale/resources/views/layouts/menu.blade.php</file>
+            <file>file:/C:/UwAmp/www/nightshopFinale/resources/views/welcome.blade.php</file>
+            <file>file:/C:/UwAmp/www/nightshopFinale/database/factories/ProductFactory.php</file>
+            <file>file:/C:/UwAmp/www/nightshopFinale/database/migrations/2018_08_23_194317_create_visuels_table.php</file>
+            <file>file:/C:/UwAmp/www/nightshopFinale/app/Visuel.php</file>
+            <file>file:/C:/UwAmp/www/nightshopFinale/database/factories/PromotionFactory.php</file>
+            <file>file:/C:/UwAmp/www/nightshopFinale/database/migrations/2018_05_18_140456_create_products_table.php</file>
+            <file>file:/C:/UwAmp/www/nightshopFinale/app/Promotion.php</file>
+            <file>file:/C:/UwAmp/www/nightshopFinale/database/seeds/ProductsTableSeeder.php</file>
+            <file>file:/C:/UwAmp/www/nightshopFinale/database/seeds/DatabaseSeeder.php</file>
+            <file>file:/C:/UwAmp/www/nightshopFinale/database/migrations/2018_08_23_194041_create_tags_table.php</file>
+            <file>file:/C:/UwAmp/www/nightshopFinale/routes/web.php</file>
+            <file>file:/C:/UwAmp/www/nightshopFinale/database/migrations/2018_08_23_205820_create_promotions_table.php</file>
+            <file>file:/C:/UwAmp/www/nightshopFinale/app/Product.php</file>
+            <file>file:/C:/UwAmp/www/nightshopFinale/resources/views/layouts/footer.blade.php</file>
+            <file>file:/C:/UwAmp/www/nightshopFinale/resources/views/apropos.blade.php</file>
+            <file>file:/C:/UwAmp/www/nightshopFinale/database/factories/VisuelFactory.php</file>
+            <file>file:/C:/UwAmp/www/nightshopFinale/database/seeds/PromotionsTableSeeder.php</file>
+            <file>file:/C:/UwAmp/www/nightshopFinale/resources/views/contact.blade.php</file>
+        </group>
+    </open-files>
+</project-private>

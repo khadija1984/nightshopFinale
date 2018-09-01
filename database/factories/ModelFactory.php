@@ -10,14 +10,15 @@
 | database. Just tell the factory how a default model should look.
 |
 */
-use Faker\Generator as Faker;
-/** @var \Illuminate\Database\Eloquent\Factory $factory */
-$factory->define(App\Category::class, function (Faker $faker) {
 
-	$name = $faker->sentence($nbWords =2 , $variableNbWords = true);
+/** @var \Illuminate\Database\Eloquent\Factory $factory */
+$factory->define(App\User::class, function (Faker\Generator $faker) {
+    static $password;
 
     return [
-        'name' => $name,
-       	'slug' => str_slug($name),
+        'name' => $faker->name,
+        'email' => $faker->unique()->safeEmail,
+        'password' => $password ?: $password = bcrypt('secret'),
+        'remember_token' => str_random(10),
     ];
 });
