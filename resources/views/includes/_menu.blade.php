@@ -7,22 +7,23 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
-    <meta name="author" content="Rubel Miah">
+    <meta name="author" content="">
 
     <!-- favicon icon -->
     <link rel="shortcut icon" href="assets/images/">
 
-    <title></title>
-
+    <title>{{config('app.name'),'NightShop'}} - @yield('title', 'Acueil du site')</title>
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="{{ csrf_token()}}">
     <!-- common css -->
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/font-awesome.min.css">
-    <link rel="stylesheet" href="assets/css/animate.min.css">
-    <link rel="stylesheet" href="assets/css/owl.carousel.css">
-    <link rel="stylesheet" href="assets/css/owl.theme.css">
-    <link rel="stylesheet" href="assets/css/owl.transitions.css">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/responsive.css">
+    <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/font-awesome.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/animate.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/owl.carousel.css')}}">
+    <link rel="stylesheet" href="{{ asset('css/owl.theme.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/owl.transitions.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/responsive.css') }}">
 
     <!-- HTML5 shim and Respond.js IE9 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -86,9 +87,9 @@
                     
                     <div>
                     
-                    <a href="{{ route('auth/login')}}"><i class="active fa fa"></i>Connectez-vous</a>
+                    <a href=""><i class="active fa fa"></i>Connectez-vous</a>
                     
-                    <a href="{{ route('/register') }}"><i class="active fa fa"></i>Inscrivez-vous</a>
+                    <a href=""><i class="active fa fa"></i>Inscrivez-vous</a>
                     
                     </div>
                     
@@ -115,12 +116,12 @@
 </nav>
 
 <!-- js files -->
-<script type="text/javascript" src="assets/js/jquery-1.11.3.min.js"></script>
-<script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="assets/js/owl.carousel.min.js"></script>
-<script type="text/javascript" src="assets/js/jquery.stickit.min.js"></script>
-<script type="text/javascript" src="assets/js/menu.js"></script>
-<script type="text/javascript" src="assets/js/scripts.js"></script>
+<script type="text/javascript" src="{{ asset('js/jquery-1.11.3.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset('js/bootstrap.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset('js/owl.carousel.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset('js/jquery.stickit.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset('js/menu.js') }}"></script>
+<script type="text/javascript" src="{{ asset('js/scripts.js') }}"></script>
 </body>
 
 </html>

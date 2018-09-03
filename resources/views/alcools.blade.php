@@ -1,4 +1,4 @@
-@include('layouts.menu')
+@include('includes._menu')
 
 <html>
 <body>
@@ -101,3 +101,4 @@
  
 </body>
 </html>
+@include('includes._footer')

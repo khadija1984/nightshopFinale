@@ -12,9 +12,9 @@
 */
 
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'HomeController@index')->name('home');
+
+Route::post('nous contacter', 'HomeController@postcontact')->name('contact.post');
 
 Route::get('/contact', function () {
     return view('contact');

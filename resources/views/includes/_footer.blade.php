@@ -26,7 +26,7 @@
                 
                 <aside class="footer-widget">
                     <h3 class="widget-title text-uppercase">Promotion</h3>
-
+                    
                     <div id="myCarousel" class="carousel slide" data-ride="carousel">
                         <!--Indicator-->
                         <ol class="carousel-indicators">
@@ -34,37 +34,21 @@
                             <li data-target="#myCarousel" data-slide-to="1"></li>
                             <li data-target="#myCarousel" data-slide-to="2"></li>
                         </ol>
+                        
                         <div class="carousel-inner" role="listbox">
                             <div class="item active">
                                 <div class="single-review">
                                     <div class="review-text">
-                                        <img src="assets/images/promo1.png" alt="">
-                                    </div>
-                                    <!--<div class="author-id">
-                                        <img src="assets/images/author.png" alt="">
-
-                                        <div class="author-text">
-                                            <h4>Sophia</h4>
-
-                                            <h4>CEO, ReadyTheme</h4>
-                                        </div>
-                                    </div>--->
+                                        <img src="" alt="">
+                                    </div>                   
                                 </div>
                             </div>
-                            <div class="item">
+                    
+                            <!--<div class="item">
                                 <div class="single-review">
                                     <div class="review-text">
                                         <img src="assets/images/promo1.png" alt="">
-                                    </div>
-                                    <!--<div class="author-id">
-                                        <img src="assets/images/author.png" alt="">
-
-                                        <div class="author-text">
-                                            <h4>Sophia</h4>
-
-                                            <h4>CEO, ReadyTheme</h4>
-                                        </div>
-                                    </div>--->
+                                    </div>   
                                 </div>
                             </div>
                             <div class="item">
@@ -72,18 +56,10 @@
                                     <div class="review-text">
                                         <img src="assets/images/promo2.png" alt="">
                                     </div>
-                                    <!--<div class="author-id">
-                                        <img src="assets/images/author.png" alt="">
-
-                                        <div class="author-text">
-                                            <h4>Sophia</h4>
-
-                                            <h4>CEO, ReadyTheme</h4>
-                                        </div>
-                                    </div>--->
+                        
                                 </div>
-                            </div>
-                        </div>
+                            </div>-->
+                        </div> 
                     </div>
 
                 </aside>
@@ -96,10 +72,14 @@
 
                     <div class="custom-post">
                         <div>
-                            <a href=""><img src="assets/images/nouveau.png" alt=""></a>
+                        
+                            <a href=""><img src="
+                                            " alt=""></a>
+                 
                         </div>
                         
                     </div>
+
                 </aside>
             </div>
         </div>

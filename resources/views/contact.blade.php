@@ -1,4 +1,4 @@
-@include('layouts.menu')
+@include('includes._menu')
  
 <div class="leave-comment mr0">
                     <div id="googleMap" style="width:100%; height:380px; margin-bottom: 5px"></div>
@@ -7,33 +7,56 @@
                         deleniti deserunt esse illo recusandae.</p>
 
                     <h3 class="text-uppercase">Send massage</h3>
+                    <div class="container">
+                            @include('flash::message')
+                    </div>
                     <br>
 
-                    <form class="form-horizontal contact-form" role="form" method="post" action="sendemail.php">
+                    <form class="form-horizontal contact-form" role="form" method="post" action="{{ action('HomeController@postcontact') }}">
+                        {{csrf_field()}}
                         <div class="form-group">
                             <div class="col-md-12">
-                                <input type="text" class="form-control" id="name" name="name"
-                                       placeholder="Name" required>
+                                <input type="text" class="form-control" id="name" name="nom"
+                                       placeholder="Name" value="{{old('nom')}}" >
                             </div>
                         </div>
+                        @if($errors->has('nom'))
+                        <span class='help-block'>
+                            <strong>{{ $errors->first('nom')}}</strong>
+                        </span>
+                        @endif
                         <div class="form-group">
                             <div class="col-md-12">
                                 <input type="email" class="form-control" id="email" name="email"
-                                       placeholder="Email" required>
+                                       placeholder="Email" value="{{old('email')}}" >
                             </div>
                         </div>
+                        @if($errors->has('email'))
+                        <span class='help-block'>
+                            <strong>{{ $errors->first('email')}}</strong>
+                        </span>
+                        @endif
                         <div class="form-group">
                             <div class="col-md-12">
-                                <input type="text" class="form-control" id="subject" name="subject"
-                                       placeholder="Subject">
+                                <input type="text" class="form-control" id="subject" name="objet"
+                                       placeholder="Subject" value="{{old('objet')}}">
                             </div>
                         </div>
-
+                        @if($errors->has('objet'))
+                        <span class='help-block'>
+                            <strong>{{ $errors->first('objet')}}</strong>
+                        </span>
+                        @endif
                         <div class="form-group">
                             <div class="col-md-12">
-										<textarea class="form-control" rows="6" name="message"
-                                                  placeholder="Write Massage" required></textarea>
+			<textarea class="form-control" rows="6" name="content"
+                                         placeholder="Write Massage"  >{{old('content')}}</textarea>
                             </div>
+                            @if($errors->has('content'))
+                        <span class='help-block'>
+                            <strong>{{ $errors->first('content')}}</strong>
+                        </span>
+                        @endif
                         </div>
                         <button type="submit" name="submit" class="btn send-btn">send massage</button>
 
@@ -67,4 +90,4 @@
     google.maps.event.addDomListener(window, 'load', initialize);
 
 </script>
-@include('layouts.footer')  
+@include('includes._footer')

@@ -26,8 +26,19 @@ class Product extends Model
      {
          return $this->hasMany('App\Visuel');
      }
+      public function promotions()
+     {
+         return $this->hasMany('App\Promotion');
+     }
       public function tags()
      {
          return $this->belongsToMany('App\Tag');
+     }
+     function onDiscount(){
+         return $this->promotions()
+               ->where('started_at','<=',\Carbon\Carbon::now())
+               ->where('finished_at','>=',\Carbon\Carbon::now())
+               ->first();
+         
      }
 }

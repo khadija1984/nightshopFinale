@@ -1,12 +1,9 @@
 @include('includes._menu')
 
 <html>
-<body>
+    <body>
 <!--main content start-->
-<div class="main-content">
- apropos
-</div>
-
+@include('includes._slider')
 
 <!-- js files -->
 <script type="text/javascript" src="assets/js/jquery-1.11.3.min.js"></script>
