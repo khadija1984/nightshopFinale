@@ -63,6 +63,8 @@
                     </form>
                 </div>
 <script type="text/javascript"  src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAxXNz1IIB_4NBYS1jy5LbsFEgObeKJR2k&callback=initMap"
+  type="text/javascript"></script>
 <script type="text/javascript">
     /* ==== google map ====*/
     function initialize() {
@@ -76,12 +78,12 @@
         var map = new google.maps.Map(document.getElementById('googleMap'), mapOptions);
 
         var marker = new google.maps.Marker({
-            position: new google.maps.LatLng(23.7893837, 90.38596079999999),
+            position: new google.maps.LatLng(50.872991,  4.357095),
         });
 
         marker.setMap(map);
         var infowindow = new google.maps.InfoWindow({
-            content: "Our location!"
+            content: "Nous somme ici!"
         });
 
         infowindow.open(map, marker);

@@ -101,4 +101,3 @@
     
 </body>
 </html>
-@include('includes._footer')
