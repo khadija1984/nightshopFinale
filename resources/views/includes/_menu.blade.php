@@ -84,16 +84,23 @@
                    <!---  <a href="#"><i class="fa fa-google-plus"></i></a>--->
                    <!--- <a href="#"><i class="fa fa-instagram"></i></a>--->
                    <!--- <a href="#"><i class="fa fa-heart"></i></a>--->
-                    
-                    <div>
-                    
-                    <a href=""><i class="active fa fa"></i>Connectez-vous</a>
-                    
-                    <a href=""><i class="active fa fa"></i>Inscrivez-vous</a>
-                    
-                    </div>
-                    
-                    
+                    @guest
+                        <div>
+                       <a href="{{ route('login') }}"><i class="active fa fa"></i>Connectez-vous</a>
+
+                        <a href="{{ route('register') }}"><i class="active fa fa"></i>Inscrivez-vous</a>
+
+                        </div>
+                     @else
+                         <div>
+                             <p>Bienvenue</p>
+                           <a href="#"><i class="active fa fa"></i></a>  
+                        <a href="#"><i class="active fa fa"></i>Mon compte</a>
+                        <a href="logout" onclick="event.preventDefault();
+                           document.getElementById('logout-form').submit();"><i class="active fa fa"></i></a>
+                      
+                        </div>
+                     @endguest
                     <div class="top-search">
                         <a href="#"><i class="fa fa-search"></i></a>
                     </div>

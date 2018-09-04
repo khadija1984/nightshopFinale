@@ -1,5 +1,4 @@
 @include('includes._menu')
-
 <html>
     <body>
 <!--main content start-->

@@ -31,6 +31,7 @@ Route::get('/categories', function () {
 Route::get('/categories/alcools', function () {
     return view('alcools');
 });
+Auth::routes();
 /*
 Route::get('/categories', 'CategorieController@index')->name('categories.index');
 Route::get('/categories/produits}', 'ProduitController@index')->name('prouits.index');
