@@ -9,9 +9,22 @@
                             <div class="about-me-content text-center">
                                 <img src="assets/images/" alt="" class="img-me">
 
-                                <h3 class="text-uppercase">Notre Objectif</h3>
+                                <h3 class="text-uppercase">Chercher Un nightShop</h3>
+                            <form  class="pub form-custom form-horizontal" method="POST" action="">
+              
+                              <div class="form-group row"> 
+                                  <label for="" class="col-sm-2 col-form-label">Adresse</label><br>
+                                <div class="col-sm-10">
+                                     <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                                         <div class="input-group-addon"><i class="fa fa-user" ></i></div>
+                                        <input type="text" class="form-control" id="username" name="" placeholder="" value="" required autofocus>
+                                    </div> 
+                 
+                                </div>
+                              </div>
+                                  <button type="submit" name="submit" class="btn send-btn">Chercher</button>
 
-                                <p>Lorem Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un peintre anonyme assembla ensemble des morceaux d</p>
+                                </form>
                             </div>
                         </div>
                     
@@ -20,17 +33,46 @@
                 </div>
             </div>
             <div class="col-md-8">
-                <article class="post">
+                
                     <div class="post-thumb">
-                        <a href=".html"><img src="assets/images/Softs.png" alt=""></a>
-
-                        <a href=".html" class="post-thumb-overlay text-center">
-                            <div class="text-uppercase text-center">Voir</div>
-                        </a>
+                        <div id="googleMap" style="width:100%; height:380px; margin-bottom: 5px"></div>
+                        
+                        
                     </div>
                    
 
-        </div>
+             </div>
     </div>
 </div>
 </div>
+<script type="text/javascript"  src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAxXNz1IIB_4NBYS1jy5LbsFEgObeKJR2k&callback=initMap"
+  type="text/javascript"></script>
+<script type="text/javascript">
+    /* ==== google map ====*/
+    function initialize() {
+        var mapOptions = {
+            zoom: 14,
+            center: new google.maps.LatLng(23.7893837, 90.38596079999999),
+            mapTypeId: google.maps.MapTypeId.ROADMAP,
+            scrollwheel: false
+        };
+
+        var map = new google.maps.Map(document.getElementById('googleMap'), mapOptions);
+
+        var marker = new google.maps.Marker({
+            position: new google.maps.LatLng(50.872991,  4.357095),
+        });
+
+        marker.setMap(map);
+        var infowindow = new google.maps.InfoWindow({
+            content: ""
+        });
+
+        infowindow.open(map, marker);
+
+    }
+    
+    google.maps.event.addDomListener(window, 'load', initialize);
+
+</script>

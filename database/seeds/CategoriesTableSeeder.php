@@ -11,6 +11,30 @@ class CategoriesTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(App\Category::class, 4)->create();
+        DB::table('categories')->insert([
+            [
+            'name' => 'Alcools',
+            'slug' => 'alcools',
+            'image' => 'assets\images\Softs.png',
+            ],
+            [
+            'name' => 'Divers',
+            'slug' => 'divers',
+            'image' => 'assets\images\Packs.png',
+            
+            ],
+                [
+            'name' => 'Packs',
+            'slug' => 'packs',
+            'image' => 'assets\images\Alcools.png',
+            ],
+            [
+            'name' => 'Softs',
+            'slug' => 'softs',
+            'image' => 'assets\images\Divers.png',     
+            ],
+         ]);
+
+        //factory(App\Category::class, 4)->create();
     }
 }

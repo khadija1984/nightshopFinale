@@ -8,7 +8,7 @@ class Product extends Model
 {
 
      protected $fillable = [
-        'name', 'slug','description','prix','image','category_id',
+        'name', 'slug','description','prix','category_id',
      ];
 
      function setNameAttribute($value)
@@ -20,7 +20,7 @@ class Product extends Model
      
      public function category()
      {
-         return $this->belongsToMany('App\Category');
+         return $this->belongsTo('App\Category');
      }
       public function visuels()
      {

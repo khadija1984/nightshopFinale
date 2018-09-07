@@ -21,8 +21,14 @@ class CreateProductsTable extends Migration
             $table->text('description');
             $table->float('prix');
             $table->integer('qte');
-            $table->string('image')->default('http://lorempixel.com/400/400');
-            $table->integer('category_id');
+            $table->string('image');
+            $table->integer('category_id')->unsigned();
+            $table->foreign('category_id')
+                    ->references('id')
+                     ->on('categories')
+                     ->onDelete('restrict')
+                     ->onUpdate('restrict');
+            
             
         });
     }

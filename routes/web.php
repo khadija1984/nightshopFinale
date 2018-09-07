@@ -14,6 +14,8 @@
 
 Route::get('/', 'HomeController@index')->name('home');
 
+Route::get('/produit/', 'ProductController@index')->name('produit.index');
+//Route::get('/categories', 'CategorieController@listCategories');
 Route::post('nous contacter', 'HomeController@postcontact')->name('contact.post');
 
 Route::get('/contact', function () {
@@ -25,12 +27,11 @@ Route::get('/apropos', function () {
 
 
 
-Route::get('/categories', function () {
-    return view('categories');
-});
-Route::get('/categories/alcools', function () {
+Route::get('/categories', 'CategorieController@listCategories');
+Route::get('/categories/alcools', 'CategorieController@alcools');
+ /* Route::get('/categories/alcools', function () {
     return view('alcools');
-});
+});*/
 Auth::routes();
 /*
 Route::get('/categories', 'CategorieController@index')->name('categories.index');

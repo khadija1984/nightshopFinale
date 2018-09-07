@@ -18,16 +18,15 @@ $factory->define(App\Product::class, function (Faker $faker) {
     $categories = App\Category::pluck('id')->toArray();
     
 
-    $types = ['people','nature','transport','sports','technics','fashion','business','food'];
     
-    $image = $faker->randomElement($types);
+   
 
     return [
         'name' => $name,
         'slug' => str_slug($name),
         'description'=>$faker->paragraph,
         'prix' => $faker->randomFloat(2, $min = 0, $max = 50),
-        'image' => $faker->imageUrl($width=400, $height=400, $image , true, 'Faker'),
+        'image' => imageUrl($width=400, $height=400, $image),
         'qte' =>100,
         'category_id' =>$faker->randomElement($categories) ,
         

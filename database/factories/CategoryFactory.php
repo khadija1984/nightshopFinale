@@ -19,5 +19,6 @@ $factory->define(App\Category::class, function (Faker $faker) {
     return [
         'name' => $name,
        	'slug' => str_slug($name),
+        'image' => imageUrl($width=400, $height=400, $image),
     ];
 });

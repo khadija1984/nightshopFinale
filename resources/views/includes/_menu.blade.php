@@ -24,7 +24,7 @@
     <link rel="stylesheet" href="{{ asset('css/owl.transitions.css') }}">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('css/responsive.css') }}">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     <!-- HTML5 shim and Respond.js IE9 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
     <script src="assets/js/html5shiv.js"></script>
@@ -65,7 +65,18 @@
                             <li class="menu-item-has-children"><a href="{{ url('categories') }}">Catégories <i
                                     class="fa fa-angle-right"></i></a>
                                 <ul class="sub-menu">
-                                    <li><a href="{{ url('categories/alcools') }}">Alcools</a></li>          
+                                    <li><a href="{{ url('categories/alcools') }}">Alcools</a>
+                                        <!---
+                                            <ul class="sub-menu">
+                                            <li><a href="">Vodka</a></li>
+                                            <li><a href="">Whisky</a></li>
+                                            <li><a href="">Bières</a></li>
+                                            <li><a href="">Vin Mousseux-Champagne</a></li>
+                                            <li><a href="">Rhum</a></li>
+                                            <li><a href="">Liqueur</a></li>
+                                            </ul>
+                                        --->
+                                    </li> 
                                     <li><a href="home-1.html">Softs</a></li>
                                     <li><a href="home-2.html">Packs</a></li>
                                     <li><a href="home-2.html">Divers</a></li>
@@ -73,6 +84,7 @@
                             </li>
                         </ul>
                     </li>
+                    
                     <li><a href="{{ url('apropos') }}">A PROPOS</a></li>
                     <li><a href="{{ url('contact') }}">CONTACTEZ-NOUS</a></li>
                 </ul>
