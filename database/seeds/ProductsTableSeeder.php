@@ -15,10 +15,10 @@ class ProductsTableSeeder extends Seeder
             [
             'name' => 'Smirnoff Vodka-Nature',
             'slug' => 'alcools',
-            'image' => 'assets\images\Softs.png',
+            'image' => 'assets\images\Smirnoff70cl.png',
             'description'=> 'Smirnoff No. 21 est la vodka numéro 1 au monde. Son goût classique a inspiré d’autres variétés de vodka aux quatre coins du globe.',
             'Prix'=>'25,00 €',
-            'Category_id'=>'2',
+            'Category_id'=>'1',
             ],
             [
             'name' => 'ABSOLUT Blue Vodka',
@@ -42,7 +42,7 @@ class ProductsTableSeeder extends Seeder
                     Apparence
                     Rouge intense.',
             'Prix'=>'25,00 €',
-                    'Category_id'=>'3',
+                    'Category_id'=>'1',
             ],
             [
             'name' => 'Trojka Pink',
@@ -54,6 +54,63 @@ class ProductsTableSeeder extends Seeder
                         17 %',
             'Prix'=>'28,00 €',  
                 'Category_id'=>'1',
+            ],
+            [
+            'name' => 'Red Bull',
+            'slug' => 'softs',
+            'image' => 'assets\images\RedBullCan-300x158.png',
+                    'description'=> 'Red Bull Canettes',
+                    'Prix'=>'2,50',  
+                    'Category_id'=>'4',
+            ],
+             [
+            'name' => 'Coca Cola 1,5L',
+            'slug' => 'softs',
+            'image' => 'assets\images\CocaCola1.5l.png',
+                    'description'=> 'Coca Cola 1,5L',
+                    'Prix'=>'4,00',  
+                    'Category_id'=>'4',
+            ],
+              [
+            'name' => 'Sprite 1,5 L',
+            'slug' => 'softs',
+            'image' => 'assets\images\Sprite1.5l.png',
+                    'description'=> 'Sprite 1,5 L',
+                    'Prix'=>'4,00',  
+                    'Category_id'=>'4',
+            ],
+             [
+            'name' => 'Minute Maid – Orange Original – 1 L',
+            'slug' => 'softs',
+            'image' => 'assets\images\MinuteMaidOrange1l.png',
+                    'description'=> 'Marque
+                        Minute Maid
+                        Ingrédients
+                        Teneur en fruits 100%
+                        Conseils d’utilisation
+                        Servir frais.
+                        Agiter avant d’ouvrir',
+                    'Prix'=>'4,00',  
+                    'Category_id'=>'4',
+            ],
+            [
+            'name' => 'Minute Maid – Pomme – 1 L',
+            'slug' => 'softs',
+            'image' => 'assets\images\MinuteMaidPomme1l.png',
+                    'description'=> 'Marque
+                        Minute Maid
+                        Ingrédients
+                        Jus de pomme à base de concentré, Teneur en fruits 100%.',
+                    'Prix'=>'4,00',  
+                    'Category_id'=>'4',
+            ],
+            [
+            'name' => 'Fanta 1,5 L',
+            'slug' => 'softs',
+            'image' => 'assets\images\Fanta1.5l.png',
+                    'description'=> 'Fanta 1,5 L',
+                    'Prix'=>'4,00',  
+                    'Category_id'=>'4',
             ],
          ]);
        // $tags = App\Tag::orderByRaw('RAND()')->take(4)->get();

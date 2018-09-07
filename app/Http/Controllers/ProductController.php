@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
-   function  index($slug)
+   function  index($id)
    	{
             $product = \App\Product::where('slug',$slug)->firstOrFail();
 

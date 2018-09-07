@@ -1,7 +1,5 @@
 <!DOCTYPE html>
-
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -77,7 +75,7 @@
                                             </ul>
                                         --->
                                     </li> 
-                                    <li><a href="home-1.html">Softs</a></li>
+                                    <li><a href="{{ url('categories/softs') }}">Softs</a></li>
                                     <li><a href="home-2.html">Packs</a></li>
                                     <li><a href="home-2.html">Divers</a></li>
                                 </ul>

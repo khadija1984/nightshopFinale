@@ -1,6 +1,5 @@
 @include('includes._menu')
-<html>
-<body>
+<div style="position: absolute; padding-left: 310px;">
 <div class="col-md-8">
     <h1 class="portfolio-title text-uppercase">Categories</h1>
     <div class="row">
@@ -9,9 +8,11 @@
                 <article class="post portfolio-2 portfolio-3 post-grid">
                     <div class="post-thumb ">
                         <a href=""><img src="{{ $categorie->image }}" alt=""></a>
-                        <a href="single-portfolio.html" class="post-thumb-overlay text-center ">
+                        
+                        <a href="" class="post-thumb-overlay text-center ">
                             <div class="text-uppercase text-center" onclick="" >Voir</div>
                         </a>
+                        
                     </div>
                     <div class="post-content">
                         <header class="entry-header text-center text-uppercase">
@@ -22,10 +23,10 @@
                     </div>
 
                 </article>
+                 
             </div>
         @endforeach
     </div> 
 </div>
-</body>
-</html>
-
+</div>
+@include('includes._footer')

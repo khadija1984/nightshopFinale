@@ -43,4 +43,14 @@ class CategorieController extends Controller
         //dd($product);
         return view('alcools', compact('categorie', 'product'));
     }
+      public function softs()
+    {
+        $categorie = \App\Category::get();
+        
+        $product = \App\Product::get();
+        
+       
+        //dd($product);
+        return view('softs', compact('categorie', 'product'));
+    }
 }

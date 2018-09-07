@@ -1,13 +1,17 @@
-<footer class="footer-widget-section">
+
+<footer class="footer-widget-section" style=" margin-top:650px;">
    <div class="container">
         <div class="row">
             <div class="col-md-4">
                 <aside class="footer-widget">
+                    
                     <div class="about-img"><img src="assets/images/logofooter.png" alt="Kotha"></div>
+                    
                     <div class="about-content">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
                         eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed voluptua. At vero eos et
                         accusam et justo duo dlores et ea rebum magna text ar koto din.
                     </div>
+                    
                     <div class="address">
                         <h4 class="text-uppercase">contact Info</h4>
 
@@ -44,21 +48,6 @@
                                 </div>
                             </div>
                     
-                            <!--<div class="item">
-                                <div class="single-review">
-                                    <div class="review-text">
-                                        <img src="assets/images/promo1.png" alt="">
-                                    </div>   
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="single-review">
-                                    <div class="review-text">
-                                        <img src="assets/images/promo2.png" alt="">
-                                    </div>
-                        
-                                </div>
-                            </div>-->
                         </div> 
                     </div>
 
