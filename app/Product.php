@@ -41,4 +41,8 @@ class Product extends Model
                ->first();
          
      }
+     function prixVente()
+    {
+        return $this->onDiscount()?$this->onDiscount()->prix:$this->prix;
+    }
 }

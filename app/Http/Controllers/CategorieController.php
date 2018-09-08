@@ -26,10 +26,7 @@ class CategorieController extends Controller
         $categorie = \App\Category::get();
         $product = \App\Product::get();
         //$products = \App\Category::findOrFail($product->category_id)->get();
-        
-        
        
-        //dd($categorie->id);
         return view('categories', compact('categorie', 'product'));
         
     }
@@ -48,8 +45,7 @@ class CategorieController extends Controller
         $categorie = \App\Category::get();
         
         $product = \App\Product::get();
-        
-       
+  
         //dd($product);
         return view('softs', compact('categorie', 'product'));
     }

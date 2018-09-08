@@ -26,7 +26,7 @@ Route::get('/apropos', function () {
 });
 
 Route::get('produit/{id}', 'ProductController@index')->name('product.index');
-
+Route::get('panier/add/{id}', 'PanierController@add')->name('panier.add');
 Route::get('/categories', 'CategorieController@listCategories');
 Route::get('/categories/alcools', 'CategorieController@alcools');
 
@@ -43,6 +43,8 @@ Route::get('/categories/produits}', 'ProduitController@index')->name('prouits.in
 Route::get('/categories/produits/{id}', 'ProduitController@index')->name('prouits.index');
 
 */
-
+Route::get('panier/addOne/{id}','PanierController@addOne')->name('panier.addOne');
+Route::get('panier/subOne/{id}','PanierController@subOne')->name('panier.subOne');
+Route::get('panier/delete/{id}','PanierController@delete')->name('panier.delete');
 
 

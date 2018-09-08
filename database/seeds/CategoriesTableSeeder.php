@@ -15,23 +15,23 @@ class CategoriesTableSeeder extends Seeder
             [
             'name' => 'Alcools',
             'slug' => 'alcools',
-            'image' => 'assets\images\Softs.png',
+            'image' => 'assets\images\Alcools.png',
             ],
             [
             'name' => 'Divers',
             'slug' => 'divers',
-            'image' => 'assets\images\Packs.png',
+            'image' => 'assets\images\Divers.png',
             
             ],
                 [
             'name' => 'Packs',
             'slug' => 'packs',
-            'image' => 'assets\images\Alcools.png',
+            'image' => 'assets\images\Packs.png',
             ],
             [
             'name' => 'Softs',
             'slug' => 'softs',
-            'image' => 'assets\images\Divers.png',     
+            'image' => 'assets\images\Softs.png',     
             ],
          ]);
 

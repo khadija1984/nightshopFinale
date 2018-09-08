@@ -48,7 +48,7 @@
                     <!--<h6><a href="#">{{ $product->name }}</a></h6>-->
                     <h1 class="entry-title"><a href="">{{ $product->name }}</a></h1>
                     <h6>{{ $product->prix }}.00 €</h6>
-                    <button type="submit" class="btn btn-icon btn-primary" ><i class="fa fa-cart-arrow-down"></i> <span>Ajouter au panier</span></button>
+                    <button onclick="location.href='{{ route('panier.add',['id'=>$product->id]) }}'" type="submit" class="btn btn-icon btn-primary" ><i class="fa fa-cart-arrow-down"></i> <span>Ajouter au panier</span></button>
                     <!---<h6>categorie  {{ $product->category_id }}</h6>--->
                     </header>
                 </div>
