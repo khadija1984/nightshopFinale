@@ -53,4 +53,16 @@ class CategorieController extends Controller
         //dd($product);
         return view('softs', compact('categorie', 'product'));
     }
+    
+    public function filtre (Request $request, $product=null)
+    {
+        $categorie = \App\Category::get();
+        $product = \App\Product::get();
+        $ordre = $request->ordre;
+        $perpage = $request->perpage;
+        
+        
+        
+        return view('alcools', compact('categorie', 'product','ordre', 'perpage' ));
+    }
 }

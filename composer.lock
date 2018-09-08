@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "12cabd524596b5d3b998b43a0d242c3d",
-    "content-hash": "cabf34a4e732210f1ba53dc02c41c185",
+    "hash": "e4c3cd42a01b5e5b51780feab8ae5d8b",
+    "content-hash": "606596bc3db16980cc0974af46b61b87",
     "packages": [
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -202,6 +202,66 @@
                 "map"
             ],
             "time": "2018-03-30 21:00:53"
+        },
+        {
+            "name": "gloudemans/shoppingcart",
+            "version": "2.5.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Crinsane/LaravelShoppingcart.git",
+                "reference": "7ff157b7e1ef10d27cd2759d5151aae2cc6b1b9a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Crinsane/LaravelShoppingcart/zipball/7ff157b7e1ef10d27cd2759d5151aae2cc6b1b9a",
+                "reference": "7ff157b7e1ef10d27cd2759d5151aae2cc6b1b9a",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/events": "5.1.*|5.2.*|5.3.*|5.4.*|5.5.*|5.6.*",
+                "illuminate/session": "5.1.*|5.2.*|5.3.*|5.4.*|5.5.*|5.6.*",
+                "illuminate/support": "5.1.*|5.2.*|5.3.*|5.4.*|5.5.*|5.6.*"
+            },
+            "require-dev": {
+                "mockery/mockery": "~0.9.0",
+                "orchestra/testbench": "~3.1",
+                "phpunit/phpunit": "~5.0|~6.0|~7.0"
+            },
+            "suggest": {
+                "gloudemans/notify": "Simple flash notifications for Laravel"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Gloudemans\\Shoppingcart\\ShoppingcartServiceProvider"
+                    ],
+                    "aliases": {
+                        "Cart": "Gloudemans\\Shoppingcart\\Facades\\Cart"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Gloudemans\\Shoppingcart\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Rob Gloudemans",
+                    "email": "info@robgloudemans.nl"
+                }
+            ],
+            "description": "Laravel Shoppingcart",
+            "keywords": [
+                "laravel",
+                "shoppingcart"
+            ],
+            "time": "2018-02-17 09:34:00"
         },
         {
             "name": "guzzlehttp/guzzle",

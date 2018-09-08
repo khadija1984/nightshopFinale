@@ -25,11 +25,14 @@ Route::get('/apropos', function () {
     return view('apropos');
 });
 
-Route::get('produit/{id}', 'ProductController@index');
+Route::get('produit/{id}', 'ProductController@index')->name('product.index');
 
 Route::get('/categories', 'CategorieController@listCategories');
 Route::get('/categories/alcools', 'CategorieController@alcools');
+
+Route::get('/categories/alcools', 'CategorieController@filtre')->name('alcools.index');;
 Route::get('/categories/softs', 'CategorieController@softs');
+Route::get('panier','PanierController@index')->name('panier');
  /* Route::get('/categories/alcools', function () {
     return view('alcools');
 });*/

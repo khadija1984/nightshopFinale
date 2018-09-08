@@ -88,19 +88,20 @@
                 </ul>
                 
                 <div class="i_con">
-                   <!--- <a href="#"><i class="active fa fa-twitter"></i></a>--->
-                   <!---<a href="#"><i class="fa fa-facebook"></i></a>--->
-                   <!--- <a href="#"><i class="fa fa-linkedin"></i></a>--->
-                   <!---  <a href="#"><i class="fa fa-google-plus"></i></a>--->
-                   <!--- <a href="#"><i class="fa fa-instagram"></i></a>--->
-                   <!--- <a href="#"><i class="fa fa-heart"></i></a>--->
+                    
+                   <i class="fa fa-shopping-cart"></i></a>
+                
+                   <a href="{{ route('panier') }} ">Panier:(0) items</a>
+                   
+                   
+                   
                     @guest
-                        <div>
-                       <a href="{{ route('login') }}"><i class="active fa fa"></i>Connectez-vous</a>
-
-                        <a href="{{ route('register') }}"><i class="active fa fa"></i>Inscrivez-vous</a>
-
+                       <div>
+                           <a href="{{ route('login') }}"><i class="active fa fa"></i>Connectez-vous</a>
+                           
+                            <a href="{{ route('register') }}"><i class="active fa fa"></i>Inscrivez-vous</a>
                         </div>
+                        <br>
                      @else
                          <div>
                              <p>Bienvenue</p>
