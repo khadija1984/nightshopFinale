@@ -4,40 +4,22 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/UwAmp/www/nightshopFinale/resources/views/includes/_menu.blade.php</file>
-            <file>file:/C:/UwAmp/www/nightshopFinale/public/css/owl.transitions.css</file>
-            <file>file:/C:/UwAmp/www/nightshopFinale/app/Http/Controllers/CategorieController.php</file>
-            <file>file:/C:/UwAmp/www/nightshopFinale/app/Visuel.php</file>
-            <file>file:/C:/UwAmp/www/nightshopFinale/database/migrations/2018_08_23_194317_create_visuels_table.php</file>
-            <file>file:/C:/UwAmp/www/nightshopFinale/resources/views/includes/_footer.blade.php</file>
-            <file>file:/C:/UwAmp/www/nightshopFinale/database/seeds/ProductsTableSeeder.php</file>
-            <file>file:/C:/UwAmp/www/nightshopFinale/public/css/bootstrap.min.css</file>
-            <file>file:/C:/UwAmp/www/nightshopFinale/database/migrations/2018_05_18_131156_create_categories_table.php</file>
-            <file>file:/C:/UwAmp/www/nightshopFinale/public/css/animate.min.css</file>
-            <file>file:/C:/UwAmp/www/nightshopFinale/routes/web.php</file>
-            <file>file:/C:/UwAmp/www/nightshopFinale/app/Http/Controllers/ProductController.php</file>
-            <file>file:/C:/UwAmp/www/nightshopFinale/resources/views/includes/_slider.blade.php</file>
-            <file>file:/C:/UwAmp/www/nightshopFinale/public/css/responsive.css</file>
-            <file>file:/C:/UwAmp/www/nightshopFinale/public/css/font-awesome.min.css</file>
-            <file>file:/C:/UwAmp/www/nightshopFinale/app/Product.php</file>
-            <file>file:/C:/UwAmp/www/nightshopFinale/database/factories/CategoryFactory.php</file>
-            <file>file:/C:/UwAmp/www/nightshopFinale/resources/views/layouts/main.blade.php</file>
-            <file>file:/C:/UwAmp/www/nightshopFinale/resources/views/index.blade.php</file>
-            <file>file:/C:/UwAmp/www/nightshopFinale/resources/views/contact.blade.php</file>
-            <file>file:/C:/UwAmp/www/nightshopFinale/public/css/owl.theme.css</file>
-            <file>file:/C:/UwAmp/www/nightshopFinale/.gitignore</file>
-            <file>file:/C:/UwAmp/www/nightshopFinale/public/css/style.css</file>
             <file>file:/C:/UwAmp/www/nightshopFinale/resources/views/alcools.blade.php</file>
-            <file>file:/C:/UwAmp/www/nightshopFinale/app/Category.php</file>
-            <file>file:/C:/UwAmp/www/nightshopFinale/resources/views/welcome.blade.php</file>
-            <file>file:/C:/UwAmp/www/nightshopFinale/database/factories/ProductFactory.php</file>
-            <file>file:/C:/UwAmp/www/nightshopFinale/public/css/owl.carousel.css</file>
-            <file>file:/C:/UwAmp/www/nightshopFinale/database/migrations/2018_05_18_140456_create_products_table.php</file>
+            <file>file:/C:/UwAmp/www/nightshopFinale/app/Http/Controllers/CategorieController.php</file>
+            <file>file:/C:/UwAmp/www/nightshopFinale/routes/web.php</file>
+            <file>file:/C:/UwAmp/www/nightshopFinale/config/app.php</file>
+            <file>file:/C:/UwAmp/www/nightshopFinale/resources/views/panier.blade.php</file>
             <file>file:/C:/UwAmp/www/nightshopFinale/resources/views/categories.blade.php</file>
             <file>file:/C:/UwAmp/www/nightshopFinale/resources/views/softs.blade.php</file>
+            <file>file:/C:/UwAmp/www/nightshopFinale/app/Http/Controllers/ProductController.php</file>
+            <file>file:/C:/UwAmp/www/nightshopFinale/resources/views/includes/_slider.blade.php</file>
+            <file>file:/C:/UwAmp/www/nightshopFinale/app/Http/Controllers/PanierController.php</file>
+            <file>file:/C:/UwAmp/www/nightshopFinale/resources/views/includes/_product.blade.php</file>
             <file>file:/C:/UwAmp/www/nightshopFinale/database/seeds/CategoriesTableSeeder.php</file>
-            <file>file:/C:/UwAmp/www/nightshopFinale/resources/views/home/main.blade.php</file>
-            <file>file:/C:/UwAmp/www/nightshopFinale/public/css/app.css</file>
-            <file>file:/C:/UwAmp/www/nightshopFinale/database/factories/VisuelFactory.php</file>
+            <file>file:/C:/UwAmp/www/nightshopFinale/app/Product.php</file>
+            <file>file:/C:/UwAmp/www/nightshopFinale/config/cart.php</file>
+            <file>file:/C:/UwAmp/www/nightshopFinale/resources/views/index.blade.php</file>
+            <file>file:/C:/UwAmp/www/nightshopFinale/public/js/app.js</file>
         </group>
     </open-files>
 </project-private>

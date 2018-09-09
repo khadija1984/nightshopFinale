@@ -30,13 +30,15 @@ Route::get('panier/add/{id}', 'PanierController@add')->name('panier.add');
 Route::get('/categories', 'CategorieController@listCategories');
 Route::get('/categories/alcools', 'CategorieController@alcools');
 
-Route::get('/categories/alcools', 'CategorieController@filtre')->name('alcools.index');;
+Route::get('/categories/alcools', 'CategorieController@filtre')->name('alcools.index');
 Route::get('/categories/softs', 'CategorieController@softs');
 Route::get('panier','PanierController@index')->name('panier');
  /* Route::get('/categories/alcools', function () {
     return view('alcools');
 });*/
+Route::post('panier/add','PanierController@addProduct')->name('panier.add');
 Auth::routes();
+
 /*
 Route::get('/categories', 'CategorieController@index')->name('categories.index');
 Route::get('/categories/produits}', 'ProduitController@index')->name('prouits.index');

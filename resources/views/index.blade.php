@@ -40,32 +40,30 @@
                 
             <div>
                 <p>Stock :{{$product->qte>0?$product->qte.' pièces':'insuffisant'}}  </p>
-                <form  method="POST" action="">
-                {{csrf_field() }}
-                <input  name="slug" type="hidden" value="{{$product->slug}}">
-                <div class="row mt-4">
-                    <div class="col-md-6"><label for="qte">Quantité:</label></div>
-                    <div class="col-md-6">
-                        <div class="input-group">
-                            <span class="input-group-btn">
-                            <button class="btn btn-secondary subOneProduct  " type="button" data-input="{{$product->id}}">-</button>
-                            </span>
-                            <input type="text" class="form-control" id="input-{{ $product->id }}"  aria-label="qte" value="1" readonly name="qte">
-                            <span class="input-group-btn">
-                            <button class="btn btn-secondary addOneProduct " type="button"  data-input="{{$product->id}}">+</button>
-                            </span>
+                <form class="form-horizontal contact-form" role="form" method="post" action="{{ action('panier.add') }}">
+                        <input  name="slug" type="hidden" value="{{$product->slug}}">
+                        <div class="row mt-4">
+                            <div class="col-md-6"><label for="qte">Quantité:</label></div>
+                            <div class="col-md-6">
+                                <div class="input-group">
+                                    <span class="input-group-btn">
+                                    <button class="btn btn-secondary subOneProduct  " type="button" data-input="{{$product->id}}">-</button>
+                                    </span>
+                                    <input type="text" class="form-control" id="input-{{ $product->id }}"  aria-label="qte" value="1" readonly name="qte">
+                                    <span class="input-group-btn">
+                                    <button class="btn btn-secondary addOneProduct " type="button"  data-input="{{$product->id}}">+</button>
+                                    </span>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
-                <div class="row mt-4">
-                    <div class="col-md-12">
-                        <button type="submit" class="btn btn-icon btn-primary" ><i class="fa fa-cart-arrow-down"></i><span>Ajouter au panier</span></button>
+                        <div class="row mt-4">
+                            <div class="col-md-12">
+                                   <button type="submit" class="btn btn-icon btn-primary" ><i class="fa fa-cart-arrow-down"></i><span>Ajouter au panier</span></button>
+                                   <a href="#" class="btn btn-icon btn-secondary  btn-neutre like" alt="favoris" data-id=2><i class="fa fa-heart"></i></a>
+                            </div> 
 
-                           <a href="#" class="btn btn-icon btn-secondary  btn-neutre like" alt="favoris" data-id=2><i class="fa fa-heart"></i></a>
-                              
-                    </div> 
-                </div>  
-                    </form>
+                        </div>  
+                </form>
                  </div>
                  <div class="row mt-4">
                      
@@ -88,6 +86,7 @@
 
         </div>
         <div class="products">
+            
             <div class="header_title"><h4>Voir aussi </h4></div>
             <div class="row">
              @foreach($related as $product) 
@@ -132,4 +131,5 @@
             </div>
         </div>
 </div>
+<script type="text/javascript" src="{{ asset('js/scripts.js') }}"></script>
 @include('includes._footer')

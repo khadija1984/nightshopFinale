@@ -11,6 +11,7 @@ class PanierController extends Controller
         
         return view('panier', compact('panier'));
     }
+    
     function add($id, $qte=1){
         $product = \App\Product::where('id',$id)->firstOrFail();
         //calculer prix hors taxe
@@ -73,5 +74,10 @@ class PanierController extends Controller
     	// flash ....
     	return redirect()->back();
     }
-
+    function addProduct()
+    {
+        $panier = \Cart::content();
+        dd('$panier');
+        return view('panier', compact('panier'));
+    }
 }

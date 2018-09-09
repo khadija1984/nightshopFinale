@@ -22,6 +22,7 @@
     <link rel="stylesheet" href="{{ asset('css/owl.transitions.css') }}">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('css/responsive.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/stylefiche.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     <!-- HTML5 shim and Respond.js IE9 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -35,6 +36,11 @@
 
 <body>
 
+    
+    
+    
+    
+    
 <nav class="navbar main-menu navbar-default">
     <div class="container">
         <div class="menu-content">
@@ -90,28 +96,41 @@
                 <div class="i_con">
                     
                    <i class="fa fa-shopping-cart"></i></a>
-                
-                   <a href="{{ route('panier') }} ">Panier:(0) items</a>
+                 
+                   <a href="{{ route('panier') }} ">Panier: ({{ \Cart::count()?:'0'}}) items</a>
+                  
                    
-                   
-                   
+                   <ul>
                     @guest
                        <div>
-                           <a href="{{ route('login') }}"><i class="active fa fa"></i>Connectez-vous</a>
+                           <li><a href="{{ route('login') }}"><i class="active fa fa"></i>Connectez-vous</a></li>
                            
-                            <a href="{{ route('register') }}"><i class="active fa fa"></i>Inscrivez-vous</a>
+                            <li><a href="{{ route('register') }}"><i class="active fa fa"></i>Inscrivez-vous</a></li>
                         </div>
                         <br>
                      @else
-                         <div>
-                             <p>Bienvenue</p>
-                           <a href="#"><i class="active fa fa"></i></a>  
-                        <a href="#"><i class="active fa fa"></i>Mon compte</a>
-                        <a href="logout" onclick="event.preventDefault();
-                           document.getElementById('logout-form').submit();"><i class="active fa fa"></i></a>
-                      
-                        </div>
+                     <li class="dropdown">
+                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
+                            {{Auth::user()->username}} <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu">
+                                <li><a href="#">Mon compte</a></li>
+                                <li>
+                                    <a href="logout"
+                                    onclick="event.preventDefault();
+                                    document.getElementById('logout-form').submit();">
+                                    Logout
+                                    </a>
+
+                                    <form id="logout-form" action="{{route('logout')}}" method="POST" style="display: none;">
+                                    {{csrf_field()}}
+                                    </form>
+                                </li>
+                            </ul>
+                         </li>
                      @endguest
+                     </ul>
                     <div class="top-search">
                         <a href="#"><i class="fa fa-search"></i></a>
                     </div>
