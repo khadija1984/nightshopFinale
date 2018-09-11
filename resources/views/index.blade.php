@@ -24,7 +24,7 @@
                     <li>Taille : M </li>
                     <li>Poids : 2 kg</li>
                     <li>Cateégorie: {{ $product->category->name }}</li>
-
+                    <li>Prix: {{ $product->prix }}€</li>
                 </ul>
             <div class="tags">
                 <ul>

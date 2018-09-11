@@ -33,19 +33,11 @@
 						<td scope="row">{{$index}}</td>
 						<td class="product_name"><a href="{{route('produit.index',['slug'=>str_slug($product->name)])}}">{{$product->name}}</a></td>
 						<td>
-							<div class="input-group-sm">
-							  <span class="input-group-btn-sm">
-								<button class="btn btn-secondary subOne  " type="button" data-input="{{$product->id}}">-</button>
-							  </span>
-							  <input type="text" class="form-control-sm  small-input" id="input-{{$product->id}}"  aria-label="qte" value="{{$product->qty}} " readonly>
-							  <span class="input-group-btn-sm">
-								<button class="btn btn-secondary addOne " type="button"  data-input="{{$product->id}}">+</button>
-							  </span>
-							</div>
+                                                    {{$product->qty}}
 						</td>
 						<td>{{ round($product->price, 2)}}€</td>
 						<td id="total-{{$product->id}}"><span>{{ round($product->price * $product->qty, 2) }}</span> €</td>
-						<td><a href="{{route('panier.delete',['id'=>$product->id])}}" class="btn btn-icon btn-danger "> <i class="fa fa-trash"></i></a></td>
+						<!--<td><a href="{{route('panier.delete',['id'=>$product->id])}}" class="btn btn-icon btn-danger "> <i class="fa fa-trash"></i></a></td>--->
 					</tr>
 					@php
 						$index ++;
@@ -85,7 +77,7 @@
 						<a href="{{ url('categories') }}" class="btn btn-icon btn-primary  "><i class="fa fa-reply"></i><span>Retour au catalogue</span></a>
 				</div>
 				<div class="col-md-6 text-right">
-							<a  href="{{ route('panier.valider') }}" class="btn btn-icon btn-black"><i class="fa fa-check"></i><span>Valider le Panier </span></a>
+							<a  href="{{ route('panier.payer') }}" class="btn btn-icon btn-black"><i class="fa fa-money"></i><span>Payer le panier </span></a>
 				</div>
 			</div>
                 

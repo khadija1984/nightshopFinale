@@ -42,6 +42,12 @@ Route::get('panier/add/{name}', 'PanierController@add')->name('panier.add');
 // route  pour valider
 Route::get('panier/validation', 'PanierController@valider')->name('panier.valider');
 
+//ROUTE PAIEMENT
+Route::group(['middleware'=>['auth']], function(){
+    Route::get('panier/paiement', 'PanierController@payer')->name('panier.payer');
+    Route::post('paiement/stripe', 'PaiementController@checkoutStripe')->name('checkout.stripe');
+});
+
 //route ajouter le meme produit (quantité)
 Route::get('panier/addOne/{id}','PanierController@addOne')->name('panier.addOne');
 //route enlever le meme produit  (quantité)

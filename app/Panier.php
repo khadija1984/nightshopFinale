@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Panier extends Model
 {
      protected $fillable = [
-        'user_id', 'total','subtotal' 
+        'user_id', 'total',
     ];
 
     public function user()

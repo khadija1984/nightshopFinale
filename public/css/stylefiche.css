@@ -5,6 +5,8 @@
         margin: 0;
         padding: 0;
     }
+    
+    
 
     .alert {margin-top: 20px!important;}
     .btn-primary,.badge-primary { background-color: #26a0d7!important; border-color: #26a0d7;color:#FFF;}
@@ -302,7 +304,7 @@
     #Btn-paypal .link img{max-width: 200px; height: auto;}
     
     #Btn-stripe .stripe-button-el { margin:25px auto;  } 
-    #Btn-stripe .stripe-button-el span {height: 200px; width: 200px;line-height: 200px; background-image: url('../img/cartes.jpg')}
+    #Btn-stripe .stripe-button-el span {height: 200px; width: 200px;line-height: 200px; background-image: url('assets/images/logo.png')}
 
     .pagination{border-radius: 0;}
     .pagination .page-item:first-child .page-link , .pagination .page-item:last-child .page-link {border-radius: 0;}

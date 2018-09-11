@@ -83,10 +83,15 @@ class PanierController extends Controller
 	function valider(){
 		
 		$panier = \Cart::content();
-		return view('panier.valider', compact('panier'));
+		return view('paniervalider', compact('panier'));
 		
 	}
-	
+	function payer(){
+		
+		$panier = \Cart::total();
+		return view('panierpayer', compact('panier'));
+		
+	}
 	
 
 }
