@@ -7,7 +7,7 @@
     <div class="row">
  
       
-      <form action="{{route('alcools.index',['product'=>Request::segment(2)])}}" method="GET">
+		<form action="{{route('alcools.index',['product'=>Request::segment(2)])}}" method="GET">
                         <ul class="nav navbar-nav text-uppercase">
                             <li> 
                                 <label>Trier par</label>
@@ -31,7 +31,7 @@
             </ul>
           <br>
            <button type="submit"><i class="fa fa-search"></i></button>
-         </form>       
+		</form>       
    
         @foreach($product as $product)
             @if($product->category_id == 1)
@@ -48,9 +48,14 @@
                     <!--<h6><a href="#">{{ $product->name }}</a></h6>-->
                     <h1 class="entry-title"><a href="">{{ $product->name }}</a></h1>
                     <h6>{{ $product->prix }}.00 €</h6>
-                    <button onclick="location.href='{{ route('panier.add',['id'=>$product->id]) }}'" type="submit" class="btn btn-icon btn-primary" ><i class="fa fa-cart-arrow-down"></i> <span>Ajouter au panier</span></button>
+					
+                    <!----<button  type="submit" class="btn btn-icon btn-primary" ><i class="fa fa-cart-arrow-down"></i> <span>Ajouter au panier</span></button>--->
                     <!---<h6>categorie  {{ $product->category_id }}</h6>--->
-                    </header>
+					
+					<a  href="{{route('panier.add',['name'=>$product->name])}}" style="width:5; margin-left:-27px;"  class="btn btn-icon btn-primary" ><i class="fa fa-cart-arrow-down"></i><span>Ajouter au panier</span></a>
+                    
+					</header>
+					
                 </div>
             
             </article>
@@ -61,4 +66,4 @@
 </div>
 </div>
 <script type="text/javascript" src="{{ asset('js/scripts.js') }}"></script>
-@include('includes._footer')
+

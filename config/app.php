@@ -51,8 +51,8 @@ return [
     |
     */
 
-    'url' => env('APP_URL', 'http://localhost'),
-
+    'url' => env('APP_URL', 'http://localhost/nightshopFinale/public'),
+    
     /*
     |--------------------------------------------------------------------------
     | Application Timezone
@@ -89,7 +89,7 @@ return [
     | the language folders that are provided through your application.
     |
     */
-
+    
     'fallback_locale' => 'en',
 
     /*

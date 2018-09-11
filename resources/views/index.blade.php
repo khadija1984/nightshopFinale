@@ -40,8 +40,10 @@
                 
             <div>
                 <p>Stock :{{$product->qte>0?$product->qte.' pièces':'insuffisant'}}  </p>
-                <form class="form-horizontal contact-form" role="form" method="post" action="{{ action('panier.add') }}">
-                        <input  name="slug" type="hidden" value="{{$product->slug}}">
+                <form class="form-horizontal contact-form" role="form" method="post" action="{{route('panier.add.product')}}">
+                    {{ csrf_field() }}
+                    
+                        <input  name="name" type="hidden" value="{{$product->name}}">
                         <div class="row mt-4">
                             <div class="col-md-6"><label for="qte">Quantité:</label></div>
                             <div class="col-md-6">
@@ -107,17 +109,14 @@
                             @else
                             <span class="price "></span>
                             @endif
-
-                            <a href="" class="btn btn-icon btn-primary" alt="Ajouter au panier"><i class="fa fa-cart-arrow-down"></i></a>
-
+                            
+                                   <button type="submit" class="btn btn-icon btn-primary" ><i class="fa fa-cart-arrow-down"></i><span>Ajouter au panier</span></button>
+                            
                             <a href="{{route('produit.index',['slug'=>$product->slug])}}" class="btn btn-icon btn-secondary" alt="détails"><i class="fa fa-eye"></i></a>
 
                         @if(Auth::check())
-                            @php
-                                $likes = \Auth::user()->likes->pluck('id');
-                            @endphp
+                            
 
-                                <a href="#" class="btn btn-icon btn-secondary  {{in_array($product->id,$likes->toArray())?'':'btn-neutre'}} like" alt="favoris" data-id={{ $product->id }}><i class="fa fa-heart"></i></a>
 
                            @else
 
@@ -132,4 +131,5 @@
         </div>
 </div>
 <script type="text/javascript" src="{{ asset('js/scripts.js') }}"></script>
+<script type="text/javascript" src="{{ asset('js/app.js') }}"></script>
 @include('includes._footer')

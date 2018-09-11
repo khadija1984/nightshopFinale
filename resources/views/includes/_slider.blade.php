@@ -1,78 +1,59 @@
-<div class="main-content">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-4" data-sticky_column>
-                <div class="primary-sidebar">
-                    <aside class="widget about-me-widget">
-                        <div class="about-me-img">
 
-                            <div class="about-me-content text-center">
-                                <img src="assets/images/" alt="" class="img-me">
+<script   type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false&language=fr">
+</script>
 
-                                <h3 class="text-uppercase">Chercher Un nightShop</h3>
-                            <form  class="pub form-custom form-horizontal" method="POST" action="">
-              
-                              <div class="form-group row"> 
-                                  <label for="" class="col-sm-2 col-form-label">Adresse</label><br>
-                                <div class="col-sm-10">
-                                     <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-                                         <div class="input-group-addon"><i class="fa fa-user" ></i></div>
-                                        <input type="text" class="form-control" id="username" name="" placeholder="" value="" required autofocus>
-                                    </div> 
-                 
-                                </div>
-                              </div>
-                                  <button type="submit" name="submit" class="btn send-btn">Chercher</button>
+<form>
+  <input type="text" id="adresse"/>
+  <input type="button"  value="Localiser sur Google Map" onclick="TrouverAdresse();"/>
+</form>
+<!---<span id="text_latlng"></span>--->
+<div id="map-canvas" style="margin: 50px;float:right;height:300px;width:60%"></div>
 
-                                </form>
-                            </div>
-                        </div>
-                    
-                    </aside>
-                    
-                </div>
-            </div>
-            <div class="col-md-8">
-                
-                    <div class="post-thumb">
-                        <div id="googleMap" style="width:100%; height:380px; margin-bottom: 5px"></div>
-                        
-                        
-                    </div>
-                   
 
-             </div>
-    </div>
-</div>
-</div>
-<script type="text/javascript"  src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
-  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAxXNz1IIB_4NBYS1jy5LbsFEgObeKJR2k&callback=initMap"
-  type="text/javascript"></script>
+
+
+
+
+
 <script type="text/javascript">
-    /* ==== google map ====*/
-    function initialize() {
-        var mapOptions = {
-            zoom: 14,
-            center: new google.maps.LatLng(23.7893837, 90.38596079999999),
-            mapTypeId: google.maps.MapTypeId.ROADMAP,
-            scrollwheel: false
-        };
-
-        var map = new google.maps.Map(document.getElementById('googleMap'), mapOptions);
-
-        var marker = new google.maps.Marker({
-            position: new google.maps.LatLng(50.872991,  4.357095),
-        });
-
-        marker.setMap(map);
-        var infowindow = new google.maps.InfoWindow({
-            content: ""
-        });
-
-        infowindow.open(map, marker);
-
+var geocoder;
+var map;
+// initialisation de la carte Google Map de départ
+function initialiserCarte() {
+  geocoder = new google.maps.Geocoder();
+  // Ici j'ai mis la latitude et longitude du vieux Port de Marseille pour centrer la carte de départ
+  var latlng = new google.maps.LatLng(43.295309,5.374457);
+  var mapOptions = {
+    zoom      : 14,
+    center    : latlng,
+    mapTypeId : google.maps.MapTypeId.ROADMAP
+  }
+  // map-canvas est le conteneur HTML de la carte Google Map
+  map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+}
+ 
+function TrouverAdresse() {
+  // Récupération de l'adresse tapée dans le formulaire
+  var adresse = document.getElementById('adresse').value;
+  geocoder.geocode( { 'address': adresse}, function(results, status) {
+    if (status == google.maps.GeocoderStatus.OK) {
+      map.setCenter(results[0].geometry.location);
+      // Récupération des coordonnées GPS du lieu tapé dans le formulaire
+      var strposition = results[0].geometry.location+"";
+      strposition=strposition.replace('(', '');
+      strposition=strposition.replace(')', '');
+      // Affichage des coordonnées dans le <span>
+      document.getElementById('text_latlng').innerHTML='Coordonnées : '+strposition;
+      // Création du marqueur du lieu (épingle)
+      var marker = new google.maps.Marker({
+          map: map,
+          position: results[0].geometry.location
+      });
+    } else {
+      alert('Adresse introuvable: ' + status);
     }
-    
-    google.maps.event.addDomListener(window, 'load', initialize);
-
+  });
+}
+// Lancement de la construction de la carte google map
+google.maps.event.addDomListener(window, 'load', initialiserCarte);
 </script>

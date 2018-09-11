@@ -8,23 +8,24 @@ class PanierController extends Controller
 {
     function index(){
         $panier = \Cart::content();
-        
+       //dd($panier);
         return view('panier', compact('panier'));
     }
     
-    function add($id, $qte=1){
-        $product = \App\Product::where('id',$id)->firstOrFail();
+    function add($name, $qty=1){
+        $product = \App\Product::where('name',$name)->firstOrFail();
+		
         //calculer prix hors taxe
         $prixVente = $product->prixVente();
         $prixht = round($prixVente/(1 + config('cart.tax')/100 ), 2 );
        //$prixtva = round($prixhtva*(1 + config('cart.tax')/100));
          //dd($product);
-        \Cart::add( $product->id,$product->name, $qte, $prixht, ['size'=>'M']);
+         \Cart::add( $product->id,$product->name, $qty, $prixht);
         
         return redirect()->route('panier');
         
     }
-    function findItem($id)
+	 function findItem($id)
     {
     	$items = \Cart::search(function($cartitem, $rowId) use ($id) {
 
@@ -33,12 +34,12 @@ class PanierController extends Controller
 
     	return $items->first();
     }
-
-        function addOne($id)
+	
+	       function addOne($id)
     {
     	$product = \App\Product::findOrFail($id);
 
-    	\Cart::add($product->id, $product->name, 1 , $product->prixVente(),['size' => 'large']);
+    	\Cart::add($product->id, $product->name, 1 , $product->prixVente());
 
     	$item = $this->findItem($id);
 
@@ -53,9 +54,7 @@ class PanierController extends Controller
     	]);
     	
     }
-
-
-    function subOne($id)
+	 function subOne($id)
     {
     	$item = $this->findItem($id);
 
@@ -74,10 +73,20 @@ class PanierController extends Controller
     	// flash ....
     	return redirect()->back();
     }
-    function addProduct()
+	
+	
+	
+      function addProduct(Request $request)
     {
-        $panier = \Cart::content();
-        dd('$panier');
-        return view('panier', compact('panier'));
+    	return $this->add($request->name , $request->qte);
     }
+	function valider(){
+		
+		$panier = \Cart::content();
+		return view('panier.valider', compact('panier'));
+		
+	}
+	
+	
+
 }
