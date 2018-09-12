@@ -17,7 +17,7 @@ class PaiementController extends Controller
         
         $total = \Cart::total();
         try{
-            Stripe::setApiKey(env('STRIPE-SECRET-KEY'));
+            Stripe::setApiKey('sk_test_fBjiV2ZktS1YLZdup4kDW1Zg');
 
             $customer = Customer::create([
                 'email' => $request->stripeEmail,
@@ -30,11 +30,12 @@ class PaiementController extends Controller
               ]);
           //sauvegarde...BD
               $panier = $this->saveTransacion($charge, 'Stripe');
-        } catch(Exception $e) {
+              //$this->addNotify(type:"success", message:"Bravo");
+        } catch(\Stripe\Error\Card $e) {
           
           return $e->getMessage();
         } 
-        return view('panier.paiement', compact('charge','panier'));
+        return view('paiement', compact('charge','panier'));
     }
     function saveTransacion($charge, $type){
         

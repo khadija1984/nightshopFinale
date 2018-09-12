@@ -14,7 +14,7 @@
                       {{csrf_field()}}
                       <script
                               src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-                              data-key="{{env('STRIPE_PUB_KEY') }}"
+                              data-key="pk_test_lxICAjcOpf3RfoIBbKk4Qz9o"
                               data-amount="{{ $panier * 100 }}"
                               data-name="E-Shop"
                               data-description="Site de vente en ligne"
@@ -40,7 +40,13 @@
 
 
 
-<!-- <script src="https://js.stripe.com/v3/"></script>-->
+<script src="https://js.stripe.com/v3/"></script>
+<script type="text/javascript" src="https://js.stripe.com/v2/"></script>
+<script>
+    (function() {
+        Stripe.setPublishableKey('pk_test_lxICAjcOpf3RfoIBbKk4Qz9o');
+    })();
+</script>
 <script type="text/javascript" src="{{ asset('js/stripe.js') }}"></script> 	
 @include('includes._footer')
 <script type="text/javascript" src="{{ asset('js/app.js') }}"></script>
