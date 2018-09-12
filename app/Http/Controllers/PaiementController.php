@@ -173,7 +173,7 @@ class PaiementController extends Controller
     	 $panier = $this->saveTransaction($charge, 'Paypal');
 
 
-    	 return view('panier.paiement', compact('charge','panier'));
+    	 return view('paiement', compact('charge','panier'));
 
     }
         function checkoutPaypalCancel()
