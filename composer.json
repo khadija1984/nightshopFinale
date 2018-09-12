@@ -6,13 +6,15 @@
     "type": "project",
     "require": {
         "php": ">=5.6.4",
+        "anouar/paypalpayment": "dev-master",
         "farhanwazir/laravelgooglemaps": "^2.3",
         "gloudemans/shoppingcart": "^2.5",
         "greenelf/laravel-admin-panel": "^1.6",
         "guzzlehttp/guzzle": "^6.3",
         "laracasts/flash": "^3.0",
         "laravel/framework": "5.4.*",
-        "laravel/tinker": "~1.0"
+        "laravel/tinker": "~1.0",
+        "stripe/stripe-php": "^6.17"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^2.4",

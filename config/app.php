@@ -179,6 +179,7 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         Gloudemans\Shoppingcart\ShoppingcartServiceProvider::class,
+	Anouar\Paypalpayment\PaypalpaymentServiceProvider::class,
 
     ],
 
@@ -229,7 +230,8 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
         'GMaps' => FarhanWazir\GoogleMaps\Facades\GMapsFacade::class,
-         'Cart' => Gloudemans\Shoppingcart\Facades\Cart::class,   
+        'Cart' => Gloudemans\Shoppingcart\Facades\Cart::class, 
+	'Paypalpayment'   => Anouar\Paypalpayment\Facades\PaypalPayment::class,		
     ],
 
 ];

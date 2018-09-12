@@ -28,7 +28,7 @@
               <div class="col-md-6 col-md-6 cell example example2" id ="Btn-paypal" >
                 <h3>Paiement par Paypal</h3>
                 <hr>
-                <a href="" class="link">
+                <a href="{{route('checkout.paypal')}}" class="link">
                   <img src="http://assets/images/paypal.jpg" alt="paypal">
                 </a>
               </div>
