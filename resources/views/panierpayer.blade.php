@@ -1,4 +1,12 @@
 @include('includes._menu')
+<style>
+  #Btn-stripe .stripe-button-el span {
+    height: 200px;
+    width: 200px;
+    line-height: 50px;
+    background-image: url(http://localhost/nightshopFinale/public/assets/images/cartes.jpg);
+}   
+</style>
  <div class="container">
         <div class="row pub ">
            <h4>Panier / Paiement </h4>
@@ -18,7 +26,7 @@
                               data-amount="{{ $panier * 100 }}"
                               data-name="E-Shop"
                               data-description="Site de vente en ligne"
-                              data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
+                              data-image="{{ URL('http://localhost/nightshopFinale/public/assets/images/logo.png')}}"
                               data-locale="auto"
                               data-currency="eur">
                       </script>
@@ -29,7 +37,7 @@
                 <h3>Paiement par Paypal</h3>
                 <hr>
                 <a href="{{route('checkout.paypal')}}" class="link">
-                  <img src="http://assets/images/paypal.jpg" alt="paypal">
+                  <img src="http://localhost/nightshopFinale/public/assets/images/paypal.jpg" alt="paypal">
                 </a>
               </div>
           </div>
