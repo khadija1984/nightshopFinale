@@ -9,9 +9,9 @@
     <link rel="stylesheet" href="{{ asset('css/stylefiche.css') }}">
     <link rel="stylesheet" href="{{ asset('css/responsive.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-<div class="container single-product ">
+          <div class="container single-product ">
     <div class="row ">
-        <div class="col-md-4 ">
+        <div  class="col-md-4 ">
             <div class="image">
             <img src="{{URL($product->image)}}" alt="{{ $product->name }}" id="visuel">
                
@@ -23,7 +23,7 @@
                 <ul>    
                     <li>Taille : M </li>
                     <li>Poids : 2 kg</li>
-                    <li>Cateégorie: {{ $product->category->name }}</li>
+                    <li>Categorie: {{ $product->category->name }}</li>
                     <li>Prix: {{ $product->prix }}€</li>
                 </ul>
             <div class="tags">
@@ -35,9 +35,7 @@
             </div>
                  
         </div>
-        <div class="col-md-3 prix">
-           
-                
+        <div class="col-md-3 prix">   
             <div>
                 <p>Stock :{{$product->qte>0?$product->qte.' pièces':'insuffisant'}}  </p>
                 <form class="form-horizontal contact-form" role="form" method="post" action="{{route('panier.add.product')}}">
@@ -66,28 +64,30 @@
 
                         </div>  
                 </form>
-                 </div>
-                 <div class="row mt-4">
-                     
-                     <div class="line-top">
-                     <ul class="social">
+            </div>
+            <div class="row mt-4">
+                <div class="line-top">
+                    <ul class="social">
                         <li> <a href=""><i class="fa fa-google-plus"></i></a> </li>
                         <li> <a href=""><i class="fa fa-facebook"></i></a> </li>
                         <li> <a href=""><i class="fa fa-twitter"></i></a> </li>
                     </ul>
                 </div>
-               </div>
             </div>
         </div>
+    </div>
 
-        <div class="row pub">
+    <div class="row pub">
             <div class=" description">
               <h4>Déscription :</h4>
             <p>{{$product->description}}</p>
             </div>  
 
-        </div>
-        <div class="products">
+    </div>
+
+</div>
+
+    <div class="products">
             
             <div class="header_title"><h4>Voir aussi </h4></div>
             <div class="row">
@@ -128,8 +128,9 @@
                 </div>
              @endforeach            
             </div>
-        </div>
+    </div>
 </div>
+
 <script type="text/javascript" src="{{ asset('js/scripts.js') }}"></script>
 <script type="text/javascript" src="{{ asset('js/app.js') }}"></script>
 @include('includes._footer')

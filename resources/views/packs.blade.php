@@ -2,7 +2,7 @@
 <link rel="stylesheet" href="{{ asset('css/stylefiche.css') }}">
 <div style="position: absolute; padding-left: 310px;">
     <div class="col-md-8">
-        <h1 class="portfolio-title text-uppercase">Alcools</h1>
+        <h1 class="portfolio-title text-uppercase">Packs</h1>
         
     <div class="row">
  
@@ -34,7 +34,7 @@
 		</form>       
    
         @foreach($product as $product)
-            @if($product->category_id == 1)
+            @if($product->category_id == 3)
         <div class="col-md-4" >
             <article class="post portfolio-2 portfolio-3 post-grid">
                 <div class="post-thumb">

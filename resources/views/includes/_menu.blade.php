@@ -54,7 +54,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="{{ url('/') }}"><img src="assets/images/logo.png" alt=""></a>
+                <a class="navbar-brand" href="{{ url('/') }}"><img src="http://localhost/nightshopFinale/public/assets/images/logo.png" alt=""></a>
             </div>
 
 
@@ -83,8 +83,8 @@
                                         --->
                                     </li> 
                                     <li><a href="{{ url('categories/softs') }}">Softs</a></li>
-                                    <li><a href="home-2.html">Packs</a></li>
-                                    <li><a href="home-2.html">Divers</a></li>
+                                    <li><a href="{{ url('categories/packs') }}">Packs</a></li>
+                                    <li><a href="{{ url('categories/divers') }}">Divers</a></li>
                                 </ul>
                             </li>
                         </ul>

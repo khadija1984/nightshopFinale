@@ -49,6 +49,24 @@ class CategorieController extends Controller
         //dd($product);
         return view('softs', compact('categorie', 'product'));
     }
+        public function packs()
+    {
+        $categorie = \App\Category::get();
+        
+        $product = \App\Product::get();
+  
+        //dd($product);
+        return view('packs', compact('categorie', 'product'));
+    }
+        public function divers()
+    {
+        $categorie = \App\Category::get();
+        
+        $product = \App\Product::get();
+  
+        //dd($product);
+        return view('divers', compact('categorie', 'product'));
+    }
     
     public function filtre (Request $request, $product=null)
     {

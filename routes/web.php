@@ -32,6 +32,8 @@ Route::get('/categories/alcools', 'CategorieController@alcools');
 
 Route::get('/categories/alcools', 'CategorieController@filtre')->name('alcools.index');
 Route::get('/categories/softs', 'CategorieController@softs');
+Route::get('/categories/packs', 'CategorieController@packs');
+Route::get('/categories/divers', 'CategorieController@divers');
 
 //route voir le panier
 Route::get('panier','PanierController@index')->name('panier');

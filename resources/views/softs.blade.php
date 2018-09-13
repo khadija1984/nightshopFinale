@@ -1,6 +1,6 @@
 @include('includes._menu')
-<html>
-<body>
+<link rel="stylesheet" href="{{ asset('css/stylefiche.css') }}">
+<div style="position: absolute; padding-left: 310px;">
 <div class="col-md-8">
     <h1 class="portfolio-title text-uppercase">Softs</h1>
     <div class="row">
@@ -29,6 +29,6 @@
         @endforeach
     </div> 
 </div>
-</body>
-</html>
+</div>
+<script type="text/javascript" src="{{ asset('js/scripts.js') }}"></script>
 
