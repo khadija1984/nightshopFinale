@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-
+use App\Http\Providers\AppServiceProvider;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
@@ -25,29 +25,28 @@ class CategorieController extends Controller
     {
         $categorie = \App\Category::get();
         $product = \App\Product::get();
+        $lasts = \App\Product::orderBy('created_at', 'ASC')->take(2)->get();
         //$products = \App\Category::findOrFail($product->category_id)->get();
        
-        return view('categories', compact('categorie', 'product'));
+        return view('categories', compact('categorie', 'product','lasts'));
         
     }
       public function alcools()
     {
         $categorie = \App\Category::get();
-        
         $product = \App\Product::get();
-        
-       
+        $lasts = \App\Product::orderBy('created_at', 'ASC')->take(2)->get();
         //dd($product);
-        return view('alcools', compact('categorie', 'product'));
+        return view('alcools', compact('categorie', 'product','lasts'));
     }
       public function softs()
     {
         $categorie = \App\Category::get();
         
         $product = \App\Product::get();
-  
+        $lasts = \App\Product::orderBy('created_at', 'ASC')->take(2)->get();
         //dd($product);
-        return view('softs', compact('categorie', 'product'));
+        return view('softs', compact('categorie', 'product','lasts'));
     }
         public function packs()
     {
@@ -79,4 +78,5 @@ class CategorieController extends Controller
         
         return view('alcools', compact('categorie', 'product','ordre', 'perpage' ));
     }
+  
 }

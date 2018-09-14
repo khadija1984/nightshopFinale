@@ -13,7 +13,8 @@
 
 
 Route::get('/', 'HomeController@index')->name('home');
-
+//Route::get('/', 'HomeController@index1')->name('home');
+//Route::get('/incudes._menuverticale', 'HomeController@footerLasts');
 Route::get('/produit/', 'ProductController@index')->name('produit.index');
 //Route::get('/categories', 'CategorieController@listCategories');
 Route::post('nous contacter', 'HomeController@postcontact')->name('contact.post');

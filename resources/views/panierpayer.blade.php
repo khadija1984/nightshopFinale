@@ -1,4 +1,5 @@
 @include('includes._menu')
+@include('includes._menuverticale')
 <style>
   #Btn-stripe .stripe-button-el span {
     height: 200px;

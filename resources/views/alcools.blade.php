@@ -1,4 +1,5 @@
 @include('includes._menu')
+
 <link rel="stylesheet" href="{{ asset('css/stylefiche.css') }}">
 <div style="position: absolute; padding-left: 310px;">
     <div class="col-md-8">

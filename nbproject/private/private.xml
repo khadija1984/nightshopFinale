@@ -3,35 +3,11 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/UwAmp/www/nightshopFinale/resources/views/vendor/mail/html/button.blade.php</file>
+            <file>file:/C:/UwAmp/www/nightshopFinale/resources/views/includes/_menuverticale.blade.php</file>
             <file>file:/C:/UwAmp/www/nightshopFinale/resources/views/includes/_menu.blade.php</file>
-            <file>file:/C:/UwAmp/www/nightshopFinale/app/User.php</file>
-            <file>file:/C:/UwAmp/www/nightshopFinale/app/Http/Controllers/CategorieController.php</file>
-            <file>file:/C:/UwAmp/www/nightshopFinale/app/Http/Controllers/Auth/ForgotPasswordController.php</file>
-            <file>file:/C:/UwAmp/www/nightshopFinale/app/Panier.php</file>
-            <file>file:/C:/UwAmp/www/nightshopFinale/.env</file>
-            <file>file:/C:/UwAmp/www/nightshopFinale/routes/web.php</file>
-            <file>file:/C:/UwAmp/www/nightshopFinale/app/Notifications/PasswordReset.php</file>
-            <file>file:/C:/UwAmp/www/nightshopFinale/app/Http/Controllers/PanierController.php</file>
-            <file>file:/C:/UwAmp/www/nightshopFinale/app/Product.php</file>
-            <file>file:/C:/UwAmp/www/nightshopFinale/resources/views/vendor/mail/markdown/panel.blade.php</file>
-            <file>file:/C:/UwAmp/www/nightshopFinale/app/Http/Controllers/Auth/RegisterController.php</file>
-            <file>file:/C:/UwAmp/www/nightshopFinale/resources/views/vendor/mail/html/panel.blade.php</file>
-            <file>file:/C:/UwAmp/www/nightshopFinale/resources/views/vendor/mail/html/subcopy.blade.php</file>
-            <file>file:/C:/UwAmp/www/nightshopFinale/resources/views/vendor/mail/markdown/message.blade.php</file>
+            <file>file:/C:/UwAmp/www/nightshopFinale/app/Http/Controllers/ProductController.php</file>
+            <file>file:/C:/UwAmp/www/nightshopFinale/app/Http/Controllers/HomeController.php</file>
             <file>file:/C:/UwAmp/www/nightshopFinale/resources/views/index.blade.php</file>
-            <file>file:/C:/UwAmp/www/nightshopFinale/config/auth.php</file>
-            <file>file:/C:/UwAmp/www/nightshopFinale/resources/views/vendor/mail/html/message.blade.php</file>
-            <file>file:/C:/UwAmp/www/nightshopFinale/resources/views/vendor/mail/html/layout.blade.php</file>
-            <file>file:/C:/UwAmp/www/nightshopFinale/resources/views/alcools.blade.php</file>
-            <file>file:/C:/UwAmp/www/nightshopFinale/database/factories/ProductFactory.php</file>
-            <file>file:/C:/UwAmp/www/nightshopFinale/resources/views/vendor/mail/html/header.blade.php</file>
-            <file>file:/C:/UwAmp/www/nightshopFinale/config/app.php</file>
-            <file>file:/C:/UwAmp/www/nightshopFinale/app/Http/Controllers/Auth/ResetPasswordController.php</file>
-            <file>file:/C:/UwAmp/www/nightshopFinale/resources/views/categories.blade.php</file>
-            <file>file:/C:/UwAmp/www/nightshopFinale/resources/views/auth/passwords/reset.blade.php</file>
-            <file>file:/C:/UwAmp/www/nightshopFinale/resources/views/vendor/mail/html/footer.blade.php</file>
-            <file>file:/C:/UwAmp/www/nightshopFinale/app/Http/Kernel.php</file>
         </group>
     </open-files>
 </project-private>

@@ -1,4 +1,5 @@
 @include('includes._menu')
+@include('includes._menuverticale')
 <div style="position: absolute; padding-left: 310px;">
 <div class="col-md-8">
     <h1 class="portfolio-title text-uppercase">Categories</h1>

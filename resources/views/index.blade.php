@@ -1,4 +1,5 @@
 @include('includes._menu')
+
     <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('css/font-awesome.min.css') }}">
     <link rel="stylesheet" href="{{ asset('css/animate.min.css') }}">
@@ -95,35 +96,23 @@
                 <div class="col-md-3">
                     <div class="product">
                         <!--  <span class="bulle">Infos</span> -->
-                        @if($product->onDiscount())
-                        <span class="bulle bulle-promo">Promo</span>
-                        <!-- <span class="bulle bulle-primary">New</span> -->
-                        @endif
-                        <a href="{{route('produit.index',['slug'=>$product->slug])}}"><img src="{{URL($product->image)}}" alt="{{$product->name}}"></a>
-
                         <h4>{{$product->name}}</h4>
                         <p> {{ str_limit($product->description,100) }}</p>
                         <div class="actions">
                             @if($product->onDiscount())
-                            <span class="price promo">{{$product->prix}} € </span>  <em class="promo"></em>
-                            @else
+                            <span class="price promo">{{$product->prix}} € </span><em class="promo"></em>
+                            <a href="{{route('produit.index',['slug'=>$product->slug])}}"><img src="{{URL($product->image)}}" alt="{{$product->name}}"></a>
                             <span class="price "></span>
                             @endif
                             
-                                   <button type="submit" class="btn btn-icon btn-primary" ><i class="fa fa-cart-arrow-down"></i><span>Ajouter au panier</span></button>
+                            <button type="submit" class="btn btn-icon btn-primary" ><i class="fa fa-cart-arrow-down"></i><span>Ajouter au panier</span></button>
                             
                             <a href="{{route('produit.index',['slug'=>$product->slug])}}" class="btn btn-icon btn-secondary" alt="détails"><i class="fa fa-eye"></i></a>
 
                         @if(Auth::check())
-                            
-
-
-                           @else
-
                                <a href="#" class="btn btn-icon btn-secondary  btn-neutre like" alt="favoris" data-id={{ $product->id }}><i class="fa fa-heart"></i></a>
                            @endif
-
-                                            </div>
+                        </div>
                     </div>
                 </div>
              @endforeach            

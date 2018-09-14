@@ -1,4 +1,5 @@
 @include('includes._menu')
+@include('includes._menuverticale')
 <link rel="stylesheet" href="{{ asset('css/stylefiche.css') }}">
  <div class="container">
         <div class="row pub ">

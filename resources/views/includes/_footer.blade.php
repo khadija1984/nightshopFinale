@@ -1,5 +1,4 @@
-
-<footer class="footer-widget-section" style=" margin-top:650px;">
+<footer class="footer-widget-section" style=" margin-top:300px;">
    <div class="container">
         <div class="row">
             <div class="col-md-4">
@@ -29,16 +28,12 @@
             <div class="col-md-4">
                 
                 <aside class="footer-widget">
-                    <h3 class="widget-title text-uppercase">Promotion</h3>
-                    
                     <div id="myCarousel" class="carousel slide" data-ride="carousel">
                         <!--Indicator-->
                         <ol class="carousel-indicators">
                             <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                            <li data-target="#myCarousel" data-slide-to="1"></li>
-                            <li data-target="#myCarousel" data-slide-to="2"></li>
                         </ol>
-                        
+                        <li><a href="{{ url('apropos') }}">A PROPOS</a></li>
                         <div class="carousel-inner" role="listbox">
                             <div class="item active">
                                 <div class="single-review">
@@ -50,7 +45,6 @@
                     
                         </div> 
                     </div>
-
                 </aside>
             </div>
        
@@ -58,19 +52,17 @@
                 <aside class="footer-widget">
                     <h3 class="widget-title text-uppercase">Nouveau produit</h3>
 
-
+                    
                     <div class="custom-post">
                         <div>
-                        
-                            <a href=""><img src="
-                                            " alt=""></a>
-                 
+                          
                         </div>
                         
                     </div>
-
+                    
                 </aside>
             </div>
+       
         </div>
     </div>
     <div class="footer-copy">

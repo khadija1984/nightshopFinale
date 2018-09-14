@@ -30,7 +30,8 @@ class PaiementController extends Controller
               ]);
           //sauvegarde...BD
               $panier = $this->saveTransacion($charge, 'Stripe');
-              //$this->addNotify(type:"success", message:"Bravo");
+              flash('Merci pour votre paiement, votre commande sera traitée dans 
+              les plus brèfs délais !')->success();
         } catch(\Stripe\Error\Card $e) {
           
           return $e->getMessage();
@@ -144,6 +145,8 @@ class PaiementController extends Controller
         try {
             
             $payment->create(Paypalpayment::apiContext());
+            flash('Merci pour votre paiement, votre commande sera traitée dans 
+              les plus brèfs délais !')->success();
         } catch (\PPConnectionException $ex) {
             return response()->json(["error" => $ex->getMessage()], 400);
         }

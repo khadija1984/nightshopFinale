@@ -45,4 +45,5 @@ class Product extends Model
     {
         return $this->onDiscount()?$this->onDiscount()->prix:$this->prix;
     }
+   
 }

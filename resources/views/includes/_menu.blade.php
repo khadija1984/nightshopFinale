@@ -61,9 +61,7 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
                 <ul class="nav navbar-nav text-uppercase">
-                    <li><a href="{{ url('/') }}" data-toggle="dropdown" class="dropdown-toggle">Home</a>
-                       
-                    </li>
+                    <li><a class="navbar-brand" href="{{ url('/') }}">Home</a></li>
                     <li class="menu-item-has-children"><a data-toggle="dropdown" class="dropdown-toggle" href="#">Boutique
                         <i class="fa fa-angle-down"></i></a>
                        <ul class="sub-menu">
