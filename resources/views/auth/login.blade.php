@@ -8,9 +8,10 @@
                 </div>    
                 <div class="col-lg-6 offset-lg-3  " id="login">
                     <div class="title"><h4>Identification  </h4></div>
-                       
+                    
                     <form class="pub form-custom form-horizontal" method="POST" action="{{ route('login') }}">
                          {{ csrf_field() }}
+                         
                        <div class="form-group {{ $errors->has('email') ? ' has-error' : '' }} row"> 
                             <label for="email" class="col-sm-2 col-form-label">Email</label>
                             <div class="col-sm-10">
@@ -61,6 +62,7 @@
                             </div>
                         </div>
                     </form>
+                    
                     <div class="row ">
                         <a href="{{ url('/') }}" class="bottom">nightshop.be</a>
                     </div>

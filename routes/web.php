@@ -34,7 +34,7 @@ Route::get('/categories/alcools', 'CategorieController@alcools');
 Route::get('/categories/alcools', 'CategorieController@filtre')->name('alcools.index');
 Route::get('/categories/softs', 'CategorieController@softs');
 Route::get('/categories/packs', 'CategorieController@packs');
-Route::get('/categories/divers', 'CategorieController@divers');
+
 
 //route voir le panier
 Route::get('panier','PanierController@index')->name('panier');
@@ -44,9 +44,19 @@ Route::post('panier/add', 'PanierController@addProduct')->name('panier.add.produ
 Route::get('panier/add/{name}', 'PanierController@add')->name('panier.add');
 // route  pour valider
 Route::get('panier/validation', 'PanierController@valider')->name('panier.valider');
-
+Route::get('', 'PanierController@valider')->name('panier.valider');
 //ROUTE PAIEMENT
+Route::group(['middleware' => ['isAdmin']], function () {
+    Route::get('/admin', 'AdminController@index')->name('dashbordAdmin');
+});
+/****  Route::get('admin', [
+        'uses' => 'AdminController@index',
+        'as' => 'admin',
+        'middleware' => 'admin'
+    ]);***/
+
 Route::group(['middleware'=>['auth']], function(){
+    
     Route::get('panier/paiement', 'PanierController@payer')->name('panier.payer');
     Route::post('paiement/stripe', 'PaiementController@checkoutStripe')->name('checkout.stripe');
     Route::get('paiement/paypal', 'PaiementController@checkoutPaypal')->name('checkout.paypal');
