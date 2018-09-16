@@ -234,13 +234,11 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
             <section class="content-header">
 		<div class="row">
                     <div class="col-md-8">
-			<h3 style="margin-top: 5px"><i class="fa fa-folder"></i>Users
+			<h3 style="margin-top: 5px"><i class="fa fa-folder"></i> Ajouter Utilisateur
 			</h3>
                     </div>
                     <div class="col-md-4">
-			<div class="pull-right">
-                            <a href="{{ url('/admin/users/addUser') }}" class="btn btn-primary"><i class="fa fa-plus-circle"></i>Ajouter un utilisateur</a>
-			</div>
+			
                     </div>
 		</div>
             </section>
@@ -250,55 +248,67 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
                          <div class="box box-primary" style="padding-top:15px">
                                <div class="box-body">
                                    <div ng-controller="SummaryTableController" class="ng-scope">
-                                         <div cg-busy="loadingPromise" style="position: relative;">
-                                                <table class="table">
-                                                    <thead>
-                                                        <tr>
-                                                            <th class="lib-name">Name</th>
-                                                            <th class="lib-tag">E-mail</th>
-                                                            <th class="lib-add">Role</th>
-                                                            <th class="lib-add">Action</th>
-                                                        </tr>
-                                                    </thead>
-                                                              <tbody>
-                                                        @foreach($user as $user)
-                                                        <tr ng-repeat="row in rows" ng-class="{'info': row.selectedFlag}" class="ng-scope">
-                                                            <td ng-repeat="col in columns" class="ng-scope">
-                                                                <div ng-switch="" on="col.renderType">
-                                                                    <div ng-switch-when="primaryLink" class="ng-scope">
-                                                                       <a ng-href="http://crudkit.com/demo/?action=page_function&amp;func=view_item&amp;item_id=1&amp;page=sqlite2" class="ng-binding" href="http://crudkit.com/demo/?action=page_function&amp;func=view_item&amp;item_id=1&amp;page=sqlite2">{{$user->username}}</a>
-                                                                    </div>
-                                                                </div>
-                                                            </td>
-                                                                <td ng-repeat="col in columns" class="ng-scope">
-                                                                    <div ng-switch="" on="col.renderType">
-                                                                        <div ng-switch-when="string" class="ng-binding ng-scope">
-                                                                             {{$user->email}}
-                                                                        </div>
-                                                                    </div>
-                                                                </td>
-                                                                <td ng-repeat="col in columns" class="ng-scope">
-                                                                    <div ng-switch="" on="col.renderType">
-                                                                        <div ng-switch-when="string" class="ng-binding ng-scope">
-                                                                         {{$user->role}}
-                                                                        </div>
-                                                                    </div>
-                                                                </td>
-                                                                <td>
-                                                                    <form action="{{ action('AdminController@destroyUser', ['id'=>$user->id]) }} " method="POST">
-                                                                        {{csrf_field()}}
-                                                                        {{method_field('DELETE')}}
-                                                                        <input type="hidden" name="_method" value="DELETE" />
-                                                                        <buttom type='submit' class="btn btn-success delete-user" style="border:none;"><i class="fa fa-trash-o" aria-hidden="true"></i></buttom>
-                                                                    </form>
-                                                                    <buttom type='submit' class="btn btn-success" ><i class="fa fa-pencil-square-o" aria-hidden="true"></i></buttom>
-                                                                </td>
-                                                            </tr>
+                                        <div cg-busy="loadingPromise" style="position: relative;">
+                                                <!----formulaire d'ajout d'un utilisateur--->
+                                              <center>
+                                             <form  class="pub form-custom form-horizontal" method="POST" action="{{ action('AdminController@addUser') }} ">
+                                              {{csrf_field()}}
+                                                {{method_field('ADD')}}
+                                             <label for="username" class="col-sm-2 col-form-label">Username</label>
+                                    <div class="col-sm-10">
+                                        <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                                            <input type="text" class="form-control" id="username" name="username" placeholder="username" value="" required autofocus>
+                                        </div> 
+                                    </div>
+                                       
 
-                                                            @endforeach
-                                                    </tbody>
-                                                </table>
-                                            </div>
+                                <label for="email" class="col-sm-2 col-form-label">Email</label>
+                                <div class="col-sm-10">
+                                    <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+
+                                            <input type="email" class="form-control" id="email" name="email" placeholder="Email"  value="{{ old('email') }}" required >
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                            <div class="form-group row"> 
+                                <label for="password" class="col-sm-2 col-form-label">Password</label>
+                                <div class="col-sm-10">
+                                    <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+
+                                        <input type="password" class="form-control" id="password" placeholder="password " name="password" required>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                                       <div class="form-group row"> 
+                                <label for="password" class="col-sm-2 col-form-label">Password</label>
+                                <div class="col-sm-10">
+                                    <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+
+                                        <input type="password" class="form-control" id="password" placeholder="password " name="password" required>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+
+                            <div class="form-group row"> 
+                                <label for="password_confirmation" class="col-sm-2 col-form-label">Role</label>
+                                <div class="col-sm-10">
+                                    <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+
+                                        <input type="password" class="form-control" id="password_confirmation" placeholder=" confirmation password " name="password_confirmation" required>
+                                    </div>
+                                   
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-sm-4"> 
+                                    <button type="submit" class="btn btn-primary  pull-right" style="text-align:right;">Valider</button>
+                                </div>
+                            </form>
+                            </div>
+                                        </div>
                                     </div>
     
                                 </div>

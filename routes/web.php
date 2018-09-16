@@ -54,6 +54,10 @@ Route::group(['middleware' => ['isAdmin']], function () {
     Route::delete('/admin/users/delete/{id}','AdminController@destroyUser')->name('deleteuser');
     Route::delete('/admin/categories/delete/{id}','AdminController@destroyCategory')->name('deletecategory');
     Route::delete('/admin/produits/delete/{id}','AdminController@destroyProduct')->name('deleteproduct');
+    Route::get('/admin/users/addUser', function () {
+    return view('addUser');
+    Route::put('/admin/users/addUser/add','AdminController@addUser')->name('addUser');
+});
 });
 Route::group(['middleware' => ['IsNightshop']], function () {
     Route::get('/nightshop', 'NightshopController@index')->name('dashbordNightshop');

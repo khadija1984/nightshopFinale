@@ -121,4 +121,16 @@ class AdminController extends Controller
          //notify()->flash('deleted','error', ['text' => 'Word Deleted Succesfully']);
         return redirect()->route('showProduits');
     }
+    public function addUser($user, $username){
+            // if user don't exist - Create new user
+            User::create([
+                'name'     => $user->name,
+                'email'    => $user->email,
+                'password'    => $user->password,
+                'username' => $user->username,
+                'role' => $user->role
+        ]);    
+        return redirect()->route('showUsers');
+
+    }
 }
