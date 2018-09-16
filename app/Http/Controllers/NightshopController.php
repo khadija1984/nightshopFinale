@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use AuthenticatesUsers;
 use \App\Http\Middleware\IsAdmin;
 
-class AdminController extends Controller
+class NightshopController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -19,29 +19,7 @@ class AdminController extends Controller
     {
         $user = \App\User::get();
         //dd($user);
-        return view('dashbordAdmin', compact('user'));
-    }
-    
-    public function showUsers()
-    {
-        $user = \App\User::get();
-        //dd($user);
-        //return view('dashbordAdmin', compact('user'));
-        return view('users', compact('user'));
-    }
-    public function showCategories()
-    {
-        $category = \App\Category::get();
-        //dd($user);
-        //return view('dashbordAdmin', compact('user'));
-        return view('category', compact('category'));
-    }
-    public function showProduits()
-    {
-        $product = \App\Product::get();
-        //dd($user);
-        //return view('dashbordAdmin', compact('user'));
-        return view('product', compact('product'));
+        return view('dashbordNightshop', compact('user'));
     }
 
     /**

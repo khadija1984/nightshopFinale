@@ -4,7 +4,7 @@ namespace App\Http\Middleware;
 use Closure;
 use Illuminate\Http\RedirectResponse;
 
-class IsAdmin
+class IsNightshop
 {
     /**
      * Handle an incoming request.
@@ -39,11 +39,11 @@ class IsAdmin
         
          $user = $request->user();
          //dd($user->role);
-            if ($user && $user->role=='admin')
+            if ($user && $user->role=='nightshop')
             {
                 return $next($request);
             }
-            return new RedirectResponse(url('/error'));  
+            return new RedirectResponse(url('/error1'));  
     }
     
 }

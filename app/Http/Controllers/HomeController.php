@@ -54,5 +54,19 @@ class HomeController extends Controller
         return view('footer',['lasts' => $lasts]);
        
    }
+    function error()
+    {
+       
+        
+     return view('error');
+       
+   }
+   function error1()
+    {
+       
+        
+     return view('error1');
+       
+   }
   
 }

@@ -230,8 +230,99 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
                 </ul>
              </section>
         </aside>
-        
+        <div class="content-wrapper" style="min-height: 279px;">
+            <section class="content-header">
+		<div class="row">
+                    <div class="col-md-8">
+			<h3 style="margin-top: 5px"><i class="fa fa-folder"></i>Users
+			</h3>
+                    </div>
+  
+		</div>
+            </section>
+            <section class="content">
+                <div class="row">
+                     <div class="col-md-12">
+                         <div class="box box-primary" style="padding-top:15px">
+                               <div class="box-body">
+                                   <div ng-controller="SummaryTableController" class="ng-scope">
+                                         <div cg-busy="loadingPromise" style="position: relative;">
+                                                <table class="table">
+                                                    <thead>
+                                                        <tr>
+                                                            <th class="lib-name">Name</th>
+                                                            <th class="lib-tag">slug</th>
+                                                            <th class="lib-add">image</th>
+                                                            <th class="lib-add">Action</th>
+                                                        </tr>
+                                                    </thead>
+                                                              <tbody>
+                                                        @foreach($category as $category)
+                                                        <tr ng-repeat="row in rows" ng-class="{'info': row.selectedFlag}" class="ng-scope">
+                                                            <td ng-repeat="col in columns" class="ng-scope">
+                                                                <div ng-switch="" on="col.renderType">
+                                                                    <div ng-switch-when="primaryLink" class="ng-scope">
+                                                                       <a ng-href="http://crudkit.com/demo/?action=page_function&amp;func=view_item&amp;item_id=1&amp;page=sqlite2" class="ng-binding" href="http://crudkit.com/demo/?action=page_function&amp;func=view_item&amp;item_id=1&amp;page=sqlite2">{{$category->name}}</a>
+                                                                    </div>
+                                                                </div>
+                                                            </td>
+                                                                <td ng-repeat="col in columns" class="ng-scope">
+                                                                    <div ng-switch="" on="col.renderType">
+                                                                        <div ng-switch-when="string" class="ng-binding ng-scope">
+                                                                             {{$category->slug}}
+                                                                        </div>
+                                                                    </div>
+                                                                </td>
+                                                                <td ng-repeat="col in columns" class="ng-scope">
+                                                                    <div ng-switch="" on="col.renderType">
+                                                                        <div ng-switch-when="string" class="ng-binding ng-scope">
+                                                                         {{$category->image}}
+                                                                        </div>
+                                                                    </div>
+                                                                </td>
+                                                                <td>
+                                                                    <a href="#" class="btn btn-success">supprimer</a>
+
+                                                                </td>
+                                                            </tr>
+
+                                                            @endforeach
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                    </div>
+    
+                                </div>
+                         </div>
+                     </div>
+                 </div>
+            </section>
+        </div>
     </div>
 </body>
 <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
 <script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js'></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

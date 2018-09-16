@@ -48,7 +48,18 @@ Route::get('', 'PanierController@valider')->name('panier.valider');
 //ROUTE PAIEMENT
 Route::group(['middleware' => ['isAdmin']], function () {
     Route::get('/admin', 'AdminController@index')->name('dashbordAdmin');
+    Route::get('/admin/users', 'AdminController@showUsers')->name('showUsers');
+    Route::get('/admin/categories', 'AdminController@showCategories')->name('showCategories');
+    Route::get('/admin/produits', 'AdminController@showProduits')->name('showProduits');
+    
 });
+Route::group(['middleware' => ['IsNightshop']], function () {
+    Route::get('/nightshop', 'NightshopController@index')->name('dashbordNightshop');
+    
+    
+});
+Route::get('/error', 'HomeController@error')->name('error');
+Route::get('/error1', 'HomeController@error1')->name('error');
 /****  Route::get('admin', [
         'uses' => 'AdminController@index',
         'as' => 'admin',

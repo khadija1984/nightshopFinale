@@ -26,43 +26,14 @@
 <!--rajouter foreach sur les produits en promotion--->
             
             <div class="col-md-4">
-                
                 <aside class="footer-widget">
-                    <div id="myCarousel" class="carousel slide" data-ride="carousel">
-                        <!--Indicator-->
-                        <ol class="carousel-indicators">
-                            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                        </ol>
-                        <li><a href="{{ url('apropos') }}">A PROPOS</a></li>
-                        <div class="carousel-inner" role="listbox">
-                            <div class="item active">
-                                <div class="single-review">
-                                    <div class="review-text">
-                                        <img src="" alt="">
-                                    </div>                   
-                                </div>
-                            </div>
-                    
-                        </div> 
-                    </div>
-                </aside>
-            </div>
-       
-            <div class="col-md-4">
-                <aside class="footer-widget">
-                    <h3 class="widget-title text-uppercase">Nouveau produit</h3>
+                        <li><a href="{{ url('cgv') }}">Conditions générales de vente</a></li>
+			<li><a href="{{ url('cgv') }}">FAQ</a></li>
+			<li><a href="{{ url('cgv') }}">Politique de confidentialité</a></li>
 
-                    
-                    <div class="custom-post">
-                        <div>
-                          
-                        </div>
-                        
-                    </div>
-                    
                 </aside>
             </div>
-       
+
         </div>
     </div>
     <div class="footer-copy">
