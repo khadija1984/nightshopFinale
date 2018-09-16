@@ -234,7 +234,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
             <section class="content-header">
 		<div class="row">
                     <div class="col-md-8">
-			<h3 style="margin-top: 5px"><i class="fa fa-folder"></i>Users
+			<h3 style="margin-top: 5px"><i class="fa fa-folder"></i>Catégories
 			</h3>
                     </div>
   
@@ -281,7 +281,12 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
                                                                     </div>
                                                                 </td>
                                                                 <td>
-                                                                    <a href="#" class="btn btn-success">supprimer</a>
+                                                                     <form action="{{ action('AdminController@destroyCategory', ['id'=>$category->id]) }} " method="POST">
+                                                                        {{csrf_field()}}
+                                                                        {{method_field('DELETE')}}
+                                                                        <input type="hidden" name="_method" value="DELETE" />
+                                                                        <buttom type='submit' class="btn btn-success delete-user" style="border:none;"><i class="fa fa-trash-o" aria-hidden="true"></i></buttom>
+                                                                    </form>
 
                                                                 </td>
                                                             </tr>
@@ -302,7 +307,15 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 </body>
 <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
 <script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js'></script>
-
+<script>
+    $('.delete-user').click(function(e){
+        e.preventDefault() // Don't post the form, unless confirmed
+        if (confirm('Are you sure?')) {
+            // Post the form
+            $(e.target).closest('form').submit() // Post the surrounding form
+        }
+    });
+</script>
 
 
 

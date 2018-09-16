@@ -226,7 +226,11 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
                         <span class="server-tag"></span></a></li>
                     <li role="presentation" class="active"><a href="{{ url('/admin/users') }}"><i class="fa fa-server"></i>Users</a></li>
                     <li class="header">ACCOUNT</li>
-                    <li role="presentation"><a href=""><i class="fa fa-sign-out"></i>Log out</a></li>
+                    <li role="presentation"><a href="logout"onclick="event.preventDefault();document.getElementById('logout-form').submit();"><i class="fa fa-sign-out"></i>Log out</a>
+                        <form id="logout-form" action="{{route('logout')}}" method="POST" style="display: none;">
+                                    {{csrf_field()}}
+                                    </form>
+                    </li>
                 </ul>
              </section>
         </aside>

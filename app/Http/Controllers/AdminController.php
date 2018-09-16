@@ -6,6 +6,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use AuthenticatesUsers;
 use \App\Http\Middleware\IsAdmin;
+use App\Notifications;
 
 class AdminController extends Controller
 {
@@ -96,8 +97,28 @@ class AdminController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroyUser($id)
     {
-        //
+       $item = \App\User::find($id);
+       $item->delete();
+       //dd($user);
+         //notify()->flash('deleted','error', ['text' => 'Word Deleted Succesfully']);
+        return redirect()->route('showUsers');
+    }
+    public function destroyCategory($id)
+    {
+       $item = \App\Category::find($id);
+       $item->delete();
+       //dd($user);
+         //notify()->flash('deleted','error', ['text' => 'Word Deleted Succesfully']);
+        return redirect()->route('showCategories');
+    }
+      public function destroyProduct($id)
+    {
+       $item = \App\Product::find($id);
+       $item->delete();
+       //dd($user);
+         //notify()->flash('deleted','error', ['text' => 'Word Deleted Succesfully']);
+        return redirect()->route('showProduits');
     }
 }
