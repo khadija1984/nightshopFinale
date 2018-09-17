@@ -1,3 +1,4 @@
+                                                   
 <style>
 body{
   font-family: "Lato", 'Helvetica Neue', Arial, Helvetica, sans-serif !important;
@@ -234,13 +235,11 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
             <section class="content-header">
 		<div class="row">
                     <div class="col-md-8">
-			<h3 style="margin-top: 5px"><i class="fa fa-folder"></i>Users
+			<h3 style="margin-top: 5px"><i class="fa fa-folder"></i> Modifié utilisateur
 			</h3>
                     </div>
                     <div class="col-md-4">
-			<div class="pull-right">
-                            <a href="{{ url('/admin/users/addUser') }}" class="btn btn-primary"><i class="fa fa-plus-circle"></i>Ajouter un utilisateur</a>
-			</div>
+			
                     </div>
 		</div>
             </section>
@@ -250,57 +249,31 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
                          <div class="box box-primary" style="padding-top:15px">
                                <div class="box-body">
                                    <div ng-controller="SummaryTableController" class="ng-scope">
-                                         <div cg-busy="loadingPromise" style="position: relative;">
-                                                <table class="table">
-                                                    <thead>
-                                                        <tr>
-                                                            <th class="lib-name">Name</th>
-                                                            <th class="lib-tag">E-mail</th>
-                                                            <th class="lib-add">Role</th>
-                                                            <th class="lib-add">Action</th>
-                                                        </tr>
-                                                    </thead>
-                                                              <tbody>
-                                                        @foreach($user as $user)
-                                                        
-                                                        <tr ng-repeat="row in rows" ng-class="{'info': row.selectedFlag}" class="ng-scope">
-                                                            <td ng-repeat="col in columns" class="ng-scope">
-                                                                <div ng-switch="" on="col.renderType">
-                                                                    <div ng-switch-when="primaryLink" class="ng-scope">
-                                             
-                                                                       <a href="{{ route('user.index',['id'=>$user->id]) }}">{{$user->username}}</a>
-                                                                    </div>
-                                                                </div>
-                                                            </td>
-                                                                <td ng-repeat="col in columns" class="ng-scope">
-                                                                    <div ng-switch="" on="col.renderType">
-                                                                        <div ng-switch-when="string" class="ng-binding ng-scope">
-                                                                             {{$user->email}}
-                                                                        </div>
-                                                                    </div>
-                                                                </td>
-                                                                <td ng-repeat="col in columns" class="ng-scope">
-                                                                    <div ng-switch="" on="col.renderType">
-                                                                        <div ng-switch-when="string" class="ng-binding ng-scope">
-                                                                         {{$user->role}}
-                                                                        </div>
-                                                                    </div>
-                                                                </td>
-                                                                <td>
-                                                                    <form action="{{ action('AdminController@destroyUser', ['id'=>$user->id]) }} " method="POST">
-                                                                        {{csrf_field()}}
-                                                                        {{method_field('DELETE')}}
-                                                                        <input type="hidden" name="_method" value="DELETE" />
-                                                                        <buttom type='submit' class="btn btn-success delete-user" style="border:none;"><i class="fa fa-trash-o" aria-hidden="true"></i></buttom>
-                                                                    </form>
-                                                                
-                                                                </td>
-                                                            </tr>
+                                        <div cg-busy="loadingPromise" style="position: relative;">
+                                                <!----formulaire d'ajout d'un utilisateur--->
+                                            @foreach($user as $user)
+   
 
-                                                            @endforeach
-                                                    </tbody>
-                                                </table>
-                                            </div>
+                                            <form action="{{ action('AdminController@updateUser', $id) }}"  method="put">
+                                                {{csrf_field()}}
+                                                 {{method_field('UPDATE')}}
+                                                 <input name="_method" type="hidden" value="PATCH">
+                                                <label>username:
+                                                    <input type="text" name="username" value="{{ $user->username }}" name="username" placeholder="username"  />
+                                                </label>
+                                                <label>role:
+                                                <input type="text" name="role" value="{{ $user->role }}"  />
+                                                </label>
+                                                 <label>email:
+                                                <input type="text" name="email" value="{{ $user->email }}" />
+                                                </label>
+                   
+                                                <br>
+                                                 <button type="submit" name="submit" class="btn send-btn">Modifié</button>
+                                             </form>  
+                                            @endforeach
+                                        </div>
+                                        </div>
                                     </div>
     
                                 </div>
@@ -313,35 +286,5 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 </body>
 <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
 <script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js'></script>
-<script>
-    $('.delete-user').click(function(e){
-        e.preventDefault() // Don't post the form, unless confirmed
-        if (confirm('Are you sure?')) {
-            // Post the form
-            $(e.target).closest('form').submit() // Post the surrounding form
-        }
-    });
-</script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  
 

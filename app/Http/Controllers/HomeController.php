@@ -9,21 +9,19 @@ use App\Http\Requests\ContactForm;
 use App\Mail\ContactFormSite;
 class HomeController extends Controller
 {
-   function index()
+   function show()
     {
-       
+
        //$Product=\App\product::get();
         $lasts = product::orderBy('created_at', 'ASC')->take(2)->get();
-        $product = \App\product::get();
+        dd($lasts);
+       $product = \App\product::get();
         
      return view('home.main',compact('lasts','product'));
        
    }
    
-   
-  function contact(){
-      return view('contact');
-  }
+  
   
   
    function postcontact(ContactForm $request){

@@ -1,4 +1,4 @@
-@include('includes._menu')
+
 <!--main content start-->
 <div class="main-content">
     <div class="container">

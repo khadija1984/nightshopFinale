@@ -1,5 +1,4 @@
-@include('includes._menu')
-@include('includes._menuverticale')
+
 <html>
     <body>
 <!--main content start-->
@@ -82,4 +81,3 @@ $(function(){
 <script type="text/javascript" src="assets/js/jquery.stickit.min.js"></script>
 <script type="text/javascript" src="assets/js/menu.js"></script>
 <script type="text/javascript" src="assets/js/scripts.js"></script>
-@include('includes._footer')

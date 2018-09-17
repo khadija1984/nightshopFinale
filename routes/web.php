@@ -12,7 +12,7 @@
 */
 
 
-Route::get('/', 'HomeController@index')->name('home');
+Route::get('/', 'HomeController@show')->name('home');
 //Route::get('/', 'HomeController@index1')->name('home');
 //Route::get('/incudes._menuverticale', 'HomeController@footerLasts');
 Route::get('/produit/', 'ProductController@index')->name('produit.index');
@@ -71,6 +71,9 @@ Route::group(['middleware' => ['isAdmin']], function () {
     Route::GET('/admin/categories/addCategory/createCategory','AdminController@createCategory')->name('createCategory');
     Route::PUT('/admin/categories/addProduct/createProduct','AdminController@createProduct')->name('createProduct');
    Route::get('/admin/categories/addProduct/createProduct','AdminController@createProduct')->name('createProduct');
+   Route::get('/admin/users/{id}', 'AdminController@ficheUser')->name('user.index');
+    Route::put('/admin/users/updateUser','AdminController@updateUser')->name('updateUser');
+    Route::get('/admin/users/updateUser','AdminController@updateUser')->name('updateUser');
 });
 Route::group(['middleware' => ['IsNightshop']], function () {
     Route::get('/nightshop', 'NightshopController@index')->name('dashbordNightshop');

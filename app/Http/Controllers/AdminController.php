@@ -23,6 +23,13 @@ class AdminController extends Controller
         //dd($user);
         return view('dashbordAdmin', compact('user'));
     }
+      public function ficheUser($id)
+    {
+        $user = \App\User::where('id',$id)->get();
+        
+        //dd($user);
+        return view('ficheUser', compact('user','id'));
+    }
     
     public function showUsers()
     {
@@ -132,6 +139,17 @@ class AdminController extends Controller
            $user->save();
            return redirect()->route('showUsers');
     }
+   
+    public function updateUser(Request $request, $id){
+        $user = \App\User::find($id);
+                $user->username=$request->input('username');
+                 $user->role=$request->input('role');
+                 $user->email=$request->input('email');
+                 //dd($request);
+                //return ($request);
+               $user->update();
+        return redirect()->route('showUsers');
+    }
      public function createProduct(Request $request){
         $product = new \App\Product();
         $product->name=request('name');
@@ -141,9 +159,9 @@ class AdminController extends Controller
         $product->qte=request('quantité');
         $product->image=request('image');
         $product->category_id=request('category_id');
-        dd($product);
-           //$product->save();
-           //return redirect()->route('showProduits');
+        //dd($product);
+           $product->save();
+           return redirect()->route('showProduits');
     }
      public function createCategory(Request $request){
         $category = new \App\Category();
@@ -151,8 +169,8 @@ class AdminController extends Controller
         $category->slug=request('slug');
         $category->image=request('image');
         
-        dd($category);
-           //$category->save();
+        //dd($category);
+           $category->save();
            return redirect()->route('showCategories');
     }
 }

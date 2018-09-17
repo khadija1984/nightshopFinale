@@ -60,29 +60,7 @@
       <li><a href="{{ url('categories/packs') }}">Packs</a></li>
       <li><a href="{{ url('categories/divers') }}">Divers</a></li>
     </ul><br>
-    <center><div><h4>Nouveau Produit</h4></div></center>
-    
-    <div class="row" >
-        @foreach ($lasts as $last)
-            <div style="position:absolute; padding-left: 20px;">
-                <center>
-
-                    <a href="{{ route('product.index',['id'=>$last->id]) }}" alt="{{$last->name}}">
-                    <img id="img" class="nature" style="height: 200px; width: 200px;"src=" {{$last->image}} " alt="" >
-                    </a>
-                </center>
-            </div>
-        @endforeach
-    </div>
-    <div class="row" >
-        @foreach($product as $product)
-            @if($product->onDiscount())
-             <span class="bulle bulle-promo">Promo</span>
-            @endif
-            @endforeach
-    </div>
 </div>
-
 <script>
  w3.slideshow(".nature", 4000);
 </script>
