@@ -237,6 +237,11 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 			<h3 style="margin-top: 5px"><i class="fa fa-folder"></i>Produits
 			</h3>
                     </div>
+                    <div class="col-md-4">
+			<div class="pull-right">
+                            <a href="{{ url('admin/Product/addProduct') }}" class="btn btn-primary"><i class="fa fa-plus-circle"></i>Ajouter Produit</a>
+			</div>
+                    </div>
   
 		</div>
             </section>

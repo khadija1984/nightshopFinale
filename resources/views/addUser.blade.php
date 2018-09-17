@@ -250,64 +250,26 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
                                    <div ng-controller="SummaryTableController" class="ng-scope">
                                         <div cg-busy="loadingPromise" style="position: relative;">
                                                 <!----formulaire d'ajout d'un utilisateur--->
-                                              <center>
-                                             <form  class="pub form-custom form-horizontal" method="POST" action="{{ action('AdminController@addUser') }} ">
-                                              {{csrf_field()}}
-                                                {{method_field('ADD')}}
-                                             <label for="username" class="col-sm-2 col-form-label">Username</label>
-                                    <div class="col-sm-10">
-                                        <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-                                            <input type="text" class="form-control" id="username" name="username" placeholder="username" value="" required autofocus>
-                                        </div> 
-                                    </div>
-                                       
-
-                                <label for="email" class="col-sm-2 col-form-label">Email</label>
-                                <div class="col-sm-10">
-                                    <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-
-                                            <input type="email" class="form-control" id="email" name="email" placeholder="Email"  value="{{ old('email') }}" required >
-                                    </div>
-                                    
-                                </div>
-                            </div>
-                            <div class="form-group row"> 
-                                <label for="password" class="col-sm-2 col-form-label">Password</label>
-                                <div class="col-sm-10">
-                                    <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-
-                                        <input type="password" class="form-control" id="password" placeholder="password " name="password" required>
-                                    </div>
-                                    
-                                </div>
-                            </div>
-                                       <div class="form-group row"> 
-                                <label for="password" class="col-sm-2 col-form-label">Password</label>
-                                <div class="col-sm-10">
-                                    <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-
-                                        <input type="password" class="form-control" id="password" placeholder="password " name="password" required>
-                                    </div>
-                                    
-                                </div>
-                            </div>
-
-                            <div class="form-group row"> 
-                                <label for="password_confirmation" class="col-sm-2 col-form-label">Role</label>
-                                <div class="col-sm-10">
-                                    <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-
-                                        <input type="password" class="form-control" id="password_confirmation" placeholder=" confirmation password " name="password_confirmation" required>
-                                    </div>
-                                   
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <div class="col-sm-4"> 
-                                    <button type="submit" class="btn btn-primary  pull-right" style="text-align:right;">Valider</button>
-                                </div>
-                            </form>
-                            </div>
+                                            <form action="{{ action('AdminController@createUser')}}"  method="PUT">
+                                                {{csrf_field()}}
+                                                 {{method_field('ADD')}}
+                                                <label>username:
+                                                <input type="text" name="username"  />
+                                                </label>
+                                                <label>role:
+                                                <input type="text" name="role"  />
+                                                </label>
+                                                 <label>email:
+                                                <input type="text" name="email"  />
+                                                </label>
+                                                 <label>password:
+                                                <input type="password" name="password"  />
+                                                </label>
+                                                <br>
+                                                 <button type="submit" name="submit" class="btn send-btn">send massage</button>
+                                             </form>  
+             
+                                        </div>
                                         </div>
                                     </div>
     
@@ -321,15 +283,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 </body>
 <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
 <script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js'></script>
-<script>
-    $('.delete-user').click(function(e){
-        e.preventDefault() // Don't post the form, unless confirmed
-        if (confirm('Are you sure?')) {
-            // Post the form
-            $(e.target).closest('form').submit() // Post the surrounding form
-        }
-    });
-</script>
+
 
 
 

@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use AuthenticatesUsers;
 use \App\Http\Middleware\IsAdmin;
 use App\Notifications;
+use App\User;
 
 class AdminController extends Controller
 {
@@ -121,16 +122,37 @@ class AdminController extends Controller
          //notify()->flash('deleted','error', ['text' => 'Word Deleted Succesfully']);
         return redirect()->route('showProduits');
     }
-    public function addUser($user, $username){
-            // if user don't exist - Create new user
-            User::create([
-                'name'     => $user->name,
-                'email'    => $user->email,
-                'password'    => $user->password,
-                'username' => $user->username,
-                'role' => $user->role
-        ]);    
-        return redirect()->route('showUsers');
-
+    public function createUser(Request $request){
+        $user = new \App\User();
+        $user->username=request('username');
+        $user->role=request('role');
+        $user->email=request('email');
+        $user->password = bcrypt(request('password'));
+        //dd($user);
+           $user->save();
+           return redirect()->route('showUsers');
+    }
+     public function createProduct(Request $request){
+        $product = new \App\Product();
+        $product->name=request('name');
+        $product->slug=request('slug');
+        $product->description=request('description');
+        $product->prix=request('prix');
+        $product->qte=request('quantité');
+        $product->image=request('image');
+        $product->category_id=request('category_id');
+        dd($product);
+           //$product->save();
+           //return redirect()->route('showProduits');
+    }
+     public function createCategory(Request $request){
+        $category = new \App\Category();
+        $category->name=request('name');
+        $category->slug=request('slug');
+        $category->image=request('image');
+        
+        dd($category);
+           //$category->save();
+           return redirect()->route('showCategories');
     }
 }

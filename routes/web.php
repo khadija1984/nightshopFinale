@@ -56,8 +56,21 @@ Route::group(['middleware' => ['isAdmin']], function () {
     Route::delete('/admin/produits/delete/{id}','AdminController@destroyProduct')->name('deleteproduct');
     Route::get('/admin/users/addUser', function () {
     return view('addUser');
-    Route::put('/admin/users/addUser/add','AdminController@addUser')->name('addUser');
-});
+    });
+    Route::get('/admin/Category/addCategory', function () {
+    return view('addCategory');
+    });
+    Route::get('/admin/Product/addProduct', function () {
+    return view('addProduct');
+    });
+    //Route::POST('/admin/users/addUser/createUser{request}','AdminController@createUser')->name('createUser');
+    Route::PUT('/admin/users/addUser/createUser','AdminController@createUser')->name('createUser');
+    Route::GET('/admin/users/addUser/createUser','AdminController@createUser')->name('createUser');
+    Route::get('/admin/users/addUser/add', 'AdminController@addUser')->name('adduser');
+    Route::PUT('/admin/categories/addCategory/createCategory','AdminController@createCategory')->name('createCategory');
+    Route::GET('/admin/categories/addCategory/createCategory','AdminController@createCategory')->name('createCategory');
+    Route::PUT('/admin/categories/addProduct/createProduct','AdminController@createProduct')->name('createProduct');
+   Route::get('/admin/categories/addProduct/createProduct','AdminController@createProduct')->name('createProduct');
 });
 Route::group(['middleware' => ['IsNightshop']], function () {
     Route::get('/nightshop', 'NightshopController@index')->name('dashbordNightshop');
