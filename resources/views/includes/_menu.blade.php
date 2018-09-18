@@ -113,7 +113,13 @@
                             </a>
 
                             <ul class="dropdown-menu">
+                                @if (Auth::user()->role == 'user')
                                 <li><a href="{{ route('compte') }}">Mon compte</a></li>
+                                @elseif (Auth::user()->role == 'admin')
+                                <li><a href="{{ route('dashbordAdmin') }}">Dashboard</a></li>
+                                @elseif (Auth::user()->role == 'nightshop')
+                                <li><a href="{{ route('dashbordNightshop') }}">DashboardNightshop</a></li>
+                                @endif
                                 <li>
                                     <a href="logout"
                                     onclick="event.preventDefault();

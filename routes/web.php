@@ -73,11 +73,18 @@ Route::group(['middleware' => ['isAdmin']], function () {
    Route::get('/admin/users/{id}', 'AdminController@ficheUser')->name('user.index');
     Route::put('/admin/users/updateUser','AdminController@updateUser')->name('updateUser');
     Route::get('/admin/users/updateUser','AdminController@updateUser')->name('updateUser');
+    Route::get('/admin/categories', 'AdminController@showCategories')->name('showCategories');
+    Route::get('/admin/produits', 'AdminController@showProduits')->name('showProduits');
 });
 Route::group(['middleware' => ['IsNightshop']], function () {
     Route::get('/nightshop', 'NightshopController@index')->name('dashbordNightshop');
-    
-    
+    Route::get('/nightshop/categories', 'NightshopController@showCategories')->name('showCategories');
+    Route::get('/nightshop/produits', 'NightshopController@showProduits')->name('showProduits');
+    Route::get('/nightshop/Category/addCategory', function () {
+    return view('addCategoryNightshop');
+    });
+       Route::PUT('/nightshop/categories/addCategory/createCategory','NightshopController@createCategory')->name('createCategory');
+       Route::GET('/nightshop/categories/addCategory/createCategory','NightshopController@createCategory')->name('createCategory');
 });
 Route::get('/error', 'HomeController@error')->name('error');
 Route::get('/error1', 'HomeController@error1')->name('error');

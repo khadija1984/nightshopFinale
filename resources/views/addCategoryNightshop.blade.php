@@ -217,43 +217,90 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
         <aside class="main-sidebar">
             <section class="sidebar">
                 <ul class="sidebar-menu">
-                    <li role="presentation"><a href="{{ route('dashbordAdmin') }}"><i class="fa fa-tachometer"></i>Dashboard</a></li>
+                    <li role="presentation"><a href="{{ route('dashbordNightshop') }}"><i class="fa fa-tachometer"></i>Dashboard</a></li>
                     <li class="header">ACTION</li>
-                    <li role="presentation" class="active"><a href="{{ url('/admin/categories') }}"><i class="fa fa-server"></i>Catégories</a></li>
-                    <li role="presentation"><a href="{{ url('/admin/produits') }}">
+                    <li role="presentation" class="active"><a href="{{ url('/nightshop/categories') }}"><i class="fa fa-server"></i>Catégories</a></li>
+                    <li role="presentation"><a href="{{ url('/nightshop/produits') }}">
                         <i class="fa fa-server"></i>
                         <span class="server-id">Produits</span><br>
                         <span class="server-tag"></span></a></li>
-                    <li role="presentation" class="active"><a href="{{ url('/admin/users') }}"><i class="fa fa-server"></i>Users</a></li>
                     <li class="header">ACCOUNT</li>
-                    <li role="presentation"><a href="logout"onclick="event.preventDefault();document.getElementById('logout-form').submit();"><i class="fa fa-sign-out"></i>Log out</a>
-                        <form id="logout-form" action="{{route('logout')}}" method="POST" style="display: none;">
-                                    {{csrf_field()}}
-                                    </form>
-                    </li>
+                    <li role="presentation"><a href=""><i class="fa fa-sign-out"></i>Log out</a></li>
                 </ul>
              </section>
         </aside>
-        <section style="background-color: white;margin-left: 230px;padding-bottom: 20px; ">
-                <br><h2>  Bienvenue {{ Auth::user()->role }}</h2><br>
-                <div style="margin-left: 20px; ">
-                    <form class="pub form-custom form-horizontal" style="margin-bottom: 20px" action=""  method="put">
-                    {{csrf_field()}}
-                    {{method_field('UPDATE')}}
-                    <input name="_method" type="hidden" value="PATCH">
-                    <label>username
-                        <input type="text" name="username" value="{{ Auth::user()->username }}" name="username" placeholder="username"  />
-                    </label>
-                    <br><br>
-                    <label>email
-                        <input type="text" name="email" value="{{ Auth::user()->email }}" />
-                    </label>
-                    <br><br>
-                    <button type="submit" name="submit" class="btn send-btn">Modifié</button>
-                </form>
-                </div>
+        <div class="content-wrapper" style="min-height: 279px;">
+            <section class="content-header">
+		<div class="row">
+                    <div class="col-md-8">
+			<h3 style="margin-top: 5px"><i class="fa fa-folder"></i> Ajouter Catégorie
+			</h3>
+                    </div>
+                    <div class="col-md-4">
+			
+                    </div>
+		</div>
             </section>
+            <section class="content">
+                <div class="row">
+                     <div class="col-md-12">
+                         <div class="box box-primary" style="padding-top:15px">
+                               <div class="box-body">
+                                   <div ng-controller="SummaryTableController" class="ng-scope">
+                                        <div cg-busy="loadingPromise" style="position: relative;">
+                                                <!----formulaire d'ajout d'un utilisateur--->
+                                            <form action="{{ action('NightshopController@createCategory')}}"  method="PUT">
+                                                {{csrf_field()}}
+                                                 {{method_field('ADD')}}
+                                                <label>name:
+                                                <input type="text" name="name"  />
+                                                </label>
+                                                <label>slug:
+                                                <input type="text" name="slug"  />
+                                                </label>
+                                                 <label>image:
+                                                <input type="text" name="image"  />
+                                                </label>
+                                                
+                                                <br>
+                                                 <button type="submit" name="submit" class="btn send-btn">Ajouter</button>
+                                             </form>  
+             
+                                        </div>
+                                        </div>
+                                    </div>
+    
+                                </div>
+                         </div>
+                     </div>
+                 </div>
+            </section>
+        </div>
     </div>
 </body>
 <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
 <script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js'></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

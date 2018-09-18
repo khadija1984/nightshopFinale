@@ -27,9 +27,19 @@ class NightshopController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+     public function showCategories()
     {
-        //
+        $category = \App\Category::get();
+        //dd($user);
+        //return view('dashbordAdmin', compact('user'));
+        return view('categoryNightshop', compact('category'));
+    }
+    public function showProduits()
+    {
+        $product = \App\Product::get();
+        //dd($user);
+        //return view('dashbordAdmin', compact('user'));
+        return view('productNightshop', compact('product'));
     }
 
  
@@ -77,5 +87,15 @@ class NightshopController extends Controller
     public function destroy($id)
     {
         //
+    }
+      public function createCategory(Request $request){
+        $category = new \App\Category();
+        $category->name=request('name');
+        $category->slug=request('slug');
+        $category->image=request('image');
+        
+        //dd($category);
+           $category->save();
+           return redirect()->route('showCategories');
     }
 }

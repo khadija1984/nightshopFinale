@@ -200,7 +200,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 <body class="skin-blue">
     <div class="wrapper">
         <header class="main-header">
-            <a href="http://crudkit.com/demo/" class="logo">NightShop.be</a>
+            <a href="{{ url('/') }}" class="logo">NightShop.be</a>
             <!-- Header Navbar: style can be found in header.less -->
             <nav class="navbar navbar-static-top" role="navigation">
                 <!-- Sidebar toggle button-->
@@ -217,15 +217,21 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
         <aside class="main-sidebar">
             <section class="sidebar">
                 <ul class="sidebar-menu">
-                    <li role="presentation"><a href=""><i class="fa fa-tachometer"></i>Dashboard</a></li>
+                    
+                    <li role="presentation"><a href="{{ route('dashbordNightshop') }}"><i class="fa fa-tachometer"></i>Dashboard</a></li>
+ 
+                    <li role="presentation"><a href="{{ route('dashbordAdmin') }}"><i class="fa fa-tachometer"></i>Dashboard</a></li>
+                   
                     <li class="header">ACTION</li>
                     <li role="presentation" class="active"><a href="{{ url('/admin/categories') }}"><i class="fa fa-server"></i>Catégories</a></li>
                     <li role="presentation"><a href="{{ url('/admin/produits') }}">
                         <i class="fa fa-server"></i>
                         <span class="server-id">Produits</span><br>
                         <span class="server-tag"></span></a></li>
-                    <li role="presentation" class="active"><a href="{{ url('/admin/users') }}"><i class="fa fa-server"></i>Users</a></li>
-                    <li class="header">ACCOUNT</li>
+                        @if(Auth::user()->role == 'admin')
+                        <li role="presentation" class="active"><a href="{{ url('/admin/users') }}"><i class="fa fa-server"></i>Users</a></li>
+                        @endif
+                        <li class="header">ACCOUNT</li>
                     <li role="presentation"><a href=""><i class="fa fa-sign-out"></i>Log out</a></li>
                 </ul>
              </section>

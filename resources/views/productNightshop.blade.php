@@ -200,7 +200,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 <body class="skin-blue">
     <div class="wrapper">
         <header class="main-header">
-            <a href="http://crudkit.com/demo/" class="logo">NightShop.be</a>
+            <a href="{{ url('/') }}" class="logo">NightShop.be</a>
             <!-- Header Navbar: style can be found in header.less -->
             <nav class="navbar navbar-static-top" role="navigation">
                 <!-- Sidebar toggle button-->
@@ -219,19 +219,17 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
                 <ul class="sidebar-menu">
                     
                     <li role="presentation"><a href="{{ route('dashbordNightshop') }}"><i class="fa fa-tachometer"></i>Dashboard</a></li>
-                  
-                    <li role="presentation"><a href="{{ route('dashbordAdmin') }}"><i class="fa fa-tachometer"></i>Dashboard</a></li>
-                   
+
                     <li class="header">ACTION</li>
-                    <li role="presentation" class="active"><a href="{{ url('/admin/categories') }}"><i class="fa fa-server"></i>Catégories</a></li>
-                    <li role="presentation"><a href="{{ url('/admin/produits') }}">
+                    <li role="presentation" class="active"><a href="{{ url('/nightshop/categories') }}"><i class="fa fa-server"></i>Catégories</a></li>
+                    <li role="presentation"><a href="{{ url('/nightshop/produits') }}">
                         <i class="fa fa-server"></i>
                         <span class="server-id">Produits</span><br>
                         <span class="server-tag"></span></a></li>
-                    @if(Auth::user()->role == 'admin')
-                    <li role="presentation" class="active"><a href="{{ url('/admin/users') }}"><i class="fa fa-server"></i>Users</a></li>
-                    @endif
-                    <li class="header">ACCOUNT</li>
+                        @if(Auth::user()->role == 'admin')
+                        <li role="presentation" class="active"><a href="{{ url('/admin/users') }}"><i class="fa fa-server"></i>Users</a></li>
+                        @endif
+                        <li class="header">ACCOUNT</li>
                     <li role="presentation"><a href=""><i class="fa fa-sign-out"></i>Log out</a></li>
                 </ul>
              </section>
@@ -240,12 +238,12 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
             <section class="content-header">
 		<div class="row">
                     <div class="col-md-8">
-			<h3 style="margin-top: 5px"><i class="fa fa-folder"></i>Catégories
+			<h3 style="margin-top: 5px"><i class="fa fa-folder"></i>Produits
 			</h3>
                     </div>
                     <div class="col-md-4">
 			<div class="pull-right">
-                            <a href="{{ url('/admin/Category/addCategory') }}" class="btn btn-primary"><i class="fa fa-plus-circle"></i>Ajouter catégorie</a>
+                            <a href="{{ url('admin/Product/addProduct') }}" class="btn btn-primary"><i class="fa fa-plus-circle"></i>Ajouter Produit</a>
 			</div>
                     </div>
   
@@ -263,42 +261,72 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
                                                         <tr>
                                                             <th class="lib-name">Name</th>
                                                             <th class="lib-tag">slug</th>
+                                                            <th class="lib-add">description</th>
+                                                            <th class="lib-add">prix</th>
+                                                            <th class="lib-add">quantité</th>
                                                             <th class="lib-add">image</th>
-                                                            <th class="lib-add">Action</th>
+                                                            <th class="lib-add">categories</th>
                                                         </tr>
                                                     </thead>
                                                               <tbody>
-                                                        @foreach($category as $category)
+                                                        @foreach($product as $product)
                                                         <tr ng-repeat="row in rows" ng-class="{'info': row.selectedFlag}" class="ng-scope">
                                                             <td ng-repeat="col in columns" class="ng-scope">
                                                                 <div ng-switch="" on="col.renderType">
                                                                     <div ng-switch-when="primaryLink" class="ng-scope">
-                                                                       <a ng-href="http://crudkit.com/demo/?action=page_function&amp;func=view_item&amp;item_id=1&amp;page=sqlite2" class="ng-binding" href="http://crudkit.com/demo/?action=page_function&amp;func=view_item&amp;item_id=1&amp;page=sqlite2">{{$category->name}}</a>
+                                                                       <a ng-href="http://crudkit.com/demo/?action=page_function&amp;func=view_item&amp;item_id=1&amp;page=sqlite2" class="ng-binding" href="http://crudkit.com/demo/?action=page_function&amp;func=view_item&amp;item_id=1&amp;page=sqlite2">{{$product->name}}</a>
                                                                     </div>
                                                                 </div>
                                                             </td>
                                                                 <td ng-repeat="col in columns" class="ng-scope">
                                                                     <div ng-switch="" on="col.renderType">
                                                                         <div ng-switch-when="string" class="ng-binding ng-scope">
-                                                                             {{$category->slug}}
+                                                                             {{$product->slug}}
                                                                         </div>
                                                                     </div>
                                                                 </td>
                                                                 <td ng-repeat="col in columns" class="ng-scope">
                                                                     <div ng-switch="" on="col.renderType">
                                                                         <div ng-switch-when="string" class="ng-binding ng-scope">
-                                                                         {{$category->image}}
+                                                                         {{$product->description}}
+                                                                        </div>
+                                                                    </div>
+                                                                </td>
+                                                                <td ng-repeat="col in columns" class="ng-scope">
+                                                                    <div ng-switch="" on="col.renderType">
+                                                                        <div ng-switch-when="string" class="ng-binding ng-scope">
+                                                                         {{$product->prix}}
+                                                                        </div>
+                                                                    </div>
+                                                                </td>
+                                                                 <td ng-repeat="col in columns" class="ng-scope">
+                                                                    <div ng-switch="" on="col.renderType">
+                                                                        <div ng-switch-when="string" class="ng-binding ng-scope">
+                                                                         {{$product->qte}}
+                                                                        </div>
+                                                                    </div>
+                                                                </td>
+                                                                 <td ng-repeat="col in columns" class="ng-scope">
+                                                                    <div ng-switch="" on="col.renderType">
+                                                                        <div ng-switch-when="string" class="ng-binding ng-scope">
+                                                                         {{$product->image}}
+                                                                        </div>
+                                                                    </div>
+                                                                </td>
+                                                                <td ng-repeat="col in columns" class="ng-scope">
+                                                                    <div ng-switch="" on="col.renderType">
+                                                                        <div ng-switch-when="string" class="ng-binding ng-scope">
+                                                                         {{$product->category_id}}
                                                                         </div>
                                                                     </div>
                                                                 </td>
                                                                 <td>
-                                                                     <form action="{{ action('AdminController@destroyCategory', ['id'=>$category->id]) }} " method="POST">
+                                                                    <form action="{{ action('AdminController@destroyProduct', ['id'=>$product->id]) }} " method="POST">
                                                                         {{csrf_field()}}
                                                                         {{method_field('DELETE')}}
                                                                         <input type="hidden" name="_method" value="DELETE" />
                                                                         <buttom type='submit' class="btn btn-success delete-user" style="border:none;"><i class="fa fa-trash-o" aria-hidden="true"></i></buttom>
                                                                     </form>
-
                                                                 </td>
                                                             </tr>
 

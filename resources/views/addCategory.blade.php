@@ -200,7 +200,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 <body class="skin-blue">
     <div class="wrapper">
         <header class="main-header">
-            <a href="http://crudkit.com/demo/" class="logo">NightShop.be</a>
+            <a href="{{ url('/') }}" class="logo">NightShop.be</a>
             <!-- Header Navbar: style can be found in header.less -->
             <nav class="navbar navbar-static-top" role="navigation">
                 <!-- Sidebar toggle button-->
