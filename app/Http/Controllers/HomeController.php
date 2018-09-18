@@ -12,14 +12,14 @@ class HomeController extends Controller
    function show()
     {
 
-       //$Product=\App\product::get();
-        $lasts = product::orderBy('created_at', 'ASC')->take(2)->get();
-        dd($lasts);
-       $product = \App\product::get();
-        
-     return view('home.main',compact('lasts','product'));
+        $Product=\App\product::get();
+        $lasts = product::orderBy('created_at', 'ASC')->take(1)->get();
+        //$promo = product::
+        $product = \App\product::get();
+       // dd($lasts);
+     return view('welcome', compact('product','lasts'));
        
-   }
+    }
    
   
   

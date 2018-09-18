@@ -1,8 +1,9 @@
 <script src="https://www.w3schools.com/lib/w3.js"></script>
 <style>
     #divnavigation{
-       padding-left: 30px;
-       padding-top: 5px;
+       
+       padding-right:30px;
+       padding-top: 50px;
        position: absolute;
        
     }  
@@ -53,27 +54,32 @@
     width: 150px;
 }
 </style>
-<div id="divnavigation">
-    <ul id="navigation">
-      <li><a href="{{ url('categories/alcools') }}">Alcools</a></li>
-      <li><a href="{{ url('categories/softs') }}">Softs</a></li>
-      <li><a href="{{ url('categories/packs') }}">Packs</a></li>
-      <li><a href="{{ url('categories/divers') }}">Divers</a></li>
-    </ul><br>
-    <center><div><h4>Nouveau Produit</h4></div></center>
+<div id="divnavigation" style="margin-left:1100px">
+    
     
     <div class="row" >
-        @foreach ($lasts as $last)
-            <div style="position:absolute; padding-left: 20px;">
+        @foreach($product as $product)
+            @if($product->onDiscount())
+            <div style="position:absolute;height: 200px; width:200px; ">
                 <center>
-
-                    <a href="{{ route('product.index',['id'=>$last->id]) }}" alt="{{$last->name}}">
-                    <img id="img" class="nature" style="height: 200px; width: 200px;"src=" {{$last->image}} " alt="" >
+                    <span class="bulle bulle-promo">Promo</span>
+                    <a href="{{ route('product.index',['id'=>$product->id]) }}" alt="{{$product->name}}">
+                    <img id="img" class="nature" style="height: 200px; width:500px;"src=" {{$product->image}} " alt="" >
                     </a>
                 </center>
             </div>
+            @endif
         @endforeach
     </div>
-    
+
 </div>
+<!----<div id="divnavigation">
+    <center><div><h4>Promo</h4></div></center>
+
+    <div class="row" >
+        
+             <span class="bulle bulle-promo">Promo</span>
+            
+    </div>
+</div>--->
 

@@ -1,5 +1,5 @@
 @include('includes._menu')
- @include('includes._menuverticale')
+
 <div class="leave-comment mr0">
                     <div id="googleMap" style="width:100%; height:380px; margin-bottom: 5px"></div>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab accusamus aliquam deserunt esse

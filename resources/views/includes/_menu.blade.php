@@ -98,7 +98,6 @@
                  
                    <a href="{{ route('panier') }} ">Panier: ({{ \Cart::count()?:'0'}}) items</a>
                   
-                   
                    <ul>
                     @guest
                        <div>
@@ -114,7 +113,7 @@
                             </a>
 
                             <ul class="dropdown-menu">
-                                <li><a href="#">Mon compte</a></li>
+                                <li><a href="{{ route('compte') }}">Mon compte</a></li>
                                 <li>
                                     <a href="logout"
                                     onclick="event.preventDefault();

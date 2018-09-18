@@ -7,9 +7,9 @@ use Illuminate\Http\Request;
 class PanierController extends Controller
 {
     function index(){
-        $panier = \Cart::content();
-       //dd($panier);
-        return view('panier', compact('panier'));
+       $panier = \Cart::content();
+      //dd($panier);
+       return view('panier', compact('panier'));
     }
     
     function add($name, $qty=1){

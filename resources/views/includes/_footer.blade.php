@@ -1,4 +1,4 @@
-<footer class="footer-widget-section" style=" margin-top:300px;">
+<footer class="footer-widget-section" style=" margin-top:600px;">
    <div class="container">
         <div class="row">
             <div class="col-md-4">

@@ -25,7 +25,7 @@ class CategorieController extends Controller
     {
         $categorie = \App\Category::get();
         $product = \App\Product::get();
-        $lasts = \App\Product::orderBy('created_at', 'ASC')->take(2)->get();
+        $lasts = \App\Product::orderBy('created_at', 'ASC')->take(1)->get();
         //$products = \App\Category::findOrFail($product->category_id)->get();
        
         return view('categories', compact('categorie', 'product','lasts'));
@@ -51,7 +51,6 @@ class CategorieController extends Controller
         public function packs()
     {
         $categorie = \App\Category::get();
-        
         $product = \App\Product::get();
   
         //dd($product);
