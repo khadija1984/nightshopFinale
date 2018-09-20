@@ -142,12 +142,11 @@
 
             </div>
             <!-- /.navbar-collapse -->
-
-
             <div class="show-search">
-                <form role="search" method="get" id="searchform" action="#">
+                <form role="search" method="post" id="searchform" action="{{ action('CategorieController@search')}}">
+                    {{csrf_field()}}
                     <div>
-                        <input type="text" placeholder="Search and hit enter..." name="s" id="s">
+                        <input type="text" placeholder="" name="s" id="s">
                     </div>
                 </form>
             </div>

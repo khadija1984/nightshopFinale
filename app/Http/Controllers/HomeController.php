@@ -66,5 +66,12 @@ class HomeController extends Controller
      return view('error1');
        
    }
-  
+  public function search (Request $request) 
+    {
+       $categories = \App\Category::all();
+       $product = \App\Product::where('name','%'.$request->q.'%')
+         ->orwhere('description','%'.$request->q.'%');
+       
+       return view('alcools',compact('product'));
+    }
 }

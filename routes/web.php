@@ -38,6 +38,8 @@ Route::get('/categories/packs', 'CategorieController@packs');
 Route::get('packs/{categorie?}','CategorieController@filtrePacks')->name('filtrePacks');
 Route::get('/categories/divers', 'CategorieController@divers');
 Route::get('divers/{categorie?}','CategorieController@filtreDivers')->name('filtreDivers');
+Route::post('search','CategorieController@search')->name('search');
+
 //route voir le panier
 Route::get('/panier','PanierController@index')->name('panier');
 

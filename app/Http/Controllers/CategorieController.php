@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use App\Http\Providers\AppServiceProvider;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Pagination\Paginator;
+
+
 
 class CategorieController extends Controller
 {
@@ -34,36 +37,47 @@ class CategorieController extends Controller
       public function alcools()
     {
         $categorie = \App\Category::get();
-        $product = \App\Product::get();
+        $perpage=3;
+        //$currentPage = \Illuminate\Pagination\LengthAwarePaginator::resolveCurrentPage();
+        $products = \App\Product::whereCategory_id(1)->paginate($perpage);
+       
         $lasts = \App\Product::orderBy('created_at', 'ASC')->take(2)->get();
+        //dd($products);
         
-        
-        return view('alcools', compact('categorie', 'product','lasts'));
+        return view('alcools', compact('categorie', 'products','lasts'));
     }
       public function softs()
     {
         $categorie = \App\Category::get();
+        $perpage=3;
+        //$currentPage = \Illuminate\Pagination\LengthAwarePaginator::resolveCurrentPage();
+        $products = \App\Product::whereCategory_id(4)->paginate($perpage);
+           
         
-        $product = \App\Product::get();
         $lasts = \App\Product::orderBy('created_at', 'ASC')->take(2)->get();
-        //dd($product);
-        return view('softs', compact('categorie', 'product','lasts'));
+        //$count = count($products);
+       // dd($products);
+        return view('softs', compact('categorie', 'products','lasts'));
     }
         public function packs()
     {
         $categorie = \App\Category::get();
-        $product = \App\Product::get();
-
-        return view('packs', compact('categorie', 'product'));
+        $perpage=3;
+        //$currentPage = \Illuminate\Pagination\LengthAwarePaginator::resolveCurrentPage();
+        $products = \App\Product::whereCategory_id(3)->paginate($perpage);
+        
+        return view('packs', compact('categorie', 'products'));
     }
         public function divers()
     {
         $categorie = \App\Category::get();
         
-        $product = \App\Product::get();
+        $perpage=3;
+        //$currentPage = \Illuminate\Pagination\LengthAwarePaginator::resolveCurrentPage();
+        $products = \App\Product::whereCategory_id(2)->paginate($perpage);
   
         //dd($product);
-        return view('divers', compact('categorie', 'product'));
+        return view('divers', compact('categorie', 'products'));
     }
     
     
@@ -245,8 +259,13 @@ class CategorieController extends Controller
     	eval("\$product=$requete;");
     	return view('divers',compact('product','categories','brands','categorie','ordre','perpage'));
     }
-    public function search ($param) {
-        
+    public function search (Request $request) 
+    {
+       $categories = \App\Category::all();
+       $product = \App\Product::where('name','%'.$request->q.'%');
+         
+         return view('alcools', compact('product'));
+       
     }
   
 }

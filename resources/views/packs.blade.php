@@ -29,7 +29,7 @@
       
 		       
    
-        @foreach($product as $product)
+        @foreach($products as $product)
             @if($product->category_id == 3)
         <div class="col-md-4" >
             <article class="post portfolio-2 portfolio-3 post-grid">
@@ -58,6 +58,7 @@
         </div>
             @endif
         @endforeach
+        {{ $products->links() }}
     </div>
 </div>
 </div>
