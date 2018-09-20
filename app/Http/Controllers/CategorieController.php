@@ -87,7 +87,7 @@ class CategorieController extends Controller
     {
         $categories = \App\Category::all();
     	$ordre= $request->ordre;
-    	$perpage= $request->perpage;
+    	$perpage= 3;
 
     	if($categorie == null )
 
@@ -124,14 +124,14 @@ class CategorieController extends Controller
     	}
 
     	$requete.="->paginate($perpage)";
-    	eval("\$product=$requete;");
-    	return view('alcools',compact('product','categories','brands','categorie','ordre','perpage'));
+    	eval("\$products=$requete;");
+    	return view('alcools',compact('products','categories','brands','categorie','ordre','perpage'));
     }
      public function filtreSofts (Request $request, $categorie =null)
     {
         $categories = \App\Category::all();
     	$ordre= $request->ordre;
-    	$perpage= $request->perpage;
+    	$perpage= 3;
 
     	if($categorie == null )
 
@@ -168,14 +168,14 @@ class CategorieController extends Controller
     	}
 
     	$requete.="->paginate($perpage)";
-    	eval("\$product=$requete;");
-    	return view('softs',compact('product','categories','brands','categorie','ordre','perpage'));
+    	eval("\$products=$requete;");
+    	return view('softs',compact('products','categories','brands','categorie','ordre','perpage'));
     }
     public function filtrePacks (Request $request, $categorie =null)
     {
         $categories = \App\Category::all();
     	$ordre= $request->ordre;
-    	$perpage= $request->perpage;
+    	$perpage= 3;
 
     	if($categorie == null )
 
@@ -212,14 +212,14 @@ class CategorieController extends Controller
     	}
 
     	$requete.="->paginate($perpage)";
-    	eval("\$product=$requete;");
-    	return view('packs',compact('product','categories','brands','categorie','ordre','perpage'));
+    	eval("\$products=$requete;");
+    	return view('packs',compact('products','categories','brands','categorie','ordre','perpage'));
     }
     public function filtreDivers (Request $request, $categorie =null)
     {
         $categories = \App\Category::all();
     	$ordre= $request->ordre;
-    	$perpage= $request->perpage;
+    	$perpage= 3;
 
     	if($categorie == null )
 
@@ -256,8 +256,8 @@ class CategorieController extends Controller
     	}
 
     	$requete.="->paginate($perpage)";
-    	eval("\$product=$requete;");
-    	return view('divers',compact('product','categories','brands','categorie','ordre','perpage'));
+    	eval("\$products=$requete;");
+    	return view('divers',compact('products','categories','brands','categorie','ordre','perpage'));
     }
     public function search (Request $request) 
     {
