@@ -24,17 +24,20 @@ Route::get('/contact', function () {
 Route::get('/apropos', function () {
     return view('apropos');
 });
+//Route::get('produit/{categories}', 'ProductController@index')->name('product.index');
 
 Route::get('produit/{id}', 'ProductController@index')->name('product.index');
 
 Route::get('/categories', 'CategorieController@listCategories');
+
 Route::get('/categories/alcools', 'CategorieController@alcools');
-
-Route::get('/categories/alcools', 'CategorieController@filtre')->name('alcools.index');
+Route::get('alcools/{categorie?}','CategorieController@filtre')->name('filtre');
 Route::get('/categories/softs', 'CategorieController@softs');
+Route::get('softs/{categorie?}','CategorieController@filtreSofts')->name('filtreSofts');
 Route::get('/categories/packs', 'CategorieController@packs');
+Route::get('packs/{categorie?}','CategorieController@filtrePacks')->name('filtrePacks');
 Route::get('/categories/divers', 'CategorieController@divers');
-
+Route::get('divers/{categorie?}','CategorieController@filtreDivers')->name('filtreDivers');
 //route voir le panier
 Route::get('/panier','PanierController@index')->name('panier');
 

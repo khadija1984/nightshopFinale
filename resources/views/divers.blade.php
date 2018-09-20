@@ -6,33 +6,28 @@
         <h1 class="portfolio-title text-uppercase">Divers</h1>
         
     <div class="row">
- 
-      
-		<form action="{{route('alcools.index',['product'=>Request::segment(2)])}}" method="GET">
-                        <ul class="nav navbar-nav text-uppercase">
+ <form action="{{route('filtreDivers',['categorie'=>Request::segment(2)])}}" method="GET">
+                        <ul class="list-actions">
                             <li> 
                                 <label>Trier par</label>
                                 <select class="custom-select" name="ordre">
-                                <option value="prix-desc" {{app('request')->input('ordre') =='prix-desc'?'selected':''}}>Prix décroissant</option>
+                                
+                                <option value="all" {{app('request')->input('ordre') =='all'?'selected':''}}>All</option>
+                                 <option value="prix-desc" {{app('request')->input('ordre') =='prix-desc'?'selected':''}}>Prix décroissant</option>
                                 <option value="prix-asc" {{app('request')->input('ordre') =='prix-asc'?'selected':''}} >Prix croissant</option>
-                                <option value="promotion" {{app('request')->input('ordre') =='promotion'?'selected':''}}>Promotions</option>
+                                <option value="ASC"{{app('request')->input('ordre') =='ASC'?'selected':''}} >Noms : A-Z</option>
+                                <option value="DESC" {{app('request')->input('ordre') =='DESC'?'selected':''}}>Noms : Z-A</option>
+                               
+                                
                                 </select>
                             </li>
-                            <li> 
-                                <label>Afficher</label>
-                                <select class="custom-select" name="perpage">
-                                <option value="6" {{app('request')->input('perpage') =='6'?'selected':''}}>6</option>
-                                <option value="9" {{app('request')->input('perpage') =='9'?'selected':''}}>9</option>
-                                <option value="12" {{app('request')->input('perpage') =='12'?'selected':''}}>12</option>
-                                <option value="15" {{app('request')->input('perpage') =='15'?'selected':''}}>15</option>
-                                <option value="18" {{app('request')->input('perpage') =='18'?'selected':''}}>18</option>
-                                <option value="21" {{app('request')->input('perpage') =='21'?'selected':''}}>21</option>
-                                </select>
-                </li> 
-            </ul>
-          <br>
-           <button type="submit"><i class="fa fa-search"></i></button>
-		</form>       
+                           
+                        </ul>
+
+                        <button type="submit"><i class="fa fa-search"></i></button>
+                    </form>
+      
+		     
    
         @foreach($product as $product)
             @if($product->category_id == 2)
