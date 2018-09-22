@@ -20,6 +20,8 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->enum('role', ['user', 'admin','nightshop'])->default('user');
             $table->text('bio')->nullable();
+            $table->decimal('latitude')->nullable();
+            $table->decimal('longitude')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

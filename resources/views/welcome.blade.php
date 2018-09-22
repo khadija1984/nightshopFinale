@@ -19,6 +19,8 @@
 <div class="div" id="foo" style=" display:none; background: green;margin-left: 270px;margin-right: 270px;margin-top:20px;height:80px">
    <p style="margin-left: 270px;">ici mes adresse de nightshop</p>
 </div>
+@foreach($users as $user)
+
 
 <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 <script>
@@ -38,7 +40,7 @@ $(function(){
     // initialisation de la carte Google Map de départ
     function initialiserCarte() {
           var locations = [
-            ['Bondi Beach', 50.874193, 4.356880],
+            ['Nightshop1', {{$user->latitude}}, {{$user->longitude}}],
             ['Coogee Beach', 50.874853, 4.355775]
              ];
              
@@ -108,4 +110,5 @@ $(function(){
 <script type="text/javascript" src="assets/js/jquery.stickit.min.js"></script>
 <script type="text/javascript" src="assets/js/menu.js"></script>
 <script type="text/javascript" src="assets/js/scripts.js"></script>
+@endforeach
 @include('includes._footer')
