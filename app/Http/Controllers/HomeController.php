@@ -21,7 +21,7 @@ class HomeController extends Controller
          $ipLocation = $geo->getCity('213.49.177.117');
          $latitude = $ipLocation->getLatitude();
          $longitude = $ipLocation->getLongitude();
-         //dd($ipLocation->toArray());
+         //dd($latitude);
          $users= \App\user::whererole('nightshop')->get();
          $tab = json_decode($users, true);
          //dd($tab);
