@@ -23,12 +23,13 @@ class HomeController extends Controller
          $longitude = $ipLocation->getLongitude();
          //dd($ipLocation->toArray());
          $users= \App\user::whererole('nightshop')->get();
-
+         $tab = json_decode($users, true);
+         //dd($tab);
         $Product=\App\product::get();
         $lasts = product::orderBy('created_at', 'ASC')->take(1)->get();
         $product = \App\product::get();
-	//dd($users->toArray());
-     return view('welcome', compact('product','lasts','latitude','longitude','users'));
+	//dd($users);
+     return view('welcome', compact('product','lasts','latitude','longitude','users','tab'));
        
     }
    
