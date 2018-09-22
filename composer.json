@@ -14,13 +14,16 @@
         "laracasts/flash": "^3.0",
         "laravel/framework": "5.4.*",
         "laravel/tinker": "~1.0",
-        "stripe/stripe-php": "^6.17"
+        "stevebauman/location": "^3.0",
+        "stripe/stripe-php": "^6.17",
+		"midnite81/geolocation": "1.*"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^2.4",
         "fzaninotto/faker": "^1.8",
         "mockery/mockery": "0.9.*",
-        "phpunit/phpunit": "~5.7"
+        "phpunit/phpunit": "~5.7",
+		"midnite81/geolocation": "1.*"
     },
     "autoload": {
         "classmap": [

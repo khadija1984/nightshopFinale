@@ -163,6 +163,8 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
         Barryvdh\Debugbar\ServiceProvider::class,
+		Stevebauman\Location\LocationServiceProvider::class,
+		Midnite81\GeoLocation\GeoLocationServiceProvider::class,
         /*
          * Package Service Providers...
          */
@@ -179,7 +181,7 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         Gloudemans\Shoppingcart\ShoppingcartServiceProvider::class,
-	Anouar\Paypalpayment\PaypalpaymentServiceProvider::class,
+		Anouar\Paypalpayment\PaypalpaymentServiceProvider::class,
 
     ],
 
@@ -231,7 +233,9 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
         'GMaps' => FarhanWazir\GoogleMaps\Facades\GMapsFacade::class,
         'Cart' => Gloudemans\Shoppingcart\Facades\Cart::class, 
-	'Paypalpayment'   => Anouar\Paypalpayment\Facades\PaypalPayment::class,		
+		'Paypalpayment'   => Anouar\Paypalpayment\Facades\PaypalPayment::class,
+		'Location' => Stevebauman\Location\Facades\Location::class,
+		'GeoLocation' => Midnite81\GeoLocation\Facades\GeoLocation::class
     ],
 
 ];

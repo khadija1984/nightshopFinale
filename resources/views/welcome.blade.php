@@ -37,19 +37,44 @@ $(function(){
     var map;
     // initialisation de la carte Google Map de départ
     function initialiserCarte() {
-        geocoder = new google.maps.Geocoder();
-        // Ici j'ai mis la latitude et longitude du vieux Port de Marseille pour centrer la carte de départ
-        var latlng = new google.maps.LatLng(50.848650, 4.354684);
-        var mapOptions = {
-          zoom      : 14,
-          center    : latlng,
-          mapTypeId : google.maps.MapTypeId.ROADMAP
+          var locations = [
+            ['Bondi Beach', 50.874193, 4.356880],
+            ['Coogee Beach', 50.874853, 4.355775]
+             ];
+             
+             
+      
+        var map = new google.maps.Map(document.getElementById('map-canvas'), {
+        zoom: 14,
+        center: new google.maps.LatLng(50.872930, 4.357095),
+        mapTypeId: google.maps.MapTypeId.ROADMAP
+    });
+    var infowindow = new google.maps.InfoWindow();
+       var marker, i;
+
+    for (i = 0; i < locations.length; i++) {  
+      marker = new google.maps.Marker({
+        position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+        map: map,
+        icon: 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png'
+
+        
+      });
+      
+
+      google.maps.event.addListener(marker, 'click', (function(marker, i) {
+        return function() {
+          infowindow.setContent(locations[i][0]);
+          infowindow.open(map, marker);
         }
-        // map-canvas est le conteneur HTML de la carte Google Map
-        map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+      })(marker, i));
     }
- 
-    function TrouverAdresse() {
+    marker = new google.maps.Marker({
+        position: new google.maps.LatLng(50.872930, 4.357095),
+        map: map
+      });
+ }
+       function TrouverAdresse() {
         // Récupération de l'adresse tapée dans le formulaire
         var adresse = document.getElementById('adresse').value;
         geocoder.geocode( { 'address': adresse}, function(results, status) {
@@ -69,13 +94,13 @@ $(function(){
           } else {
             alert('Adresse introuvable: ' + status);
           }
-        }); 
-    }
-    
-    
-      // Lancement de la construction de la carte google map
-    google.maps.event.addDomListener(window, 'load', initialiserCarte);
+        });
+        marker.setMap(map);
+        }
+ // Lancement de la construction de la carte google map
+    google.maps.event.addDomListener(window, 'load', initialiserCarte, TrouverAdresse);
 </script>
+
 <!-- js files -->
 <script type="text/javascript" src="assets/js/jquery-1.11.3.min.js"></script>
 <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>

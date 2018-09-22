@@ -7,21 +7,48 @@ use App\Promotion;
 use Illuminate\Http\Request;
 use App\Http\Requests\ContactForm;
 use App\Mail\ContactFormSite;
+use Midnite81\GeoLocation\Contracts\Services\GeoLocation;
+
+
+
+
+
 class HomeController extends Controller
 {
-   function show()
+   function show(GeoLocation $geo, Request $request)
     {
+         //$request->ip()
+         $ipLocation = $geo->getCity('213.49.177.117');
+         $latitude = $ipLocation->getLatitude();
+         $longitude = $ipLocation->getLongitude();
+         //dd($ipLocation->toArray());
+         $users= \App\user::whererole('nightshop')->get();
 
         $Product=\App\product::get();
         $lasts = product::orderBy('created_at', 'ASC')->take(1)->get();
-        //$promo = product::
         $product = \App\product::get();
-       // dd($lasts);
-     return view('welcome', compact('product','lasts'));
+	//dd($users->toArray());
+     return view('welcome', compact('product','lasts','latitude','longitude','users'));
        
     }
    
-  
+  public function index(GeoLocation $geo, Request $request) 
+{
+    $ipLocation = $geo->getCity($request->ip());
+    
+    // if you do $geo->get($request->ip()), the default precision is now city
+
+    // $ipLocation is an IpLocation Object
+    
+    echo $ipLocation->ipAddress; // e.g. 127.0.0.1
+    
+    echo $ipLocation->getAddressString(); // e.g. London, United Kingdom
+    
+    // the object has a toJson() and toArray() method on it 
+    // so you can die and dump an array.
+    dd($ipLocation->toArray()); 
+
+}
   
   
    function postcontact(ContactForm $request){
@@ -74,4 +101,5 @@ class HomeController extends Controller
        
        return view('alcools',compact('product'));
     }
+
 }

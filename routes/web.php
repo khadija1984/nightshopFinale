@@ -123,6 +123,9 @@ Route::get('panier/delete/{id}','PanierController@delete')->name('panier.delete'
 
 Auth::routes();
 
+
+
+
 /*
 Route::get('/categories', 'CategorieController@index')->name('categories.index');
 Route::get('/categories/produits}', 'ProduitController@index')->name('prouits.index');
