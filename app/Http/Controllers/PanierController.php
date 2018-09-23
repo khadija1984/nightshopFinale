@@ -8,6 +8,7 @@ class PanierController extends Controller
 {
     function index(){
        $panier = \Cart::content();
+       $product = \App\product::get();
       //dd($panier);
        return view('panier', compact('panier'));
     }

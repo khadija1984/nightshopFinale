@@ -11,10 +11,9 @@ class ProductController extends Controller
    	{
             
             $product = \App\Product::where('id',$id)->firstOrFail();
-           
             $related = \App\Category::findOrFail($product->category_id)->products()->orderByRaw('RAND()')->take(4)->get();
-           
-            return view('index',compact('product','related'));
+           //dd($related);
+            return view('index',compact('product','related','id'));
           
    	}
    

@@ -136,3 +136,15 @@
 [13-09-2018 10:00:18] PayPal\Core\PayPalHttpConnection : INFO: POST https://api.sandbox.paypal.com/v1/payments/payment
 [13-09-2018 10:00:18] PayPal\Core\PayPalHttpConnection : INFO: Invalid or no certificate authority found - Retrying using bundled CA certs file
 [13-09-2018 10:00:20] PayPal\Core\PayPalHttpConnection : INFO: Response Status 	: 201
+[23-09-2018 06:29:08] PayPal\Core\PayPalHttpConnection : INFO: POST https://api.sandbox.paypal.com/v1/oauth2/token
+[23-09-2018 06:29:08] PayPal\Core\PayPalHttpConnection : INFO: Invalid or no certificate authority found - Retrying using bundled CA certs file
+[23-09-2018 06:29:10] PayPal\Core\PayPalHttpConnection : INFO: Response Status 	: 200
+[23-09-2018 06:29:10] PayPal\Core\PayPalHttpConnection : INFO: POST https://api.sandbox.paypal.com/v1/payment-experience/web-profiles/
+[23-09-2018 06:29:10] PayPal\Core\PayPalHttpConnection : INFO: Invalid or no certificate authority found - Retrying using bundled CA certs file
+[23-09-2018 06:29:11] PayPal\Core\PayPalHttpConnection : INFO: Response Status 	: 201
+[23-09-2018 06:29:11] PayPal\Core\PayPalHttpConnection : INFO: POST https://api.sandbox.paypal.com/v1/oauth2/token
+[23-09-2018 06:29:12] PayPal\Core\PayPalHttpConnection : INFO: Invalid or no certificate authority found - Retrying using bundled CA certs file
+[23-09-2018 06:29:13] PayPal\Core\PayPalHttpConnection : INFO: Response Status 	: 200
+[23-09-2018 06:29:13] PayPal\Core\PayPalHttpConnection : INFO: POST https://api.sandbox.paypal.com/v1/payments/payment
+[23-09-2018 06:29:13] PayPal\Core\PayPalHttpConnection : INFO: Invalid or no certificate authority found - Retrying using bundled CA certs file
+[23-09-2018 06:29:14] PayPal\Core\PayPalHttpConnection : INFO: Response Status 	: 201

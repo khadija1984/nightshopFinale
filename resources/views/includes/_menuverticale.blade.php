@@ -66,7 +66,6 @@
         @foreach ($lasts as $last)
             <div style="position:absolute; padding-left: 20px;">
                 <center>
-
                     <a href="{{ route('product.index',['id'=>$last->id]) }}" alt="{{$last->name}}">
                     <img id="img" class="nature" style="height: 200px; width: 200px;"src=" {{$last->image}} " alt="" >
                     </a>

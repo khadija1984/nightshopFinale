@@ -1,4 +1,6 @@
 @include('includes._menu')
+@include('includes._menuverticale')
+@include('includes._menuverticaledroite')
 <link rel="stylesheet" href="{{ asset('css/stylefiche.css') }}">
 <div style="position: absolute; padding-left: 310px;">
     <div class="col-md-8">
@@ -48,4 +50,4 @@
     </div>
 </div>
 <script type="text/javascript" src="{{ asset('js/scripts.js') }}"></script>
-
+@include('includes._footer')

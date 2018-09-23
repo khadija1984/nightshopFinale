@@ -21,6 +21,7 @@ Route::post('nous contacter', 'HomeController@postcontact')->name('contact.post'
 Route::get('/contact', function () {
     return view('contact');
 });
+Route::get('/contact', 'CategorieController@contact');
 Route::get('/apropos', function () {
     return view('apropos');
 });
@@ -28,7 +29,7 @@ Route::get('/apropos', function () {
 
 Route::get('produit/{id}', 'ProductController@index')->name('product.index');
 
-Route::get('/categories', 'CategorieController@listCategories');
+Route::get('/categoriesPage', 'CategorieController@listCategories');
 
 Route::get('/categories/alcools', 'CategorieController@alcools');
 Route::get('alcools/{categorie?}','CategorieController@filtre')->name('filtre');

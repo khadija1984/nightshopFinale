@@ -15,7 +15,7 @@
     				<p>Nous sommes heureux de vous confirmer votre commande N° <strong>{{$panier->id }} </strong>: et la validation de la transaction : <strong>{{$charge['id']}}</strong> </p>
     				<p>Les détails supplémentaires sont disponibles dans votre <a href="">compte personnel</a>.</p>
 
-            <p> <a href="{{ url('categories') }}" class="btn btn-icon btn-primary"><i class="fa fa-reply"></i><span>Retour au catalogue</span></a></p>
+            <p> <a href="{{ url('/categories/alcools') }}" class="btn btn-icon btn-primary"><i class="fa fa-reply"></i><span>Retour au catalogue</span></a></p>
           </div>
         </div>
 

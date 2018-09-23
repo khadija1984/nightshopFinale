@@ -65,7 +65,7 @@
                     <li class="menu-item-has-children"><a data-toggle="dropdown" class="dropdown-toggle" href="#">Boutique
                         <i class="fa fa-angle-down"></i></a>
                        <ul class="sub-menu">
-                            <li class="menu-item-has-children"><a href="{{ url('categories') }}">Catégories <i
+                            <li class="menu-item-has-children"><a href="{{ url('/categoriesPage') }}">Catégories <i
                                     class="fa fa-angle-right"></i></a>
                                 <ul class="sub-menu">
                                     <li><a href="{{ url('categories/alcools') }}">Alcools</a>

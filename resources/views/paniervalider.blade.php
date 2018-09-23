@@ -75,7 +75,7 @@
 		</table>
 			<div class="row">
 				<div class="col-md-6 text-left">
-						<a href="{{ url('categories') }}" class="btn btn-icon btn-primary  "><i class="fa fa-reply"></i><span>Retour au catalogue</span></a>
+						<a href="{{ url('/categories/alcools') }}" class="btn btn-icon btn-primary  "><i class="fa fa-reply"></i><span>Retour au catalogue</span></a>
 				</div>
 				<div class="col-md-6 text-right">
 							<a  href="{{ route('panier.payer') }}" class="btn btn-icon btn-black"><i class="fa fa-money"></i><span>Payer le panier </span></a>

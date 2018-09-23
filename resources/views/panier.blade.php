@@ -32,7 +32,7 @@
 					@foreach ($panier as $product)
 					<tr>
 						<td scope="row">{{$index}}</td>
-						<td class="product_name"><a href="{{route('produit.index',['slug'=>str_slug($product->name)])}}">{{$product->name}}</a></td>
+						<td class="product_name"><a href="{{ route('product.index',['id'=>$product->id]) }}">{{$product->name}}</a></td>
 						<td>
 							<div class="input-group-sm">
 							  <span class="input-group-btn-sm">
