@@ -25,11 +25,13 @@ class HomeController extends Controller
          $users= \App\user::whererole('nightshop')->get();
          $tab = json_decode($users, true);
          //dd($tab);
-        $Product=\App\product::get();
-        $lasts = product::orderBy('created_at', 'ASC')->take(1)->get();
-        $product = \App\product::get();
-	//dd($users);
-     return view('welcome', compact('product','lasts','latitude','longitude','users','tab'));
+         
+        $product=  \App\Product::get();
+        $lasts = product::orderBy('created_at', 'ASC')->take(2)->get();
+        $las = product::orderBy('created_at', 'ASC')->take(2)->get();
+        $promo = \App\Promotion::get();
+ 
+     return view('welcome', compact('las','product','promo','lasts','latitude','longitude','users','tab'));
        
     }
    

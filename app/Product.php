@@ -39,11 +39,13 @@ class Product extends Model
                ->where('started_at','<=',\Carbon\Carbon::now())
                ->where('finished_at','>=',\Carbon\Carbon::now())
                ->first();
+               
          
      }
      function prixVente()
     {
         return $this->onDiscount()?$this->onDiscount()->prix:$this->prix;
     }
+    
    
 }

@@ -54,7 +54,7 @@
     width: 150px;
 }
 </style>
-<div id="divnavigation" style="margin-left:1100px">
+<div id="divnavigation" style="margin-left:1100px; ">
     
     
     <div class="row" >
@@ -68,10 +68,21 @@
                     </a>
                 </center>
             </div>
+            @else
+            @foreach($las->slice(0,1) as $v1)
+            <div style="position:absolute;height: 200px; width:200px;margin-top: 210px ">
+                <center>
+                    <span class="bulle bulle-promo">New</span>
+                    <a href="" alt="">
+                    <img id="img" class="nature" style="height: 200px; width:500px;"src=" {{$v1->image}} " alt="" >
+                    </a>
+                </center>
+            </div>
+           @endforeach
             @endif
         @endforeach
     </div>
-
+  
 </div>
 <!----<div id="divnavigation">
     <center><div><h4>Promo</h4></div></center>

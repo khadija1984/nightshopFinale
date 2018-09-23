@@ -1,5 +1,6 @@
 @include('includes._menu')
-
+@include('includes._menuverticale')
+@include('includes._menuverticaledroite')
 <html>
     <body>
 <!--main content start-->
@@ -8,13 +9,10 @@
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDjS_CSbi5trGF0aoipisGXuahNiiGL5cM&callback=initMap"
   type="text/javascript"></script>
 <script   type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false&language=fr"></script>
-<form  style="padding-left: 270px">
-  <input type="text" id="adresse"/>
-  <input type="button" id="button"  value="Localiser sur Google Map" onclick="TrouverAdresse();"  />
-</form>
+
 
 <span style="display:none;" id="text_latlng"></span>
-<div id="map-canvas" style="margin-left: 270px;margin-top:30px; height:300px;width:60%"></div>
+<div id="map-canvas" style="margin-left: 270px;margin-top:20px; height:350px;width:60%"></div>
 
 <div class="div" id="foo" style=" display:none; background: green;margin-left: 270px;margin-right: 270px;margin-top:20px;height:80px">
    <p style="margin-left: 270px;">ici mes adresse de nightshop</p>
@@ -57,7 +55,7 @@ $(function(){
         var locations = [
             
             ['Nightshop2', 50.873729, 4.358945],
-            ['Nightshop1', 50.874252, 4.357736],
+            ['Nightshop1', 50.875534, 4.353314],
             ['Nightshop3', 50.874038, 4.357298],
             ['Nightshop4', 50.87426, 4.356801],
             ['Nightshop5', 50.879269, 4.347562],
