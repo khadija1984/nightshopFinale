@@ -250,22 +250,46 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
                                    <div ng-controller="SummaryTableController" class="ng-scope">
                                         <div cg-busy="loadingPromise" style="position: relative;">
                                                 <!----formulaire d'ajout d'un utilisateur--->
-                                            <form action="{{ action('AdminController@createCategory')}}"  method="PUT">
-                                                {{csrf_field()}}
-                                                 {{method_field('ADD')}}
-                                                <label>name:
-                                                <input type="text" name="name"  />
-                                                </label>
-                                                <label>slug:
-                                                <input type="text" name="slug"  />
-                                                </label>
-                                                 <label>image:
-                                                <input type="text" name="image"  />
-                                                </label>
-                                                
-                                                <br>
-                                                 <button type="submit" name="submit" class="btn send-btn">send massage</button>
-                                             </form>  
+                                            
+                        <form class="form-horizontal contact-form" enctype="multipart/form-data"  role="form" method="post" action="{{ action('AdminController@createCategory') }}">
+                        {{csrf_field()}}
+                        <div class="form-group">
+                            <div class="col-md-12">
+                                <input type="text" class="form-control" id="name" name="name"
+                                       placeholder="name" value="{{old('name')}}" >
+                            </div>
+                        </div>
+                        @if($errors->has('name'))
+                        <span class='help-block'>
+                            <strong>{{ $errors->first('name')}}</strong>
+                        </span>
+                        @endif
+                        <div class="form-group">
+                            <div class="col-md-12">
+                                <input type="text" class="form-control" id="email" name="slug"
+                                       placeholder="slug" value="{{old('slug')}}" >
+                            </div>
+                        </div>
+                        @if($errors->has('slug'))
+                        <span class='help-block'>
+                            <strong>{{ $errors->first('slug')}}</strong>
+                        </span>
+                        @endif
+                       
+                        @if($errors->has('image'))
+                        <span class='help-block'>
+                            <strong>{{ $errors->first('image')}}</strong>
+                        </span>
+                        @endif
+                       <div class="form-group">
+                            <div class="col-md-12">
+                                <input type="file" class="form-control" id="subject" name="image"
+                                       placeholder="Sujet" value="{{old('image')}}">
+                            </div>
+                        </div>
+                        <button type="submit" name="submit" class="btn send-btn">Envoyer</button>
+
+                    </form>
              
                                         </div>
                                         </div>

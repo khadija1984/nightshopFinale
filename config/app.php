@@ -165,6 +165,7 @@ return [
         Barryvdh\Debugbar\ServiceProvider::class,
 		Stevebauman\Location\LocationServiceProvider::class,
 		Midnite81\GeoLocation\GeoLocationServiceProvider::class,
+        Intervention\Image\ImageServiceProvider::class,
         /*
          * Package Service Providers...
          */
@@ -235,7 +236,8 @@ return [
         'Cart' => Gloudemans\Shoppingcart\Facades\Cart::class, 
 		'Paypalpayment'   => Anouar\Paypalpayment\Facades\PaypalPayment::class,
 		'Location' => Stevebauman\Location\Facades\Location::class,
-		'GeoLocation' => Midnite81\GeoLocation\Facades\GeoLocation::class
+		'GeoLocation' => Midnite81\GeoLocation\Facades\GeoLocation::class,
+        'Image' => Intervention\Image\Facades\Image::class
     ],
 
 ];

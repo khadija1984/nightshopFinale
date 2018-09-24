@@ -70,7 +70,8 @@
                 </center>
             </div>
             @else
-            @foreach($las->slice(0,1) as $v1)
+            @foreach($las->slice(0,2) as $v1)
+            
             <div style="position:absolute;height: 200px; width:200px;margin-top: 210px ">
                 <center>
                     <span class="bulle bulle-promo">New</span>

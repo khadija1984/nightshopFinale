@@ -72,13 +72,13 @@ Route::group(['middleware' => ['isAdmin']], function () {
     Route::PUT('/admin/users/addUser/createUser','AdminController@createUser')->name('createUser');
     Route::GET('/admin/users/addUser/createUser','AdminController@createUser')->name('createUser');
     Route::get('/admin/users/addUser/add', 'AdminController@addUser')->name('adduser');
-    Route::PUT('/admin/categories/addCategory/createCategory','AdminController@createCategory')->name('createCategory');
+    Route::post('/admin/categories/addCategory/createCategory','AdminController@createCategory')->name('createCategory');
     Route::GET('/admin/categories/addCategory/createCategory','AdminController@createCategory')->name('createCategory');
     Route::PUT('/admin/categories/addProduct/createProduct','AdminController@createProduct')->name('createProduct');
    Route::get('/admin/categories/addProduct/createProduct','AdminController@createProduct')->name('createProduct');
    Route::get('/admin/users/{id}', 'AdminController@ficheUser')->name('user.index');
-    Route::put('/admin/users/updateUser','AdminController@updateUser')->name('updateUser');
-    Route::get('/admin/users/updateUser','AdminController@updateUser')->name('updateUser');
+    Route::put('/admin/users/updateUser/{id}','AdminController@updateUser')->name('updateUser');
+    Route::get('/admin/users/updateUser/{id}','AdminController@updateUser')->name('updateUser');
     Route::get('/admin/categories', 'AdminController@showCategories')->name('showCategories');
     Route::get('/admin/produits', 'AdminController@showProduits')->name('showProduits');
 });

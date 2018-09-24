@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "44e37a409537279c9eaeb5ede434684e",
-    "content-hash": "9c3b9b10c6b3db380aed98135598b445",
+    "hash": "c6a5d80c55bbbac6fa3ce6ae871928cc",
+    "content-hash": "7dad94b9218cd6009e59f4c5d68f9eb1",
     "packages": [
         {
             "name": "anouar/paypalpayment",

@@ -252,9 +252,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
                                         <div cg-busy="loadingPromise" style="position: relative;">
                                                 <!----formulaire d'ajout d'un utilisateur--->
                                             @foreach($user as $user)
-   
-
-                                            <form action="{{ action('AdminController@updateUser', $id) }}"  method="put">
+                                            <form action="{{ action('AdminController@updateUser', $id) }}"  method="PUT">
                                                 {{csrf_field()}}
                                                  {{method_field('UPDATE')}}
                                                  <input name="_method" type="hidden" value="PATCH">

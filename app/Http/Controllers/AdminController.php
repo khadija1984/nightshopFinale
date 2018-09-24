@@ -8,6 +8,9 @@ use AuthenticatesUsers;
 use \App\Http\Middleware\IsAdmin;
 use App\Notifications;
 use App\User;
+use Illuminate\Http\UploadedFile;
+use Illuminate\Http\File;
+
 
 class AdminController extends Controller
 {
@@ -52,53 +55,7 @@ class AdminController extends Controller
         //return view('dashbordAdmin', compact('user'));
         return view('product', compact('product'));
     }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
- 
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
+    
     /**
      * Remove the specified resource from storage.
      *
@@ -142,14 +99,25 @@ class AdminController extends Controller
    
     public function updateUser(Request $request, $id){
         $user = \App\User::find($id);
-                $user->username=$request->input('username');
-                 $user->role=$request->input('role');
-                 $user->email=$request->input('email');
-                 //dd($request);
-                //return ($request);
-               $user->update();
+        $this->validate($request, [
+            'username'=>'required',
+            'role'=>'required',
+            'email'=>'required'
+        ]);
+        $input = $request->all();
+        $user->fill($input)->save();
+        //Session::flash('flash_message', 'user successfumy added');
+               // $user->username=$request->input('username');
+                 //$user->role=$request->input('role');
+                 //$user->email=$request->input('email');
+               //$user->validate();
+        //dd($request);
         return redirect()->route('showUsers');
     }
+    
+    
+    
+    
      public function createProduct(Request $request){
         $product = new \App\Product();
         $product->name=request('name');
@@ -165,12 +133,16 @@ class AdminController extends Controller
     }
      public function createCategory(Request $request){
         $category = new \App\Category();
-        $category->name=request('name');
-        $category->slug=request('slug');
-        $category->image=request('image');
-        
-        //dd($category);
-           $category->save();
-           return redirect()->route('showCategories');
+        $category->name=request('name'); 
+        $category->slug=request('slug'); 
+         $img = $request->file('image');
+         //dd($img);
+         if($request->hasFile('image')){
+           $category->image = $request->image->store('image');
+        }
+           //dd($request->image);
+         $category->save();
+         return redirect()->route('showCategories');
     }
+   
 }

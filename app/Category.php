@@ -9,14 +9,14 @@ class Category extends Model
      protected $table = 'categories';
      
      protected $fillable = [
-        'name', 'slug',
+        'name', 'slug','image'
      ];
 
      function setNameAttribute($value)
      {
          $this->attributes['name']=$value;
          $this->attributes['slug']=str_slug($value);
-         
+         $this->attributes['image']=$value;
      }
      
      public function products()

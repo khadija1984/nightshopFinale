@@ -277,7 +277,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
                                                 </label>
                                                 
                                                 <br>
-                                                 <button type="submit" name="submit" class="btn send-btn">send massage</button>
+                                                 <button type="submit" name="submit" class="btn send-btn">Ajoueter produit</button>
                                              </form>  
              
                                         </div>
