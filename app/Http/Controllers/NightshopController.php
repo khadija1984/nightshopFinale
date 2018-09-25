@@ -6,6 +6,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use AuthenticatesUsers;
 use \App\Http\Middleware\IsAdmin;
+use Illuminate\Pagination\Paginator;
 
 class NightshopController extends Controller
 {
@@ -36,7 +37,8 @@ class NightshopController extends Controller
     }
     public function showProduits()
     {
-        $product = \App\Product::get();
+        $product = \App\Product::get()->paginate($perpage);
+        $perpage=3;
         //dd($user);
         //return view('dashbordAdmin', compact('user'));
         return view('productNightshop', compact('product'));

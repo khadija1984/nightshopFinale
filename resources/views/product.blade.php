@@ -212,13 +212,13 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
                 </a>
                 <div class="navbar-custom-menu">
                 </div>
+                
             </nav>
         </header>
         <aside class="main-sidebar">
             <section class="sidebar">
                 <ul class="sidebar-menu">
                     
-                    <li role="presentation"><a href="{{ route('dashbordNightshop') }}"><i class="fa fa-tachometer"></i>Dashboard</a></li>
  
                     <li role="presentation"><a href="{{ route('dashbordAdmin') }}"><i class="fa fa-tachometer"></i>Dashboard</a></li>
                    
@@ -271,59 +271,59 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
                                                         </tr>
                                                     </thead>
                                                               <tbody>
-                                                        @foreach($product as $product)
+                                                        @foreach($product as $pro)
                                                         <tr ng-repeat="row in rows" ng-class="{'info': row.selectedFlag}" class="ng-scope">
                                                             <td ng-repeat="col in columns" class="ng-scope">
                                                                 <div ng-switch="" on="col.renderType">
                                                                     <div ng-switch-when="primaryLink" class="ng-scope">
-                                                                       <a ng-href="http://crudkit.com/demo/?action=page_function&amp;func=view_item&amp;item_id=1&amp;page=sqlite2" class="ng-binding" href="http://crudkit.com/demo/?action=page_function&amp;func=view_item&amp;item_id=1&amp;page=sqlite2">{{$product->name}}</a>
+                                                                       <a ng-href="http://crudkit.com/demo/?action=page_function&amp;func=view_item&amp;item_id=1&amp;page=sqlite2" class="ng-binding" href="http://crudkit.com/demo/?action=page_function&amp;func=view_item&amp;item_id=1&amp;page=sqlite2">{{$pro->name}}</a>
                                                                     </div>
                                                                 </div>
                                                             </td>
                                                                 <td ng-repeat="col in columns" class="ng-scope">
                                                                     <div ng-switch="" on="col.renderType">
                                                                         <div ng-switch-when="string" class="ng-binding ng-scope">
-                                                                             {{$product->slug}}
+                                                                             {{$pro->slug}}
                                                                         </div>
                                                                     </div>
                                                                 </td>
                                                                 <td ng-repeat="col in columns" class="ng-scope">
                                                                     <div ng-switch="" on="col.renderType">
                                                                         <div ng-switch-when="string" class="ng-binding ng-scope">
-                                                                         {{$product->description}}
+                                                                         {{$pro->description}}
                                                                         </div>
                                                                     </div>
                                                                 </td>
                                                                 <td ng-repeat="col in columns" class="ng-scope">
                                                                     <div ng-switch="" on="col.renderType">
                                                                         <div ng-switch-when="string" class="ng-binding ng-scope">
-                                                                         {{$product->prix}}
+                                                                         {{$pro->prix}}
                                                                         </div>
                                                                     </div>
                                                                 </td>
                                                                  <td ng-repeat="col in columns" class="ng-scope">
                                                                     <div ng-switch="" on="col.renderType">
                                                                         <div ng-switch-when="string" class="ng-binding ng-scope">
-                                                                         {{$product->qte}}
+                                                                         {{$pro->qte}}
                                                                         </div>
                                                                     </div>
                                                                 </td>
                                                                  <td ng-repeat="col in columns" class="ng-scope">
                                                                     <div ng-switch="" on="col.renderType">
                                                                         <div ng-switch-when="string" class="ng-binding ng-scope">
-                                                                         {{$product->image}}
+                                                                         {{$pro->image}}
                                                                         </div>
                                                                     </div>
                                                                 </td>
                                                                 <td ng-repeat="col in columns" class="ng-scope">
                                                                     <div ng-switch="" on="col.renderType">
                                                                         <div ng-switch-when="string" class="ng-binding ng-scope">
-                                                                         {{$product->category_id}}
+                                                                         {{$pro->category_id}}
                                                                         </div>
                                                                     </div>
                                                                 </td>
                                                                 <td>
-                                                                    <form action="{{ action('AdminController@destroyProduct', ['id'=>$product->id]) }} " method="POST">
+                                                                    <form action="{{ action('AdminController@destroyProduct', ['id'=>$pro->id]) }} " method="POST">
                                                                         {{csrf_field()}}
                                                                         {{method_field('DELETE')}}
                                                                         <input type="hidden" name="_method" value="DELETE" />
@@ -333,8 +333,10 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
                                                             </tr>
 
                                                             @endforeach
+                                                            
                                                     </tbody>
                                                 </table>
+                                             {{ $product->links() }}
                                             </div>
                                     </div>
     

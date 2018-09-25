@@ -261,33 +261,33 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
                                                         </tr>
                                                     </thead>
                                                               <tbody>
-                                                        @foreach($user as $user)
+                                                        @foreach($user as $us)
                                                         
                                                         <tr ng-repeat="row in rows" ng-class="{'info': row.selectedFlag}" class="ng-scope">
                                                             <td ng-repeat="col in columns" class="ng-scope">
                                                                 <div ng-switch="" on="col.renderType">
                                                                     <div ng-switch-when="primaryLink" class="ng-scope">
                                              
-                                                                       <a href="{{ route('user.index',['id'=>$user->id]) }}">{{$user->username}}</a>
+                                                                       <a href="{{ route('user.index',['id'=>$us->id]) }}">{{$us->username}}</a>
                                                                     </div>
                                                                 </div>
                                                             </td>
                                                                 <td ng-repeat="col in columns" class="ng-scope">
                                                                     <div ng-switch="" on="col.renderType">
                                                                         <div ng-switch-when="string" class="ng-binding ng-scope">
-                                                                             {{$user->email}}
+                                                                             {{$us->email}}
                                                                         </div>
                                                                     </div>
                                                                 </td>
                                                                 <td ng-repeat="col in columns" class="ng-scope">
                                                                     <div ng-switch="" on="col.renderType">
                                                                         <div ng-switch-when="string" class="ng-binding ng-scope">
-                                                                         {{$user->role}}
+                                                                         {{$us->role}}
                                                                         </div>
                                                                     </div>
                                                                 </td>
                                                                 <td>
-                                                                    <form action="{{ action('AdminController@destroyUser', ['id'=>$user->id]) }} " method="POST">
+                                                                    <form action="{{ action('AdminController@destroyUser', ['id'=>$us->id]) }} " method="POST">
                                                                         {{csrf_field()}}
                                                                         {{method_field('DELETE')}}
                                                                         <input type="hidden" name="_method" value="DELETE" />
@@ -300,6 +300,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
                                                             @endforeach
                                                     </tbody>
                                                 </table>
+                                             {{ $user->links() }}
                                             </div>
                                     </div>
     

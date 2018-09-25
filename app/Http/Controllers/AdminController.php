@@ -38,7 +38,8 @@ class AdminController extends Controller
     
     public function showUsers()
     {
-        $user = \App\User::get();
+        $perpage=4;
+        $user = \App\User::paginate($perpage);;
         //dd($user);
         //return view('dashbordAdmin', compact('user'));
         return view('users', compact('user'));
@@ -52,7 +53,9 @@ class AdminController extends Controller
     }
     public function showProduits()
     {
-        $product = \App\Product::get();
+        $perpage=4;
+         $product = \App\Product::paginate($perpage);
+         
         //dd($user);
         //return view('dashbordAdmin', compact('user'));
         return view('product', compact('product'));
@@ -142,15 +145,19 @@ class AdminController extends Controller
         $category = new \App\Category();
         $category->name=request('name'); 
         $category->slug=request('slug'); 
-        $category->image=$request->file('image');
+        //$category->image=$request->file('image');
          //dd($img);
               
          if($request->hasFile('image')){
-           $name = $request->file('image')->getClientOriginalName();
+            $image= $request->file('image');
+            $name = $request->file('image')->getClientOriginalName();
+            $location = public_path('assets/images/'.$name);
            //dd($name);
            //TO DO RESIZE IMAGE AND PATH TO CHANGE
            //$imagesize = Image::make($request->file('image'))->resize(300,170)->stream();
-           $category->image = $request->image->move(public_path('assets\images'), $name, $imagesize);
+           Image::make($image)->resize(100, 200)->save($location);
+           $category->image=$name;
+           //$category->image = $request->image->move(public_path('assets/images'), $name);
         }
            //dd($request->image);
          $category->save();

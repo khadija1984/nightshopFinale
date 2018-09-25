@@ -200,7 +200,8 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 <body class="skin-blue">
     <div class="wrapper">
         <header class="main-header">
-            <a href="http://crudkit.com/demo/" class="logo">NightShop.be</a>
+       
+            <a href="{{ url('/') }}" class="logo">NightShop.be</a>
             <!-- Header Navbar: style can be found in header.less -->
             <nav class="navbar navbar-static-top" role="navigation">
                 <!-- Sidebar toggle button-->
@@ -218,7 +219,6 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
             <section class="sidebar">
                 <ul class="sidebar-menu">
                     
-                    <li role="presentation"><a href="{{ route('dashbordNightshop') }}"><i class="fa fa-tachometer"></i>Dashboard</a></li>
                   
                     <li role="presentation"><a href="{{ route('dashbordAdmin') }}"><i class="fa fa-tachometer"></i>Dashboard</a></li>
                    
@@ -292,13 +292,12 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
                                                                     </div>
                                                                 </td>
                                                                 <td>
-                                                                     <form action="{{ action('AdminController@destroyCategory', ['id'=>$category->id]) }} " method="POST">
+                                                                     <form action="{{ action('AdminController@destroyCategory', ['id'=>$category->id]) }}" method="POST">
                                                                         {{csrf_field()}}
                                                                         {{method_field('DELETE')}}
                                                                         <input type="hidden" name="_method" value="DELETE" />
                                                                         <buttom type='submit' class="btn btn-success delete-user" style="border:none;"><i class="fa fa-trash-o" aria-hidden="true"></i></buttom>
                                                                     </form>
-
                                                                 </td>
                                                             </tr>
 
