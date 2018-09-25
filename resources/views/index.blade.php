@@ -114,17 +114,11 @@
 
                                 <a href="{{ route('product.index',['id'=>$product->id]) }}" class="btn btn-icon btn-secondary" alt="détails"><i class="fa fa-eye"></i></a>
 
-                            @if(Auth::check())
-                                @php
-                                    $likes = \Auth::user()->likes->pluck('id');
-                                @endphp
+                                 <a href="#" class="btn btn-icon btn-secondary  like" alt="favoris" data-id=><i class="fa fa-heart"></i></a>
 
-                                 <a href="#" class="btn btn-icon btn-secondary  {{in_array($product->id,$likes->toArray())?'':'btn-neutre'}} like" alt="favoris" data-id={{ $product->id }}><i class="fa fa-heart"></i></a>
 
-                            @else
+                                <a href="#" class="btn btn-icon btn-secondary  btn-neutre like" alt="favoris" data-id= ><i class="fa fa-heart"></i></a>
 
-                                <a href="#" class="btn btn-icon btn-secondary  btn-neutre like" alt="favoris" data-id={{ $product->id }}><i class="fa fa-heart"></i></a>
-                            @endif
 
                     </div>
                 </div>
@@ -132,7 +126,7 @@
              @endforeach            
     	</div>
         </div>
-    
+</div>    
     
 <script type="text/javascript" src="{{ asset('js/scripts.js') }}"></script>
 <script type="text/javascript" src="{{ asset('js/app.js') }}"></script>
@@ -143,7 +137,7 @@
             <div class="col-md-4">
                 <aside class="footer-widget">
                     
-                    <div class="about-img"><img src="assets/images/logofooter.png" alt="Kotha"></div>
+                    <div class="about-img"><img src="http://localhost/nightshopFinale/public/assets/images/logofooter.png" alt="Kotha"></div>
                     
                     <div class="about-content">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
                         eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed voluptua. At vero eos et

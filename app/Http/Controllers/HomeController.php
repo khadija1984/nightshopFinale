@@ -27,7 +27,7 @@ class HomeController extends Controller
          //dd($tab);
          
         $product=  \App\Product::get();
-        $lasts = product::orderBy('created_at', 'ASC')->take(2)->get();
+        $lasts = product::orderBy('created_at', 'ASC')->take(1)->get();
         $las = product::orderBy('created_at', 'ASC')->take(2)->get();
         $promo = \App\Promotion::get();
  

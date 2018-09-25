@@ -280,6 +280,7 @@ post css
 
 article {
     border: 1px solid #eee;
+    
 }
 
 .entry-header {
@@ -320,6 +321,8 @@ article {
 
 .post-thumb img {
     width: 100%;
+    
+    
 }
 
 a.more-link {
@@ -388,6 +391,7 @@ a.more-link:hover {
     -webkit-flex-direction: column;
     -ms-flex-direction: column;
     flex-direction: column;
+    
 }
 
 .post-thumb:hover .post-thumb-overlay {

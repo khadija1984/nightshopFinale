@@ -65,18 +65,17 @@
                 <center>
                     <span class="bulle bulle-promo">Promo</span>
                     <a href="{{ route('product.index',['id'=>$product->id]) }}" alt="{{$product->name}}">
-                    <img id="img" class="nature" style="height: 200px; width:500px;"src=" {{$product->image}} " alt="" >
+                    <img id="img" class="nature" style="height: 200px; width:500px;"src=" ../{{$product->image}} " alt="" >
                     </a>
                 </center>
             </div>
             @else
             @foreach($las->slice(0,2) as $v1)
-            
             <div style="position:absolute;height: 200px; width:200px;margin-top: 210px ">
                 <center>
                     <span class="bulle bulle-promo">New</span>
                     <a href="" alt="">
-                    <img id="img" class="nature" style="height: 200px; width:500px;"src=" {{$v1->image}} " alt="" >
+                    <img id="img" class="nature" style="height: 200px; width:500px;"src=" ../{{$v1->image}} " alt="" >
                     </a>
                 </center>
             </div>

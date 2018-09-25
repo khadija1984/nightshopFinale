@@ -2,14 +2,17 @@
 @include('includes._menuverticale')
 @include('includes._menuverticaledroite')
 <link rel="stylesheet" href="{{ asset('css/stylefiche.css') }}">
+<body>
 <div style="position: absolute; padding-left: 310px;">
     <div class="col-md-8">
     <h1 class="portfolio-title text-uppercase">Alcools</h1>
-        <div class="row">
-            <form action="{{route('filtre',['categorie'=>Request::segment(2)])}}" method="GET">
-                <ul class="list-actions">
+    
+            <div class="navbar navbar ">
+                <div class="col-md-4">
+            <form class="form-inline" action="{{route('filtre',['categorie'=>Request::segment(2)])}}" method="GET">
+                <ul class="form-control" class="list-actions" style="list-style-type: none;">
                     <li> 
-                        <label>Trier par</label>
+                       
                         <select class="custom-select" name="ordre">
                             <option value="all" {{app('request')->input('ordre') =='all'?'selected':''}}>All</option>
                             <option value="prix-desc" {{app('request')->input('ordre') =='prix-desc'?'selected':''}}>Prix décroissant</option>
@@ -21,6 +24,8 @@
                 </ul>
                 <button type="submit"><i class="fa fa-search"></i></button>
             </form> 
+            </div>
+            </div>
             @foreach($products as $pro)
             @if($pro->category_id == 1)
             <div class="col-md-4" >
@@ -49,5 +54,6 @@
         </div>
     </div>
 </div>
+    </body>
 <script type="text/javascript" src="{{ asset('js/scripts.js') }}"></script>
 @include('includes._footer')
