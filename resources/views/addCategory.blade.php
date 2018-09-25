@@ -275,7 +275,6 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
                             <strong>{{ $errors->first('slug')}}</strong>
                         </span>
                         @endif
-                       
                         @if($errors->has('image'))
                         <span class='help-block'>
                             <strong>{{ $errors->first('image')}}</strong>
@@ -290,6 +289,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
                         <button type="submit" name="submit" class="btn send-btn">Envoyer</button>
 
                     </form>
+
              
                                         </div>
                                         </div>

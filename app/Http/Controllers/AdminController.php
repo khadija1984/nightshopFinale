@@ -10,6 +10,8 @@ use App\Notifications;
 use App\User;
 use Illuminate\Http\UploadedFile;
 use Illuminate\Http\File;
+use Illuminate\Support\Facades\Validator;
+use Image;
 
 
 class AdminController extends Controller
@@ -132,13 +134,23 @@ class AdminController extends Controller
            return redirect()->route('showProduits');
     }
      public function createCategory(Request $request){
+         $this->validate(request(), [
+             'name'=>'required', 
+             'slug'=>'required',
+             'image'=>'required|image|mimes:jpg,jpeg,gif,png'
+         ]);
         $category = new \App\Category();
         $category->name=request('name'); 
         $category->slug=request('slug'); 
-         $img = $request->file('image');
+        $category->image=$request->file('image');
          //dd($img);
+              
          if($request->hasFile('image')){
-           $category->image = $request->image->store('image');
+           $name = $request->file('image')->getClientOriginalName();
+           //dd($name);
+           //TO DO RESIZE IMAGE AND PATH TO CHANGE
+           //$imagesize = Image::make($request->file('image'))->resize(300,170)->stream();
+           $category->image = $request->image->move(public_path('assets\images'), $name, $imagesize);
         }
            //dd($request->image);
          $category->save();
