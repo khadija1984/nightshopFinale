@@ -111,6 +111,8 @@ Route::group(['middleware'=>['auth']], function(){
     Route::get('paiement/paypal', 'PaiementController@checkoutPaypal')->name('checkout.paypal');
     Route::get('paiement/paypal/done', 'PaiementController@checkoutPaypalDone')->name('checkout.paypal.done');
     Route::get('paiement/paypal/cancel', 'PaiementController@checkoutPaypalCancel')->name('checkout.paypal.cancel');
+    Route::put('/compte/update','CompteController@update')->name('update');
+    Route::get('/admin/update','CompteController@update')->name('update');
     
 });
 Route::get('compte','CompteController@compte')->name('compte');

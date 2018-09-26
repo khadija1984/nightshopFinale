@@ -25,13 +25,58 @@
                                         @endif
                                     </div>
                             </div>
+                        
+                         
+ <div class="form-group{{ $errors->has('rue') ? ' has-error' : '' }} row"> 
+                                <label for="username" class="col-sm-2 col-form-label">Adresse</label>
+                                    <div class="col-sm-10">
+                                        <div class="input-group mb-2 mr-sm-2 mb-sm-0">
 
-                            <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }} row"> 
-                                <label for="email" class="col-sm-2 col-form-label">Email</label>
+                                            <input type="text" class="form-control" id="username" name="Adresse" placeholder="Adresse" value="{{ old('rue') }}" required autofocus>
+                                        </div> 
+                                        @if ($errors->has('rue'))
+                                            <span class="help-block">
+                                                <strong>{{ $errors->first('rue') }}</strong>
+                                            </span>
+                                        @endif
+                                    </div>
+                            </div>
+                            <div class="form-group{{ $errors->has('role') ? ' has-error' : '' }} row"> 
+                                <label for="codePostale" class="col-sm-2 col-form-label">Vous êtes Propriétaire d'un nightshop</label>
                                 <div class="col-sm-10">
                                     <div class="input-group mb-2 mr-sm-2 mb-sm-0">
 
-                                            <input type="email" class="form-control" id="email" name="email" placeholder="Email"  value="{{ old('email') }}" required >
+                                            <input type="role" class="form-control" id="codePostale" name="role" placeholder="role"  value="{{ old('role') }}" required >
+                                    </div>
+                                    @if ($errors->has('role'))
+                                        <span class="help-block">
+                                            <strong>{{ $errors->first('role') }}</strong>
+                                        </span>
+                                    @endif
+                                </div>
+                            </div>
+                         <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }} row"> 
+                                <label for="email" class="col-sm-2 col-form-label">E-mail</label>
+                                <div class="col-sm-10">
+                                    <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+
+                                            <input type="email" class="form-control" id="codePostale" name="email" placeholder="email"  value="{{ old('email') }}" required >
+                                    </div>
+                                    @if ($errors->has('email'))
+                                        <span class="help-block">
+                                            <strong>{{ $errors->first('email') }}</strong>
+                                        </span>
+                                    @endif
+                                </div>
+                            </div>
+                        
+                        
+                            <div class="form-group{{ $errors->has('codePostale') ? ' has-error' : '' }} row"> 
+                                <label for="codePostale" class="col-sm-2 col-form-label">Code Postale</label>
+                                <div class="col-sm-10">
+                                    <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+
+                                            <input type="codePostale" class="form-control" id="codePostale" name="codePostale" placeholder="codePostale"  value="{{ old('codePostale') }}" required >
                                     </div>
                                     @if ($errors->has('email'))
                                         <span class="help-block">
