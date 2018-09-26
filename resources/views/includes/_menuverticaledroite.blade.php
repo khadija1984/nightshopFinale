@@ -55,12 +55,9 @@
 }
 </style>
 <div id="divnavigation" style="margin-left:1100px; ">
-    
-    
     <div class="row" >
         @foreach($product as $product)
             @if($product->onDiscount())
-            
             <div style="position:absolute;height: 200px; width:200px; ">
                 <center>
                     <span class="bulle bulle-promo">Promo</span>

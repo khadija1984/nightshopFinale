@@ -27,11 +27,12 @@ class HomeController extends Controller
          //dd($tab);
          
         $product=  \App\Product::get();
+        $related = \App\Product::orderBy('prix', 'DESC')->orderByRaw('RAND()')->take(4)->get();
         $lasts = product::orderBy('created_at', 'ASC')->take(1)->get();
         $las = product::orderBy('created_at', 'ASC')->take(2)->get();
         $promo = \App\Promotion::get();
  
-     return view('welcome', compact('las','product','promo','lasts','latitude','longitude','users','tab'));
+     return view('welcome', compact('related','las','product','promo','lasts','latitude','longitude','users','tab'));
        
     }
    

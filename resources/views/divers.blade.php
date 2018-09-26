@@ -1,6 +1,5 @@
 @include('includes._menu')
-@include('includes._menuverticale')
-@include('includes._menuverticaledroite')
+
 <link rel="stylesheet" href="{{ asset('css/stylefiche.css') }}">
 <div style="position: absolute; padding-left: 310px;">
     <div class="col-md-8">
@@ -30,7 +29,7 @@
         <div class="col-md-4" >
             <article class="post portfolio-2 portfolio-3 post-grid">
                 <div class="post-thumb">
-                    <a href=""><img src="{{ URL($pro->image) }}" alt=""></a>
+                    <a href=""><img style="height:150px;" src="{{ URL($pro->image) }}" alt=""></a>
                     <a href="{{ route('product.index',['id'=>$pro->id]) }}" class="post-thumb-overlay text-center">
                         <div class="text-uppercase text-center">Voir</div>
                      </a>
@@ -55,5 +54,7 @@
     </div>
 </div>
 </div>
+@include('includes._menuverticale')
+@include('includes._menuverticaledroite')
 <script type="text/javascript" src="{{ asset('js/scripts.js') }}"></script>
 @include('includes._footer')

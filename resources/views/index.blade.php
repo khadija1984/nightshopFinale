@@ -43,7 +43,7 @@
             </div>
             <div class="col-md-3 prix">
                  @if($product->onDiscount())
-	                <span class="price promo">{{$product->prixVente()}} € </span>  <em class="promo">{{$product->prix}} €</em>
+	                <span class="price promo">{{$product->prix}} € </span>  <em class="promo"> {{$product->prixVente()}}€</em>
 	                @else
 	                <span class="price ">{{$product->prixVente()}} € </span>
                 @endif
@@ -102,7 +102,7 @@
                             <a href="{{ route('product.index',['id'=>$product->id]) }}"><img src="{{URL($product->image)}}" alt="{{$product->name}}"></a>
 
                             <h4>{{$product->name}}</h4>
-                            <p> {{ str_limit($product->description,100) }}</p>
+                            <p> {{ str_limit($product->description,50) }}</p>
                             <div class="actions">
                                 @if($product->onDiscount())
                                 <span class="price promo">{{$product->prix}} € </span>  <em class="promo">{{$product->prixVente()}} €</em>

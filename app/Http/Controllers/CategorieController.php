@@ -36,7 +36,7 @@ class CategorieController extends Controller
     {
         $categorie = \App\Category::get();
         $product = \App\product::get();
-        $lasts = \App\Product::orderBy('created_at', 'ASC')->take(1)->get();
+        $lasts = \App\Product::orderBy('created_at', 'DESC')->take(1)->get();
         //$products = \App\Category::findOrFail($product->category_id)->get();
         $las = \App\Product::orderBy('created_at', 'ASC')->take(2)->get();
         return view('categoriesPage', compact('categorie', 'product','lasts','las'));
@@ -50,10 +50,9 @@ class CategorieController extends Controller
         //$currentPage = \Illuminate\Pagination\LengthAwarePaginator::resolveCurrentPage();
         $products = \App\Product::whereCategory_id(1)->paginate($perpage);
         $product = \App\product::get();
-        $lasts = \App\Product::orderBy('created_at', 'ASC')->take(1)->get();
+        $lasts = \App\Product::orderBy('created_at', 'DESC')->take(1)->get();
         $las = \App\Product::orderBy('created_at', 'ASC')->take(2)->get();      
-        //dd($lasts);
-        
+      //dd($lasts);
         return view('alcools', compact('categorie', 'products','lasts','las','product'));
     }
       public function softs()
@@ -63,9 +62,9 @@ class CategorieController extends Controller
         $perpage=3;
         //$currentPage = \Illuminate\Pagination\LengthAwarePaginator::resolveCurrentPage();
         $products = \App\Product::whereCategory_id(4)->paginate($perpage);
-        $lasts = \App\Product::orderBy('created_at', 'ASC')->take(1)->get();
+        $lasts = \App\Product::orderBy('created_at', 'DESC')->take(1)->get();
         //$count = count($products);
-        $las = \App\Product::orderBy('created_at', 'ASC')->take(2)->get();
+        $las = \App\Product::orderBy('created_at', 'DESC')->take(2)->get();
         //dd($las);
         return view('softs', compact('product','categorie', 'products','lasts','las'));
     }
@@ -73,12 +72,14 @@ class CategorieController extends Controller
     {
         $categorie = \App\Category::get();
         $perpage=3;
+        
         //$currentPage = \Illuminate\Pagination\LengthAwarePaginator::resolveCurrentPage();
         $products = \App\Product::whereCategory_id(3)->paginate($perpage);
-         $product = \App\product::get();
-        $lasts = \App\Product::orderBy('created_at', 'ASC')->take(1)->get();
+        $product = \App\product::get();
+        $lasts = \App\Product::orderBy('created_at', 'DESC')->take(1)->get();
         $las = \App\Product::orderBy('created_at', 'ASC')->take(2)->get();
-        return view('packs', compact('product','categorie', 'products','lasts','las'));
+       
+        return view('packs', compact('categorie', 'products','lasts','las','product'));
     }
         public function divers()
     {
@@ -88,7 +89,7 @@ class CategorieController extends Controller
         //$currentPage = \Illuminate\Pagination\LengthAwarePaginator::resolveCurrentPage();
         $products = \App\Product::whereCategory_id(2)->paginate($perpage);
         $product = \App\product::get();
-        $lasts = \App\Product::orderBy('created_at', 'ASC')->take(1)->get();
+        $lasts = \App\Product::orderBy('created_at', 'DESC')->take(1)->get();
         $las = \App\Product::orderBy('created_at', 'ASC')->take(2)->get();
         //dd($product);
         return view('divers', compact('product','categorie', 'products','lasts','las'));
@@ -99,7 +100,7 @@ class CategorieController extends Controller
     
     public function filtre (Request $request, $categorie =null)
     {
-        $lasts = \App\Product::orderBy('created_at', 'ASC')->take(1)->get();
+        $lasts = \App\Product::orderBy('created_at', 'DESC')->take(1)->get();
         $categories = \App\Category::all();
     	$ordre= $request->ordre;
     	$perpage= 3;
@@ -140,10 +141,13 @@ class CategorieController extends Controller
 
     	$requete.="->paginate($perpage)";
     	eval("\$products=$requete;");
-    	return view('alcools',compact('products','$lasts ','categories','brands','categorie','ordre','perpage'));
+    	return view('alcools',compact('products','lasts ','categories','brands','categorie','ordre','perpage'));
     }
      public function filtreSofts (Request $request, $categorie =null)
     {
+         $product = \App\Product::get();
+         $lasts = \App\Product::orderBy('created_at', 'DESC')->take(1)->get();
+         $las = \App\Product::orderBy('created_at', 'ASC')->take(2)->get();
         $categories = \App\Category::all();
     	$ordre= $request->ordre;
     	$perpage= 3;
@@ -184,7 +188,7 @@ class CategorieController extends Controller
 
     	$requete.="->paginate($perpage)";
     	eval("\$products=$requete;");
-    	return view('softs',compact('products','categories','brands','categorie','ordre','perpage'));
+    	return view('softs',compact('products','categories','brands','categorie','ordre','perpage','lasts','product','las'));
     }
     public function filtrePacks (Request $request, $categorie =null)
     {
@@ -235,7 +239,10 @@ class CategorieController extends Controller
     }
     public function filtreDivers (Request $request, $categorie =null)
     {
+        $product = \App\product::get();
+        $lasts = \App\Product::orderBy('created_at', 'ASC')->take(1)->get();
         $categories = \App\Category::all();
+        $las = \App\Product::orderBy('created_at', 'ASC')->take(2)->get();
     	$ordre= $request->ordre;
     	$perpage= 3;
 
@@ -275,7 +282,7 @@ class CategorieController extends Controller
 
     	$requete.="->paginate($perpage)";
     	eval("\$products=$requete;");
-    	return view('divers',compact('products','categories','brands','categorie','ordre','perpage'));
+    	return view('divers',compact('products','product','las','lasts','categories','brands','categorie','ordre','perpage'));
     }
     public function search (Request $request) 
     {

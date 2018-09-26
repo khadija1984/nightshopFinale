@@ -1,8 +1,5 @@
 @include('includes._menu')
-@include('includes._menuverticale')
-@include('includes._menuverticaledroite')
-<html>
-    <body>
+
 <!--main content start-->
 <!---@include('includes._slider')--->
 
@@ -10,15 +7,50 @@
   type="text/javascript"></script>
 <script   type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false&language=fr"></script>
 
-
+@include('includes._menuverticale')
+@include('includes._menuverticaledroite')
 <span style="display:none;" id="text_latlng"></span>
 <div id="map-canvas" style="margin-left: 270px;margin-top:20px; height:350px;width:60%"></div>
 
 <div class="div" id="foo" style=" display:none; background: green;margin-left: 270px;margin-right: 270px;margin-top:20px;height:80px">
    <p style="margin-left: 270px;">ici mes adresse de nightshop</p>
 </div>
+<div class="products"  style="padding-top: 200px">
+<div class="row">
+             @foreach($related as $product) 
+		<div class="col-md-3">
+                    <div>
+                            <!--  <span class="bulle">Infos</span> -->
+                            @if($product->onDiscount())
+                            <span  class="bulle bulle-promo">Promo</span>
+                            @endif
+                            <a href="{{ route('product.index',['id'=>$product->id]) }}"><img src="{{URL($product->image)}}" alt="{{$product->name}}"></a>
+
+                            <h4>{{$product->name}}</h4>
+                            <p> {{ str_limit($product->description,50) }}</p>
+                            <div class="actions">
+                                @if($product->onDiscount())
+                                <span class="price promo">{{$product->prix}} € </span>  <em class="promo">{{$product->prixVente()}} €</em>
+                                @else
+                                <span class="price ">{{$product->prixVente()}} € </span>
+                                @endif
+
+                                <a href="{{route('panier.add',['name'=>$product->name])}}" class="btn btn-icon btn-primary" alt="Ajouter au panier"><i class="fa fa-cart-arrow-down"></i></a>
+
+                                <a href="{{ route('product.index',['id'=>$product->id]) }}" class="btn btn-icon btn-secondary" alt="détails"><i class="fa fa-eye"></i></a>
+
+                                 <a href="#" class="btn btn-icon btn-secondary  like" alt="favoris" data-id=><i class="fa fa-heart"></i></a>
 
 
+                                <a href="#" class="btn btn-icon btn-secondary  btn-neutre like" alt="favoris" data-id= ><i class="fa fa-heart"></i></a>
+
+
+                    </div>
+                </div>
+		</div>
+             @endforeach            
+    	</div>
+</div>
 <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 <script>
 $(function(){   
@@ -96,4 +128,5 @@ google.maps.event.addDomListener(window, 'load', function(){initialiserCarte(loc
 <script type="text/javascript" src="assets/js/jquery.stickit.min.js"></script>
 <script type="text/javascript" src="assets/js/menu.js"></script>
 <script type="text/javascript" src="assets/js/scripts.js"></script>
+
 @include('includes._footer')

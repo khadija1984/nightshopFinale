@@ -1,11 +1,10 @@
 @include('includes._menu')
-@include('includes._menuverticale')
-@include('includes._menuverticaledroite')
+
 <link rel="stylesheet" href="{{ asset('css/stylefiche.css') }}">
 <div style="position: absolute; padding-left: 310px;">
 <div class="col-md-8">
     <h1 class="portfolio-title text-uppercase">Softs</h1>
-    <div class="navbar navbar ">
+    <div  class="navbar navbar ">
         <div class="col-md-4">
          <form class="form-inline"  action="{{route('filtreSofts',['categorie'=>Request::segment(2)])}}" method="GET">
                 <ul class="form-control" class="list-actions" style="list-style-type: none;">
@@ -20,9 +19,9 @@
                             </li>
                         </ul>
                         <button type="submit"><i class="fa fa-search"></i></button>
-                    </form>
+              </form>
                      </div>
-            </div>
+        </div>
         @foreach($products as $pro)
             @if($pro->category_id == 4)
             <div class="col-md-4" >
@@ -35,10 +34,10 @@
                     </div>
                     <div class="post-content">
                         <header class="entry-header text-center text-uppercase">
-                        <h6><a href="#">{{ $pro->name }}</a></h6>
+                        
                         <h1 class="entry-title"><a href="blog.html">{{ $pro->name }}</a></h1>
                         <h6>{{ $pro->prix }} €</h6>
-                    <button >Ajouter au panier</button>
+                        <button >Ajouter au panier</button>
                         </header>
                     </div>
 
@@ -50,5 +49,7 @@
     </div> 
 </div>
 </div>
+@include('includes._menuverticale')
+@include('includes._menuverticaledroite')
 <script type="text/javascript" src="{{ asset('js/scripts.js') }}"></script>
 @include('includes._footer')

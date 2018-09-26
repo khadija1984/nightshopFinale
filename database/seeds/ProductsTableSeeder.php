@@ -51,6 +51,29 @@ class ProductsTableSeeder extends Seeder
             'prix'=>'28',  
                 'Category_id'=>'1',
             ],
+            [
+            'name' => 'Johnnie Walker',
+            'slug' => 'alcools',
+            'image' => 'assets\images\JWBlackLabel70cl-300x282.png',
+            'qte'=>'1',
+                    'description'=> 'Johnnie Walker Black Label 40° 70cl–Scotch Whisky
+                        Associations Mets–Alcools
+                        Poissons fumés
+                        Format
+                            70 cL Bouteille',
+            'prix'=>'28',  
+                'Category_id'=>'1',
+            ],
+            [
+            'name' => 'BAILEY’S',
+            'slug' => 'alcools',
+            'image' => 'assets\images\JWBlackLabel70cl-300x282.png',
+            'qte'=>'1',
+            'description'=> 'Irish cream–17° 70cl',
+            'prix'=>'30',  
+                'Category_id'=>'1',
+            ],
+            
             
             //softs
             [
@@ -81,11 +104,11 @@ class ProductsTableSeeder extends Seeder
                     'Category_id'=>'4',
             ],
              [
-            'name' => 'Minute Maid – Orange Original – 1 L',
+            'name' => 'Minute Maid',
             'slug' => 'softs',
             'image' => 'assets\images\MinuteMaidOrange1l.png',
                  'qte'=>'1',
-                    'description'=> 'Marque
+                    'description'=> '1L,Marque
                         Minute Maid
                         Ingrédients
                         Teneur en fruits 100%
@@ -96,11 +119,11 @@ class ProductsTableSeeder extends Seeder
                     'Category_id'=>'4',
             ],
             [
-            'name' => 'Minute Maid – Pomme – 1 L',
+            'name' => 'Minute Maid',
             'slug' => 'softs',
             'image' => 'assets\images\MinuteMaidPomme1l.png',
                 'qte'=>'1',
-                    'description'=> 'Marque
+                    'description'=> '1 L, Marque
                         Minute Maid
                         Ingrédients
                         Jus de pomme à base de concentré, Teneur en fruits 100%.',
@@ -139,7 +162,7 @@ class ProductsTableSeeder extends Seeder
             
             //divers
             [
-            'name' => 'Paquet de Cigarettes',
+            'name' => 'Cigarettes',
             'slug' => 'divers',
             'image' => 'assets\images\Cigarettes-300x120.png',
             'qte'=>'1',
@@ -184,11 +207,11 @@ class ProductsTableSeeder extends Seeder
             'Category_id'=>'2',
             ],
             [
-            'name' => 'Tampax Pack 20 tampons',
+            'name' => 'Tampax',
             'slug' => 'divers',
             'image' => 'assets\images\Tampax20p.png',
             'qte'=>'1',
-            'description'=> 'Discrétion & protection
+            'description'=> ' Pack 20 tampons, Discrétion & protection
                     De la gamme Tampax Compak clean system
                     Ouverture en V
                     Jupe de protection
@@ -212,5 +235,5 @@ class ProductsTableSeeder extends Seeder
          **});
     *}
   }              */
-}
+    }
 }

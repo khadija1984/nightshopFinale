@@ -1,6 +1,5 @@
 @include('includes._menu')
-@include('includes._menuverticale')
-@include('includes._menuverticaledroite')
+
 <div class="leave-comment mr0" style="padding-bottom: 900px;height:300px; width: 55%; margin-left: 300px ">
                 <div id="googleMap" style="width:100%; height:300px; margin-bottom: 5px"></div>
                 <div style="margin-bottom:100px;">
@@ -62,7 +61,9 @@
                         <button type="submit" name="submit" class="btn send-btn">Envoyer</button>
 
                     </form>
-</div>          </div>
+             </div>
+</div>                
+    
 <script type="text/javascript"  src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
   <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAxXNz1IIB_4NBYS1jy5LbsFEgObeKJR2k&callback=initMap"
   type="text/javascript"></script>
@@ -94,6 +95,7 @@
     google.maps.event.addDomListener(window, 'load', initialize);
 
 </script>
+
 <footer class="footer-widget-section" style=" margin-top:100px;">
    <div class="container">
         <div class="row">

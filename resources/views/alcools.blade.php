@@ -1,8 +1,14 @@
 @include('includes._menu')
-@include('includes._menuverticale')
-@include('includes._menuverticaledroite')
 <link rel="stylesheet" href="{{ asset('css/stylefiche.css') }}">
-<body>
+
+    <div id="divnavigation">
+    <ul id="navigation">
+      <li><a href="{{ url('categories/alcools') }}">Alcools</a></li>
+      <li><a href="{{ url('categories/softs') }}">Softs</a></li>
+      <li><a href="{{ url('categories/packs') }}">Packs</a></li>
+      <li><a href="{{ url('categories/divers') }}">Divers</a></li>
+    </ul>
+    </div>
 <div style="position: absolute; padding-left: 310px;">
     <div class="col-md-8">
     <h1 class="portfolio-title text-uppercase">Alcools</h1>
@@ -28,10 +34,11 @@
             </div>
             @foreach($products as $pro)
             @if($pro->category_id == 1)
+           
             <div class="col-md-4" >
                 <article class="post portfolio-2 portfolio-3 post-grid">
                     <div class="post-thumb">
-                        <a href=""><img src="{{ URL($pro->image) }}" alt=""></a>
+                        <a href=""><img style="height:150px;" src="{{ URL($pro->image) }}" alt=""></a>
                         <a href="{{ route('product.index',['id'=>$pro->id]) }}" class="post-thumb-overlay text-center">
                         <div class="text-uppercase text-center">Voir</div>
                         </a>
@@ -54,6 +61,7 @@
         </div>
     </div>
 </div>
-    </body>
+@include('includes._menuverticale')
+@include('includes._menuverticaledroite')
 <script type="text/javascript" src="{{ asset('js/scripts.js') }}"></script>
 @include('includes._footer')
