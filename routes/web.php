@@ -22,9 +22,7 @@ Route::get('/contact', function () {
     return view('contact');
 });
 Route::get('/contact', 'CategorieController@contact');
-Route::get('/apropos', function () {
-    return view('apropos');
-});
+Route::get('/apropos', 'homeController@apropos');
 //Route::get('produit/{categories}', 'ProductController@index')->name('product.index');
 
 Route::get('produit/{id}', 'ProductController@index')->name('product.index');

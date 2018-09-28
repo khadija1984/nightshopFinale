@@ -51,8 +51,8 @@ class CategorieController extends Controller
         $products = \App\Product::whereCategory_id(1)->paginate($perpage);
         $product = \App\product::get();
         $lasts = \App\Product::orderBy('created_at', 'DESC')->take(1)->get();
-        $las = \App\Product::orderBy('created_at', 'ASC')->take(2)->get();      
-      //dd($lasts);
+      $las = \App\Product::orderBy('created_at', 'ASC')->take(2)->get();      
+      //dd($las);
         return view('alcools', compact('categorie', 'products','lasts','las','product'));
     }
       public function softs()
@@ -78,7 +78,7 @@ class CategorieController extends Controller
         $product = \App\product::get();
         $lasts = \App\Product::orderBy('created_at', 'DESC')->take(1)->get();
         $las = \App\Product::orderBy('created_at', 'ASC')->take(2)->get();
-       
+      
         return view('packs', compact('categorie', 'products','lasts','las','product'));
     }
         public function divers()
@@ -100,7 +100,9 @@ class CategorieController extends Controller
     
     public function filtre (Request $request, $categorie =null)
     {
+        $product = \App\Product::get();
         $lasts = \App\Product::orderBy('created_at', 'DESC')->take(1)->get();
+        $las = \App\Product::orderBy('created_at', 'ASC')->take(2)->get();
         $categories = \App\Category::all();
     	$ordre= $request->ordre;
     	$perpage= 3;
@@ -141,7 +143,7 @@ class CategorieController extends Controller
 
     	$requete.="->paginate($perpage)";
     	eval("\$products=$requete;");
-    	return view('alcools',compact('products','lasts ','categories','brands','categorie','ordre','perpage'));
+    	return view('alcools',compact('products','lasts ','categories','brands','categorie','ordre','perpage', 'lasts','product','las'));
     }
      public function filtreSofts (Request $request, $categorie =null)
     {

@@ -1,5 +1,7 @@
 @include('includes._menu')
 <script src="https://www.w3schools.com/lib/w3.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
 <style>
     #divnavigation{
        
@@ -83,14 +85,26 @@
     </div>
   
 </div>
+
+
+
 <div  class="row-fluid">
     <div class="col-md-12 ">
         <div style="background-color: white; margin-left: 200px;"class="col-lg-6 contact-infos">
-                            <ul class="sub-menu">
-                                <li style="list-style-type: none;"><a href="#">Historique des commandes</a></li>
-                                <li style="list-style-type: none;"><a href="#">Favoris</a></li>
-                            </ul>
+                            
+            
+<button  onclick="masquer_div('a_masquer');" value="">historique</button>
+<div id="a_masquer" style="visibility:hidden">
+ @foreach($arrays as $post)
+     <h6>Produit:{{ $post->name}}|Quantité:{{ $post->qty}}|Prix:{{ $post->price}}€|TVA:{{ $post->tax}}€|Prix Total:{{ $post->subtotal}}€</h6>
+@endforeach
+</div>  
+<button  onclick="masquer_div('a_masquer1');" value="">Favoris</button>
+<div id="a_masquer1" style="visibility:hidden">
+   Contenu de la div en question.
+</div>
         </div> 
+        
         <div class="  products">
             
             <div class="row  nomargin" >
@@ -221,5 +235,23 @@
                 </div>
             </div>
         </div>
-</div><br><br><br><br><br><br><br><br>
+</div><br><br><br><br><br><br><br><br><br><br><br><br>
 @include('includes._footer')
+
+
+
+<script>
+function masquer_div(id)
+{
+  if (document.getElementById(id).style.visibility == 'hidden')
+  {
+       document.getElementById(id).style.visibility = 'visible';
+       document.getElementById(id).style.height = '100px';
+  }
+  else
+  {
+       document.getElementById(id).style.visibility = 'hidden';
+       document.getElementById(id).style.height = '0';
+  }
+}
+</script>

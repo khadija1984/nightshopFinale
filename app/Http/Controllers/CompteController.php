@@ -20,8 +20,12 @@ class CompteController extends Controller
         $lasts = \App\Product::orderBy('created_at', 'DESC')->take(1)->get();
         $las = \App\Product::orderBy('created_at', 'ASC')->take(2)->get(); 
         $user = \App\User::get();
-        //dd($user);
-        return view('compte', compact('user','products','product','las','lasts'));
+        //$panier = \Cart::content();
+        $product = \App\product::get();
+        $monpanier = \Cart::content();
+        $arrays = \GuzzleHttp\json_decode($monpanier);
+        //dd($arrays );
+        return view('compte', compact('arrays','pan','user','products','product','las','lasts','monpanier'));
     }
     public function update(Request $request){
         $user = \App\User::find(Auth::user()->id);
@@ -41,4 +45,12 @@ class CompteController extends Controller
         //dd($request);
         return redirect()->back();
     }
+     public function PanierPerso(){
+         
+         $user = \App\User::find(Auth::user()->id);
+         
+         
+         return view('histocommandes', compact('user','products','product','las','lasts','$monpanier'));
+     }
 }
+

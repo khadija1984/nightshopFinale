@@ -105,5 +105,16 @@ class HomeController extends Controller
        
        return view('alcools',compact('product'));
     }
+    function apropos()
+    {
+       $product=  \App\Product::get();
+        $related = \App\Product::orderBy('prix', 'DESC')->orderByRaw('RAND()')->take(4)->get();
+        $lasts = product::orderBy('created_at', 'ASC')->take(1)->get();
+        $las = product::orderBy('created_at', 'ASC')->take(2)->get();
+        $promo = \App\Promotion::get();
+        //dd($las);
+     return view('apropos',  compact('related','las','product','promo','lasts'));
+       
+   }
 
 }

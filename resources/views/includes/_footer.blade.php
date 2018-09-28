@@ -4,7 +4,7 @@
             <div class="col-md-4">
                 <aside class="footer-widget">
                     
-                    <div class="about-img"><img src="assets/images/logofooter.png" alt="Kotha"></div>
+                    <div class="about-img"><img src="../assets/images/logofooter.png" alt="logo"></div>
                     
                     <div class="about-content">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
                         eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed voluptua. At vero eos et
